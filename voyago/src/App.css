@@ -1,0 +1,90 @@
+/* App component styles */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+}
+
+#app {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+
+
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 11;
+    background: transparent;
+    display: flex;
+
+
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-family: 'Inter', sans-serif;
+    color: white;
+}
+
+header nav {
+    margin-left: auto;
+    transform: translateX(-35rem);
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 5rem;
+    
+
+    color: white;
+
+}
+
+header nav a {
+    text-decoration: none;;
+    color: white;
+
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    
+    /*highlight-on-hover*/
+    display:inline-block;
+    padding: 0.6rem 1rem; /*highlight size*/
+    border-radius: 5rem;
+
+    
+    transition: 0.2s ease;
+}
+
+header nav a:visited {
+  color: white; /* stop browser default visited purple */
+}
+
+header nav a:hover {
+    color: #0099ff;
+    background-color: rgba(255, 255, 255, 0.705);
+}
+
