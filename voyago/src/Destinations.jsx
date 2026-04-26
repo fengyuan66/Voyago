@@ -4,12 +4,13 @@ function Destinations(){
     const dest2 = "Vancouver";
 
     return(
-
+        <section className="destinations">
         <ul>
             <li>{dest1}</li>
             <li>{dest2}</li>
             <li>Want to see more?</li>
         </ul>
+        </section>
 
     )
 
@@ -19,3 +20,4 @@ function Destinations(){
 }
 
 export default Destinations
+

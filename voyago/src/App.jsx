@@ -8,6 +8,7 @@ import Header from './Header'
 import Footer from './Footer'
 import Hero from './Hero'
 import Destinations from './Destinations'
+import HeroTransition from './HeroTransition'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
     <>
     <Header/>
     <Hero/>
+    <HeroTransition/>
     <Destinations/>
     <Footer/>
     
