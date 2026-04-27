@@ -1,0 +1,23 @@
+{
+  "aoi": {
+    "minLat": 49.246,
+    "maxLat": 49.295,
+    "minLng": -123.155,
+    "maxLng": -123.065
+  },
+  "grid": {
+    "latStep": 0.012,
+    "lngStep": 0.012,
+    "zoom": 14
+  },
+  "searchTerm": "restaurant",
+  "maxPlacesPerCell": 120,
+  "maxPhotosPerPlace": 25,
+  "maxScrollRounds": 35,
+  "photoMinWidth": 600,
+  "headless": false,
+  "slowMoMs": 35,
+  "timeoutMs": 45000,
+  "outputDir": "output",
+  "downloadPhotos": true
+}

@@ -1,0 +1,14 @@
+{
+  "name": "leads-extractor",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "extract": "node scrapeMapsRestaurants.mjs --config config.json",
+    "web": "node webapp/server.mjs"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "playwright": "^1.55.0"
+  }
+}

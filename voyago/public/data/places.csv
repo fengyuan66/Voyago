@@ -1,0 +1,6 @@
+id,name,country,description,bestSeason,budgetLevel,avgDailyCost,daysSuggested,imageUrl
+seoul-korea,Seoul,South Korea,Modern city life mixed with palaces and street food.,April to June,Medium,115,4,https://images.unsplash.com/photo-1538485399081-7191377e8241?auto=format&fit=crop&w=1400&q=80
+queenstown-nz,Queenstown,New Zealand,Adventure capital with lakes and mountain views.,December to February,Premium,165,5,https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=1400&q=80
+granada-spain,Granada,Spain,Historic architecture and lively tapas culture.,March to May,Budget-friendly,85,3,https://images.unsplash.com/photo-1579446565308-427218a2c60e?auto=format&fit=crop&w=1400&q=80
+medellin-colombia,Medellin,Colombia,Spring-like weather and urban innovation in the mountains.,December to March,Budget-friendly,70,4,https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1400&q=80
+almaty-kazakhstan,Almaty,Kazakhstan,Green boulevards with mountain day trips and local markets.,May to September,Medium,75,4,https://images.unsplash.com/photo-1603393982144-1113bdf8d31e?auto=format&fit=crop&w=1400&q=80
