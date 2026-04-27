@@ -151,6 +151,15 @@ function Swiper(){
 
                 variants={cardVariants} //Connects the initial, animate, exit variants with the actual animation definitions wrote in cardVariants
                 custom={direction} //Passes the direction (1 or -1 for scrolling up/down) to the variants, so they know which way to animate
+                
+
+
+
+
+                transition={{ duration: 0.35}} //SETTING: DURATION OF ANIMATION
+
+
+
                 >
                     <img src= {currentPlace.imageUrl} style= {{width: '100%', height: '340px', objectFit: 'cover'}} />
                     <div style= {{padding: '1rem'}}>
