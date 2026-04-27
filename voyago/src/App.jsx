@@ -1,53 +1,32 @@
 import './App.css'
 
+import LandingPage from './LandingPage'
+
 import Header from './Header'
 import Footer from './Footer'
 import Hero from './Hero'
 import Destinations from './Destinations'
 import HeroTransition from './HeroTransition'
-import SwipePlanner from './SwipePlanner'
+import Swiper from './Swiper'
 import { useEffect, useState } from 'react'
 
-const HOME_HASH = '#home'
-const SWIPE_HASH = '#swipe'
+import { Routes, Route } from 'react-router-dom'
 
-function getPageFromHash(hash) {
-  if (hash === SWIPE_HASH) {
-    return 'swipe'
-  }
-  return 'home'
-}
+
+
 
 function App() {
-  const [currentPage, setCurrentPage] = useState(getPageFromHash(window.location.hash))
-
-  useEffect(() => {
-    if (!window.location.hash) {
-      window.location.hash = HOME_HASH
-    }
-
-    const onHashChange = () => {
-      setCurrentPage(getPageFromHash(window.location.hash))
-    }
-
-    window.addEventListener('hashchange', onHashChange)
-    return () => window.removeEventListener('hashchange', onHashChange)
-  }, [])
-
-  const isSwipePage = currentPage === 'swipe'
+ 
 
   return (
     <>
-      <Header currentPage={currentPage} />
-      {isSwipePage ? (
-        <SwipePlanner />
-      ) : (
-        <>
-          <Hero />
-          <HeroTransition />
-          <Destinations />
-        </>
-      )}
+      <Header/>
+      {/*Adding routings for sub-webpages*/}
+
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/swipe" element={<Swiper />} />
+      </Routes>
       <Footer />
     </>
   )

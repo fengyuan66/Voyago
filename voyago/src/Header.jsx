@@ -1,19 +1,24 @@
-function Header({ currentPage }) {
+import {NavLink, useLocation} from 'react-router-dom'
+
+/*if current header page is located in, e.g., the scroll page, customize it with CSS class X. In this case to become solid if it is the Scroll page */
+
+
+function Header() {
+    const location = useLocation();
+    const isSwipePage = location.pathname === '/swipe';
   return (
-    <header className={`site-header ${currentPage === 'swipe' ? 'site-header--solid' : ''}`}>
+    <header className={`site-header ${isSwipePage ? 'site-header--solid' : ''}`}>
       <h1>Voyago</h1>
       <nav>
         <ul>
           <li>
-            <a className={currentPage === 'home' ? 'active' : ''} href="#home">
-              Home
-            </a>
+            {/* Router link to homepage route "/" */}
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <a className={currentPage === 'swipe' ? 'active' : ''} href="#swipe">
-              Swipe Planner
-            </a>
+            <NavLink to="/swipe">Scroll</NavLink>
           </li>
+          
           <li>
             <a href="#plan">Plan</a>
           </li>
@@ -25,6 +30,8 @@ function Header({ currentPage }) {
     </header>
   )
 }
+
+/*Dynamic page-adding system for the header*/
 
 export default Header
 
