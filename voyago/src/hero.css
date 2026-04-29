@@ -52,10 +52,10 @@
 }
 
 .hero-image {
-  width: 100%;            /* container spans screen width */
-  aspect-ratio: 16 / 12;   /* height comes from width */
+  width: 100%;
+  aspect-ratio: 16 / 12;
   max-height: 100vh;       
-  overflow: hidden;       /* hides any extra image outside container */
+  overflow: hidden;
 }
 
 .hero-image img {

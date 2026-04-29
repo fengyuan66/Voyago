@@ -6,3 +6,6 @@ FastAPI Response Models: https://fastapi.tiangolo.com/tutorial/response-model/
 Valhalla Python bindings (pyvalhalla usage + CLI): https://valhalla.github.io/valhalla/README_python/
 Valhalla route request format (locations, costing, etc.): https://valhalla.github.io/valhalla/api/turn-by-turn/api-reference/
 Uvicorn run settings (--reload, host/port): https://www.uvicorn.org/settings/
+
+https://www.geeksforgeeks.org/node-js/how-to-post-json-data-from-javascript-frontend-to-fastapi-backend/
+https://medium.com/data-science-community-srm/from-frontend-to-backend-with-fastapi-your-complete-guide-to-apis-2c46e749e707

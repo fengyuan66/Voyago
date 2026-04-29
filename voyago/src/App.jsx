@@ -8,6 +8,7 @@ import Hero from './Hero'
 import Destinations from './Destinations'
 import HeroTransition from './HeroTransition'
 import Swiper from './Swiper'
+import About from './About'
 import { useEffect, useState } from 'react'
 
 import { Routes, Route } from 'react-router-dom'
@@ -27,6 +28,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/swipe" element={<Swiper />} />
       </Routes>
+      
       <Footer />
     </>
   )

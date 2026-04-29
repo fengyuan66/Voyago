@@ -32,7 +32,7 @@ class Location(BaseModel):
     lon:float
 class RouteRequest(BaseModel):
     locations: list[Location] = Field(min_length=2)
-    costing_mode: str = "multimodal" #routing mode
+    costing: str = "multimodal" #routing mode
     date_time: dict | None = None
 
 
@@ -57,16 +57,27 @@ def route(req: RouteRequest):
     if actor is None:
         raise HTTPException(status_code = 201, detail = "Valhalla not ready!")
     
-    if req.date_time:
-        payload["date_time"] = req.date_time
+    
 
     payload = {
         "locations": [{"lat": p.lat, "lon": p.lon} for p in req.locations],
-        "costing_mode": req.routing_mode
+        "costing": req.costing
     }
+
+    if req.date_time:
+        payload["date_time"] = req.date_time
 
     try:
         return actor.route(payload)
     except Exception as e:
         raise HTTPException(status_code = 202, detail = "Routing failed with below message: {e}")
     
+#debug
+@app.get("/health")
+def health():
+    return {
+        "actor_presence": actor is not None,
+        "config_path": str(VALHALLA_CONFIG_PATH),
+        "actor_error": actor_error
+    }
+

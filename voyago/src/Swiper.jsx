@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 
+import { getRoute } from "./routingapi.js"
+
 const ANIMATION_SCROLLLOCK_MS = 420 //Duration to lock scrolling during one animation, in miliseconds
 
 const cardVariants = {

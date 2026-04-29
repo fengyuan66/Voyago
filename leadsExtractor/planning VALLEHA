@@ -44,7 +44,7 @@ Use a **2-layer system**:
 
 ---
 
-### 3. Set Up Valhalla with Transit
+### 3. Set Up Valhalla with Transit (DONE)!
 
 - API / Docs:  
   https://valhalla.github.io/valhalla/api/  
@@ -59,6 +59,8 @@ Use a **2-layer system**:
 
 - Config reference:  
   https://github.com/valhalla/valhalla/blob/master/scripts/valhalla_build_config  
+
+  DONE!
 
 ---
 

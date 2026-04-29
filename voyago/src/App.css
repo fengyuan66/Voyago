@@ -3,7 +3,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: #e4e4e4;
+  background: #ffffff;
 }
 
 #app {
@@ -79,20 +79,24 @@ main {
   backdrop-filter: blur(8px);
 }
 
+
 .site-header--solid h1 {
   color: #16273a;
 }
+
 
 .site-header--solid nav a,
 .site-header--solid nav a:visited {
   color: #334358;
 }
 
+
 .site-header--solid nav a:hover,
 .site-header--solid nav a.active {
   color: #0f5ca8;
   background: #e7f2ff;
 }
+
 
 .hero-transition {
   background: white;
