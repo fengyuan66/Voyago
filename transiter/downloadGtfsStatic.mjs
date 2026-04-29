@@ -41,8 +41,8 @@ await writeFile(versionedZipPath, zipBuffer); //archive timestamp of archived fi
 //METADATA CONFIGURATION FOR DOWNLOADS
 const metadata = {
 
-    source_url: GTFS_STATIC_URL, // where data came from
-    fetched_at_utc: fetchedAt.toISOString(), // exact fetch time in UTC
+    source_url: GTFS_STATIC_URL, // url
+    fetched_at_utc: fetchedAt.toISOString(), // fetch time
     size_bytes: zipBuffer.length, // zip file size
     latest_file: latestZipPath, // local path to latest file
     versioned_file: versionedZipPath // local path to archived file   

@@ -22,7 +22,7 @@ Use a **2-layer system**:
 
 ### 1. Get Base Data
 
-- OSM extract for BC (Geofabrik):  
+- DONE! OSM extract for BC (Geofabrik):  
   https://download.geofabrik.de/north-america/canada/british-columbia.html  
 
 - DONE!TransLink GTFS static (weekly updates):  

@@ -2,3 +2,4 @@ For reference, these files are to be pulled almost daily in development. My PC d
 
 Repo used -> Valhalla with OSM and Translink GTFS https://github.com/valhalla/valhalla
 
+downloadGtfsStatic and downloadOSMBC
