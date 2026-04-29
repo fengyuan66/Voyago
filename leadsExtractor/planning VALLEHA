@@ -1,0 +1,115 @@
+# Multimodal Transit ETA System (Vancouver / TransLink)
+
+## Overview
+
+Use a **2-layer system**:
+
+### 1. Routing Layer  
+- OSM road/walk network  
+- GTFS static schedules  
+- :contentReference[oaicite:0]{index=0} multimodal routing (`costing: "multimodal"`)
+
+### 2. Prediction Layer  
+- GTFS-RT (real-time feeds) + historical data  
+- Real-time trip updates + vehicle positions  
+- Model predicts delay / arrival offset from schedule  
+
+**Final ETA = Scheduled ETA (routing) + Predicted delay**
+
+---
+
+## Practical Build Path (Vancouver / TransLink)
+
+### 1. Get Base Data
+
+- OSM extract for BC (Geofabrik):  
+  https://download.geofabrik.de/north-america/canada/british-columbia.html  
+
+- DONE!TransLink GTFS static (weekly updates):  
+  https://www.translink.ca/about-us/doing-business-with-translink/app-developer-resources/gtfs/gtfs-data  
+
+
+- DONE! Direct static feed:  
+  `gtfs-static.translink.ca`
+
+---
+
+### 2. Get Realtime Feeds (GTFS-RT)
+
+- TransLink GTFS-RT endpoints (TripUpdates, VehiclePositions, Alerts):  
+  https://www.translink.ca/about-us/doing-business-with-translink/app-developer-resources/gtfs/gtfs-realtime  
+
+- API key registration:  
+  https://www.translink.ca/about-us/doing-business-with-translink/app-developer-resources/register  
+
+---
+
+### 3. Set Up Valhalla with Transit
+
+- API / Docs:  
+  https://valhalla.github.io/valhalla/api/  
+  https://valhalla.github.io/valhalla/api/turn-by-turn/api-reference/  
+
+- Build docs:  
+  https://valhalla.github.io/valhalla/building/  
+
+- Key config fields:  
+  - `mjolnir.transit_dir`  
+  - `mjolnir.transit_feeds_dir`  
+
+- Config reference:  
+  https://github.com/valhalla/valhalla/blob/master/scripts/valhalla_build_config  
+
+---
+
+### 4. Implement Predictor Logic
+
+For each stop arrival prediction target:
+
+#### Data Features
+- Scheduled data (GTFS static):  
+  - `trips.txt`, `stop_times.txt`  
+- GTFS-RT features:  
+  - Current delay  
+  - Vehicle lateness trend  
+  - Headway  
+
+#### Context Features
+- Time of day  
+- Weekday  
+- Stop sequence index  
+- Transfer count  
+
+#### Modeling Approach
+- Start simple:
+  - Median delay by route–stop–time bucket  
+- Then upgrade:
+  - Gradient boosting / ML model  
+
+#### Scope
+- Predict only **next 15–60 minutes**
+
+---
+
+### 5. Validate Feeds Before Modeling
+
+- GTFS Schedule reference:  
+  https://gtfs.org/documentation/schedule/reference/  
+
+- GTFS-Realtime reference:  
+  https://gtfs.org/documentation/realtime/reference  
+
+- Validator:  
+  https://github.com/MobilityData/gtfs-validator  
+
+---
+
+## Architecture Note
+
+- :contentReference[oaicite:1]{index=1} supports **OSM + GTFS (static)** for multimodal routing  
+- No official support found for **GTFS-RT ingestion in routing**  
+
+👉 Therefore:  
+- Treat **GTFS-RT as input to your prediction service**, not the routing engine  
+- Keep routing **schedule-based**, and apply delays **post-routing**
+
