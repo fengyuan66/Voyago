@@ -55,4 +55,5 @@ await writeFile(metadataPath, JSON.stringify(MediaMetadata, null, 2), "utf-8");
 // Success messages
 console.log(`Saved latest: ${latestZipPath}`);
 console.log(`Saved archive: ${versionedZipPath}`); 
-console.log(`Saved metadata: ${metadataPath}`); 
+console.log(`Saved metadata: ${metadataPath}`);
+
