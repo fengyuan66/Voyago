@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { fetchRoute } from "./routingapi"
+import { getRoute } from "./routingapi";
 
 function TimeEstimate (){
     const [startLat, setStartLat] = useState("");
@@ -9,8 +9,8 @@ function TimeEstimate (){
 
     const [result, setResult] = useState(null);
 
-    const click = async() => {
-        const data = await fetchRoute({
+    const handleClick = async() => {
+        const data = await getRoute({
             locations: [
                 { lat: parseFloat(startLat), lon: parseFloat(startLon) },
                 { lat: parseFloat(endLat), lon: parseFloat(endLon) },
@@ -40,16 +40,16 @@ function TimeEstimate (){
             <input
             placeholder = "ELat"
             value = {endLat}
-            onChange = {(e) => setendLat(e.target.value)}
+            onChange = {(e) => setEndLat(e.target.value)}
             />
             <input
             placeholder = "ELon"
             value = {endLon}
-            onChange = {(e) => setendLon(e.target.value)}
+            onChange = {(e) => setEndLon(e.target.value)}
             />
         </div>
 
-        <button onClick= {handleClick}>
+        <button onClick={handleClick}>
             Get route
         </button>
 
@@ -62,3 +62,5 @@ function TimeEstimate (){
     );
 
 }
+
+export default TimeEstimate;

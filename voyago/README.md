@@ -1,16 +1,38 @@
-# React + Vite
+# Voyago
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Voyago now has:
+- A Vite React frontend (`/swipe`) that displays restaurants and lets users rate them from 1-10.
+- A lightweight recommendation backend (`backend/server.js`) that learns tag preferences from ratings.
+- Catalog ingestion from your tagged JSON output (`../tagger/restaurants.tagged.json` by default).
 
-Currently, two official plugins are available:
+## Run Locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. Frontend
+```bash
+npm run dev
+```
 
-## React Compiler
+2. Backend API (in a second terminal)
+```bash
+npm run api
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The frontend proxies `/api/*` to `http://127.0.0.1:8787`.
 
-## Expanding the ESLint configuration
+## API Endpoints
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `GET /api/health`
+- `POST /api/catalog/import`
+  - Optional body: `{ "filePath": "absolute/or/relative/path/to/restaurants.tagged.json" }`
+- `GET /api/feed?user_id=demo-user&limit=10&exclude_ids=id1,id2`
+- `POST /api/ratings`
+  - Body: `{ "user_id": "demo-user", "restaurant_id": "abc", "rating": 8 }`
+
+## Hack Club AI (Optional Insights)
+
+The recommender core is deterministic/statistical for reliability.  
+Optional profile insight generation can run every few ratings if you set:
+
+- `HACKCLUB_API_KEY`
+- `HACKCLUB_MODEL` (default: `gpt-4o-mini`)
+- `HACKCLUB_BASE_URL` (default: `https://ai.hackclub.com/proxy/v1`)

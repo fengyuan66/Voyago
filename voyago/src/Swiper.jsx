@@ -1,254 +1,282 @@
-//imports
+import { useEffect, useMemo, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { fetchFeed, submitRating } from "./recommendationApi";
+import "./swiper.css";
 
-import { useEffect, useRef, useState } from "react"
-import { AnimatePresence, motion } from "framer-motion"
-
-import { getRoute } from "./routingapi.js"
-
-const ANIMATION_SCROLLLOCK_MS = 420 //Duration to lock scrolling during one animation, in miliseconds
+const USER_ID = "demo-user";
+const ANIMATION_SCROLLLOCK_MS = 420;
+const PREFETCH_THRESHOLD = 3;
+const PREFETCH_BATCH_SIZE = 10;
 
 const cardVariants = {
+  enter: (direction) => ({
+    y: direction > 0 ? 90 : -90,
+    opacity: 0,
+    scale: 0.97,
+  }),
+  center: {
+    y: 0,
+    opacity: 1,
+    scale: 1,
+  },
+  exit: (direction) => ({
+    y: direction > 0 ? -90 : 90,
+    opacity: 0,
+    scale: 0.97,
+  }),
+};
 
-    //Initial position of the incoming card
-    enter: (direction) => ({
-        y: direction > 0 ? 90: -90,
-        opacity: 0,
-        scale: 0.97,
-    }),
-
-    //Final resting position of the current card
-    center: {
-        y: 0,
-        opacity: 1,
-        scale: 1,
-    },
-
-    //Exit position of the outgoing card
-    exit: (direction) => ({
-        y: direction >0 ? -90:90,
-        opacity:0,
-        scale: 0.97,
-    }),
-
-    //Kinda like Capcut animations lmao
+function getImageFallback(restaurant) {
+  if (restaurant.imageUrl) {
+    return restaurant.imageUrl;
+  }
+  return "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80";
 }
 
+function Swiper() {
+  const [cards, setCards] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
+  const [isBootLoading, setIsBootLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [ratingByCardId, setRatingByCardId] = useState({});
+  const [profileSummary, setProfileSummary] = useState(null);
+  const [insights, setInsights] = useState(null);
 
+  const isAnimatingRef = useRef(false);
+  const isFetchingRef = useRef(false);
+  const cardsRef = useRef(cards);
+  const currentIndexRef = useRef(currentIndex);
 
-function Swiper(){
+  useEffect(() => {
+    cardsRef.current = cards;
+  }, [cards]);
 
-    /*const places = [
+  useEffect(() => {
+    currentIndexRef.current = currentIndex;
+  }, [currentIndex]);
 
-        {
-            id: 'test1',
-            name: 'Krusty Krabs',
-            location: '305125, 305125',
-            description: 'The best place to get a Krabby Patty',
-            address: '123 Ocean Avenue, Bikini Bottom',
-            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/The_Krusty_Krab.png/330px-The_Krusty_Krab.png'
-        },
+  const currentPlace = cards[currentIndex];
+  const totalCards = cards.length;
 
-        {
-            id: 'test2',
-            name: 'Hitlers Bunker',
-            location: '888888, 888888',
-            description: 'Hitlers Super Secret Den where he committed all his crimes and plotted world domination and also where he hid all his gold and suicide when papa Stalin is coming for him',
-            address: '8888 Nazi Road, Berlin, Germany',
-            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Bundesarchiv_Bild_183-V04744%2C_Berlin%2C_Garten_der_zerst%C3%B6rte_Reichskanzlei.jpg/330px-Bundesarchiv_Bild_183-V04744%2C_Berlin%2C_Garten_der_zerst%C3%B6rte_Reichskanzlei.jpg'
-        },
+  const ratingButtons = useMemo(() => Array.from({ length: 10 }, (_, index) => index + 1), []);
 
-        {
-            id: 'test3',
-            name: 'The One Piece',
-            location: '6969796767, 6969796767',
-            description: 'THE ONE PIECE!!11!! THE ONE PIECE IS REAL',
-            address: 'idk lmao',
-            imageUrl: 'https://wallpapers.com/images/featured/one-piece-iphone-6cakwu3a3exyh3p3.jpg'
+  async function loadMoreCards(limit = PREFETCH_BATCH_SIZE) {
+    if (isFetchingRef.current) {
+      return;
+    }
+    isFetchingRef.current = true;
+    try {
+      const excludeIds = cardsRef.current.map((restaurant) => restaurant.id);
+      const payload = await fetchFeed({
+        userId: USER_ID,
+        limit,
+        excludeIds,
+      });
+      const incoming = payload.items ?? [];
+      const knownIds = new Set(cardsRef.current.map((restaurant) => restaurant.id));
+      const unique = incoming.filter((restaurant) => !knownIds.has(restaurant.id));
+      if (unique.length > 0) {
+        setCards((previous) => [...previous, ...unique]);
+      }
+      if (payload.profileSummary) {
+        setProfileSummary(payload.profileSummary);
+      }
+      setError("");
+    } catch (requestError) {
+      setError(requestError.message || "Failed to fetch recommendations.");
+    } finally {
+      isFetchingRef.current = false;
+      setIsBootLoading(false);
+    }
+  }
 
-        }
+  useEffect(() => {
+    void loadMoreCards(PREFETCH_BATCH_SIZE);
+  }, []);
 
-    ];*/
-    const spreadsheetRows = []; //PLACEHOLDER PLEASE ADD SPREADSHEET HERE
-    const toFeed = {
-        place: [
-            "type",
-            "id",
-            "name",
-            "description",
-            "imageUrl",
-            "location",
-            "address",
-            "admission_price",
-            "activity_price"
-        ],
-        restaurant: [
-            "id",
-            "type",
-            "name",
-            "description",
-            "imageUrl",
-            "location",
-            "address",
-            "price",
-            "menu",
-            "genre"
-        ]
-    };
+  async function maybePrefetch(nextIndex) {
+    const remaining = cardsRef.current.length - nextIndex - 1;
+    if (remaining <= PREFETCH_THRESHOLD) {
+      await loadMoreCards(PREFETCH_BATCH_SIZE);
+    }
+  }
 
-    //cleanning
-    const hasRequired = (item, fields) => fields.every((f) => String(item[f] ?? "").trim() !== "");
-    const normalizeItem = (item) => {
-    const type = String(item.type || "").trim().toLowerCase();
-    if (!toFeed[type]) return null;
+  async function moveCard(dir) {
+    if (cardsRef.current.length === 0) {
+      return;
+    }
+    if (isAnimatingRef.current) {
+      return;
+    }
+    isAnimatingRef.current = true;
+    setDirection(dir);
 
-    const normalized = {
-        ...item,
-        type,
-        imageUrl: item.imageUrl || (item.imageId ? `/api/images/${encodeURIComponent(item.imageId)}` : "")
-    };
-    if (!hasRequired(normalized, toFeed[type])) return null; //USE EXISTING SCHEMA MAP
-    return normalized;
-    };
-
-
-
-
-
-    
-    const feed = spreadsheetRows.map(normalizeItem).filter(Boolean); //SOURCE IS CURRENT PLACEHOLDER
-
-    
-
-    const [currentIndex, setCurrentIndex] = useState(0) //current card, which one is it?
-    const [direction, setDirection] = useState(1) //current movement direction
-    const isAnimatingRef = useRef(false) //prevents multiple scrolls during animation
-
-    const currentPlace = feed[currentIndex]  //current card OBJECT
-
-
-
-
-
-
-   
-
-        // Helper to move between cards in either direction.
-    const moveCard = (dir) => {
-
-        if (feed.length === 0) return
-
-        // If animation is running, ignore new input.
-         //THE FOLLOWING PART IS GENERATED USING AI, IM TOO TIRED FOR THIS TEDIOUS ANIMATION SHIT
-        if (isAnimatingRef.current) return
-        
-
-        // Lock interaction until animation finishes.
-        isAnimatingRef.current = true
-
-        // Save direction so animation knows which way to slide.
-        setDirection(dir)
-
-        // Update index with wrap-around.
-        setCurrentIndex((prev) => {
-        const next = prev + dir
-        if (next < 0) return feed.length - 1
-        if (next >= feed.length) return 0
-        return next
-        })
-
-        // Unlock after animation window.
-        setTimeout(() => {
-        isAnimatingRef.current = false
-        }, ANIMATION_SCROLLLOCK_MS)
+    if (dir > 0) {
+      let nextIndex = currentIndexRef.current + 1;
+      if (nextIndex >= cardsRef.current.length) {
+        await loadMoreCards(6);
+        nextIndex = currentIndexRef.current + 1;
+      }
+      if (nextIndex < cardsRef.current.length) {
+        setCurrentIndex(nextIndex);
+        currentIndexRef.current = nextIndex;
+        await maybePrefetch(nextIndex);
+      }
+    } else if (dir < 0) {
+      const nextIndex = Math.max(0, currentIndexRef.current - 1);
+      setCurrentIndex(nextIndex);
+      currentIndexRef.current = nextIndex;
     }
 
-    // Add keyboard support: ArrowDown / ArrowUp.
-    useEffect(() => {
-        const onKeyDown = (event) => {
-        if (event.key === 'ArrowDown') moveCard(1)
-        if (event.key === 'ArrowUp') moveCard(-1)
-        }
+    setTimeout(() => {
+      isAnimatingRef.current = false;
+    }, ANIMATION_SCROLLLOCK_MS);
+  }
 
-        // Register event listener when component mounts.
-        window.addEventListener('keydown', onKeyDown)
+  useEffect(() => {
+    const onKeyDown = (event) => {
+      if (event.key === "ArrowDown") {
+        void moveCard(1);
+      }
+      if (event.key === "ArrowUp") {
+        void moveCard(-1);
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+    // This listener should only be registered once for the page session.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-        // Cleanup listener when component unmounts.
-        return () => window.removeEventListener('keydown', onKeyDown)
-    }, [])
+  async function handleRating(rating) {
+    if (!currentPlace) {
+      return;
+    }
+    setRatingByCardId((previous) => ({ ...previous, [currentPlace.id]: rating }));
+    try {
+      const payload = await submitRating({
+        userId: USER_ID,
+        restaurantId: currentPlace.id,
+        rating,
+      });
+      if (payload.profileSummary) {
+        setProfileSummary(payload.profileSummary);
+      }
+      if (payload.insights) {
+        setInsights(payload.insights);
+      }
+      setError("");
+    } catch (requestError) {
+      setError(requestError.message || "Failed to submit rating.");
+    }
+  }
 
+  if (isBootLoading && !currentPlace) {
+    return <section className="swiper-page">Loading recommendations...</section>;
+  }
 
-// AI PART ENDS HERE
-
-
-    if (!currentPlace){
-        return <section style={{ padding: '6rem 1rem'}}>404: Card has no valid item(s)!</section>
-    }//fallback
-
-
-
-
+  if (!currentPlace) {
     return (
+      <section className="swiper-page">
+        <p>No restaurants available yet.</p>
+        <button type="button" onClick={() => void loadMoreCards(10)}>
+          Retry feed
+        </button>
+      </section>
+    );
+  }
 
-        <section
-        style={{ padding: '6rem 1rem' }}
-        onWheel={(event) => {
-            // Trackpad noise filter
-            if (Math.abs(event.deltaY) < 10) return
+  return (
+    <section
+      className="swiper-page"
+      onWheel={(event) => {
+        if (Math.abs(event.deltaY) < 10) {
+          return;
+        }
+        void moveCard(event.deltaY > 0 ? 1 : -1);
+      }}
+    >
+      <div className="swiper-meta">
+        <span>
+          Card {currentIndex + 1} / {Math.max(totalCards, 1)}
+        </span>
+        {error ? <span className="swiper-error">{error}</span> : null}
+      </div>
 
-            // scroll down = next card, scroll up = previous card
-            moveCard(event.deltaY > 0 ? 1 : -1)
-        }}
+      <AnimatePresence mode="wait" custom={direction}>
+        <motion.article
+          className="swiper-card"
+          key={currentPlace.id}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          variants={cardVariants}
+          custom={direction}
+          transition={{ duration: 0.35 }}
         >
+          <img src={getImageFallback(currentPlace)} alt={currentPlace.name} className="swiper-image" />
+          <div className="swiper-content">
+            <h1>{currentPlace.name}</h1>
+            <p>{currentPlace.description || "No description available."}</p>
+            <p>
+              <strong>Genre:</strong> {currentPlace.genre || "Unknown"}
+            </p>
+            <p>
+              <strong>Price:</strong> {currentPlace.priceRange || "Unknown"}
+            </p>
+            <p>
+              <strong>Address:</strong> {currentPlace.address || "Unknown"}
+            </p>
+            <p>
+              <strong>Hours:</strong> {currentPlace.hours || "Unknown"}
+            </p>
+            <p>
+              <strong>Top tags:</strong> {(currentPlace.tags || []).slice(0, 8).join(", ") || "None"}
+            </p>
+          </div>
+        </motion.article>
+      </AnimatePresence>
 
-            
-            
+      <section className="rating-panel">
+        <p>Rate this restaurant (1-10)</p>
+        <div className="rating-grid">
+          {ratingButtons.map((rating) => {
+            const selected = ratingByCardId[currentPlace.id] === rating;
+            return (
+              <button
+                key={rating}
+                type="button"
+                className={`rating-button ${selected ? "rating-button-selected" : ""}`}
+                onClick={() => void handleRating(rating)}
+              >
+                {rating}
+              </button>
+            );
+          })}
+        </div>
+      </section>
 
-            <AnimatePresence mode="wait" //allows Framer Motion to run exit/ enter animations when the element changes
-            
-            custom={direction} //Same lah, but for coordination between new/old key'ed elements
-            > 
-
-
-                
-
-                <motion.article style={{ maxWidth: '700px', margin: '0 auto', background: '#fff', borderRadius: '16px', overflow: 'hidden'}}
-                key={currentPlace.id} //tells React that each card is a different new instance when the place changes. This distinguish is needed for the animations. Otherwise the DOM may be reused, so the old card just stays instead of gets destroyed / new animation won't load / be done in parallel
-                initial="enter" //When a new card appears, use the "enter" variant as the initial state
-                animate="center" //When the card is in view, use the "center" variant
-                exit="exit" //When the card is leaving, use the "exit" variant
-
-                variants={cardVariants} //Connects the initial, animate, exit variants with the actual animation definitions wrote in cardVariants
-                custom={direction} //Passes the direction (1 or -1 for scrolling up/down) to the variants, so they know which way to animate
-                
-
-
-
-
-                transition={{ duration: 0.35}} //SETTING: DURATION OF ANIMATION
-
-
-
-                >
-                    <img src= {currentPlace.imageUrl} style= {{width: '100%', height: '340px', objectFit: 'cover'}} />
-                    <div style= {{padding: '1rem'}}>
-
-                        <h1>{currentPlace.name}</h1>
-                        <p>{currentPlace.description}</p>
-                        <p><strong>Address: </strong>{currentPlace.address}</p>
-                        <p><strong>Location: </strong>{currentPlace.location}</p>
-
-                    </div>
-                </motion.article>
-
-            </AnimatePresence>
-
+      {profileSummary ? (
+        <section className="profile-panel">
+          <h2>Learned Preferences</h2>
+          <p>
+            <strong>Liked:</strong>{" "}
+            {profileSummary.liked?.map((entry) => entry.tag).join(", ") || "Not enough data yet"}
+          </p>
+          <p>
+            <strong>Disliked:</strong>{" "}
+            {profileSummary.disliked?.map((entry) => entry.tag).join(", ") || "Not enough data yet"}
+          </p>
+          {insights?.profile_summary ? (
+            <p>
+              <strong>Agent insight:</strong> {insights.profile_summary}
+            </p>
+          ) : null}
         </section>
-
-    )
-
-
-    //GOOD NIGHT!!!111!!!!!! I have school tomorrow 
-
+      ) : null}
+    </section>
+  );
 }
 
-export default Swiper
+export default Swiper;

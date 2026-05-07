@@ -4,12 +4,7 @@ import LandingPage from './LandingPage'
 
 import Header from './Header'
 import Footer from './Footer'
-import Hero from './Hero'
-import Destinations from './Destinations'
-import HeroTransition from './HeroTransition'
 import Swiper from './Swiper'
-import About from './About'
-import { useEffect, useState } from 'react'
 
 import { Routes, Route } from 'react-router-dom'
 
