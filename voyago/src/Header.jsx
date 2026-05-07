@@ -23,7 +23,7 @@ function Header() {
             <a href="#plan">Plan</a>
           </li>
           <li>
-            <a href="#settings">Settings</a>
+            <NavLink to="/swipe">Scroll</NavLink>
           </li>
         </ul>
       </nav>
