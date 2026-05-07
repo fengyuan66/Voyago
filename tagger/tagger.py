@@ -22,19 +22,19 @@ def tag_restaurants(restaurants: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         tagged_restaurant["llm_tags"] = tag_restaurant(restaurant)
         tagged_restaurants.append(tagged_restaurant)
 
+    return tagged_restaurants
+
 
 def validate_tag(rawtags: Any, allowedtags: List[str]) -> List[str]:
     if not isinstance(rawtags, list):
-        return[]
-    
+        return []
+
     allowed_set = set(allowedtags)
-    
     cleanedtags = []
 
     for tag in rawtags:
         if isinstance(tag, str) and tag in allowed_set and tag not in cleanedtags:
             cleanedtags.append(tag)
-        
-        return cleanedtags
-    
+
+    return cleanedtags
     

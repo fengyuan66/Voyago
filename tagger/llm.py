@@ -7,7 +7,7 @@ HACKCLUB_URL = "https://ai.hackclub.com/proxy/v1"
 
 apikey = os.getenv("HACKCLUB_AI_API_KEY")
 
-def get_client() -> OpeanAI:
+def get_client() -> OpenAI:
 
     if not apikey:
         raise RuntimeError(

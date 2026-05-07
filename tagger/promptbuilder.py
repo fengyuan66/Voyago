@@ -19,6 +19,12 @@ def build_tagging_prompt(restaurant: Dict[str, Any], allowed_tags: List[str]) ->
     else:
         features_text = str(features)
 
+    menu = restaurant.get("menu", [])
+    if isinstance(menu, list):
+        menu_text = ", ".join(str(item) for item in menu)
+    else:
+        menu_text = str(menu)
+
 
 
 
@@ -35,10 +41,16 @@ Allowed tags:
 
 Restaurant:
 Name: {restaurant.get("name", "")}
-Cuisine: {restaurant.get("cuisine", "")}
+Cuisine / Genre: {restaurant.get("cuisine", "")}
 Price range: {restaurant.get("price_range", "")}
 Description: {restaurant.get("description", "")}
+Menu: {menu_text}
 Features: {features_text}
+Location tag: {restaurant.get("location_tag", "")}
+Status: {restaurant.get("status", "")}
+Address: {restaurant.get("address", "")}
+Hours: {restaurant.get("hours", "")}
+Website: {restaurant.get("website", "")}
 
 Return exactly this JSON shape:
 {{
