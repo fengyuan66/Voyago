@@ -37,7 +37,7 @@ const cardVariants = {
 
 function Swiper(){
 
-    const places = [
+    /*const places = [
 
         {
             id: 'test1',
@@ -64,27 +64,83 @@ function Swiper(){
             description: 'THE ONE PIECE!!11!! THE ONE PIECE IS REAL',
             address: 'idk lmao',
             imageUrl: 'https://wallpapers.com/images/featured/one-piece-iphone-6cakwu3a3exyh3p3.jpg'
+
         }
 
-    ]
+    ];*/
+    const spreadsheetRows = []; //PLACEHOLDER PLEASE ADD SPREADSHEET HERE
+    const toFeed = {
+        place: [
+            "type",
+            "id",
+            "name",
+            "description",
+            "imageUrl",
+            "location",
+            "address",
+            "admission_price",
+            "activity_price"
+        ],
+        restaurant: [
+            "id",
+            "type",
+            "name",
+            "description",
+            "imageUrl",
+            "location",
+            "address",
+            "price",
+            "menu",
+            "genre"
+        ]
+    };
+
+    //cleanning
+    const hasRequired = (item, fields) => fields.every((f) => String(item[f] ?? "").trim() !== "");
+    const normalizeItem = (item) => {
+    const type = String(item.type || "").trim().toLowerCase();
+    if (!toFeed[type]) return null;
+
+    const normalized = {
+        ...item,
+        type,
+        imageUrl: item.imageUrl || (item.imageId ? `/api/images/${encodeURIComponent(item.imageId)}` : "")
+    };
+    if (!hasRequired(normalized, toFeed[type])) return null; //USE EXISTING SCHEMA MAP
+    return normalized;
+    };
+
+
+
+
+
+    
+    const feed = spreadsheetRows.map(normalizeItem).filter(Boolean); //SOURCE IS CURRENT PLACEHOLDER
+
+    
 
     const [currentIndex, setCurrentIndex] = useState(0) //current card, which one is it?
     const [direction, setDirection] = useState(1) //current movement direction
     const isAnimatingRef = useRef(false) //prevents multiple scrolls during animation
 
-    const currentPlace = places[currentIndex] //current card OBJECT
+    const currentPlace = feed[currentIndex]  //current card OBJECT
 
 
 
 
 
 
-    //THE FOLLOWING PART IS GENERATED USING AI, IM TOO TIRED FOR THIS TEDIOUS ANIMATION SHIT
+   
 
         // Helper to move between cards in either direction.
     const moveCard = (dir) => {
+
+        if (feed.length === 0) return
+
         // If animation is running, ignore new input.
+         //THE FOLLOWING PART IS GENERATED USING AI, IM TOO TIRED FOR THIS TEDIOUS ANIMATION SHIT
         if (isAnimatingRef.current) return
+        
 
         // Lock interaction until animation finishes.
         isAnimatingRef.current = true
@@ -95,8 +151,8 @@ function Swiper(){
         // Update index with wrap-around.
         setCurrentIndex((prev) => {
         const next = prev + dir
-        if (next < 0) return places.length - 1
-        if (next >= places.length) return 0
+        if (next < 0) return feed.length - 1
+        if (next >= feed.length) return 0
         return next
         })
 
@@ -124,8 +180,13 @@ function Swiper(){
 // AI PART ENDS HERE
 
 
+    if (!currentPlace){
+        return <section style={{ padding: '6rem 1rem'}}>404: Card has no valid item(s)!</section>
+    }//fallback
 
-//MAIN PART LMAO FUCK THIS ANIMATION SHIT
+
+
+
     return (
 
         <section
@@ -140,10 +201,15 @@ function Swiper(){
         >
 
             
+            
+
             <AnimatePresence mode="wait" //allows Framer Motion to run exit/ enter animations when the element changes
             
             custom={direction} //Same lah, but for coordination between new/old key'ed elements
             > 
+
+
+                
 
                 <motion.article style={{ maxWidth: '700px', margin: '0 auto', background: '#fff', borderRadius: '16px', overflow: 'hidden'}}
                 key={currentPlace.id} //tells React that each card is a different new instance when the place changes. This distinguish is needed for the animations. Otherwise the DOM may be reused, so the old card just stays instead of gets destroyed / new animation won't load / be done in parallel

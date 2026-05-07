@@ -93,7 +93,7 @@ For each stop arrival prediction target:
 
 ---
 
-### 5. Validate Feeds Before Modeling
+### 5. Validate Feeds Before Modeling --may not need?
 
 - GTFS Schedule reference:  
   https://gtfs.org/documentation/schedule/reference/  

@@ -9,3 +9,5 @@ Uvicorn run settings (--reload, host/port): https://www.uvicorn.org/settings/
 
 https://www.geeksforgeeks.org/node-js/how-to-post-json-data-from-javascript-frontend-to-fastapi-backend/
 https://medium.com/data-science-community-srm/from-frontend-to-backend-with-fastapi-your-complete-guide-to-apis-2c46e749e707
+
+These are some tutorials I found helpful while coding in this folder. Im just typing here rn to log time cuz Ive been workin for hours but it wont count cuz there's no wakatime for it lmao
