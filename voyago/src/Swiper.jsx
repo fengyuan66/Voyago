@@ -1,6 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { fetchFeed, submitRating } from "./recommendationApi";
+import { getRoute } from "./routingapi";
+import { getHQFromStorage } from "./settingsStore";
+import { decodePolyline6 } from "./polyline6";
+import RouteMiniMap from "./RouteMinimap";
 import "./swiper.css";
 
 const USER_ID = "demo-user";
@@ -42,6 +46,13 @@ function Swiper() {
   const [ratingByCardId, setRatingByCardId] = useState({});
   const [profileSummary, setProfileSummary] = useState(null);
   const [insights, setInsights] = useState(null);
+  const [hq, setHq] = useState(() => getHQFromStorage());
+  const [routeInfo, setRouteInfo] = useState({
+    isLoading: false,
+    error: "",
+    etaMinutes: null,
+    points: [],
+  });
 
   const isAnimatingRef = useRef(false);
   const isFetchingRef = useRef(false);
@@ -55,6 +66,17 @@ function Swiper() {
   useEffect(() => {
     currentIndexRef.current = currentIndex;
   }, [currentIndex]);
+
+  useEffect(() => {
+    const syncHq = () => setHq(getHQFromStorage());
+    syncHq();
+    window.addEventListener("storage", syncHq);
+    window.addEventListener("focus", syncHq);
+    return () => {
+      window.removeEventListener("storage", syncHq);
+      window.removeEventListener("focus", syncHq);
+    };
+  }, []);
 
   const currentPlace = cards[currentIndex];
   const totalCards = cards.length;
@@ -94,6 +116,107 @@ function Swiper() {
   useEffect(() => {
     void loadMoreCards(PREFETCH_BATCH_SIZE);
   }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadRoute() {
+      if (!currentPlace) {
+        setRouteInfo({
+          isLoading: false,
+          error: "",
+          etaMinutes: null,
+          points: [],
+        });
+        return;
+      }
+
+      if (!hq) {
+        setRouteInfo({
+          isLoading: false,
+          error: "Set HQ in Settings to see route.",
+          etaMinutes: null,
+          points: [],
+        });
+        return;
+      }
+
+      const destinationLat = Number(currentPlace.lat);
+      const destinationLon = Number(currentPlace.lon);
+      if (!Number.isFinite(destinationLat) || !Number.isFinite(destinationLon)) {
+        setRouteInfo({
+          isLoading: false,
+          error: "Restaurant coordinates are missing.",
+          etaMinutes: null,
+          points: [],
+        });
+        return;
+      }
+
+      setRouteInfo((previous) => ({
+        ...previous,
+        isLoading: true,
+        error: "",
+      }));
+
+      try {
+        const payload = await getRoute({
+          locations: [
+            { lat: hq.lat, lon: hq.lon },
+            { lat: destinationLat, lon: destinationLon },
+          ],
+          costing: "multimodal",
+        });
+
+        if (cancelled) {
+          return;
+        }
+
+        const legShapes = (payload?.trip?.legs ?? []).map((leg) => leg?.shape).filter(Boolean);
+        const mergedPoints = [];
+        for (const shape of legShapes) {
+          const decoded = decodePolyline6(shape);
+          if (decoded.length === 0) {
+            continue;
+          }
+          if (mergedPoints.length > 0) {
+            const [lastLat, lastLon] = mergedPoints[mergedPoints.length - 1];
+            const [firstLat, firstLon] = decoded[0];
+            if (lastLat === firstLat && lastLon === firstLon) {
+              mergedPoints.push(...decoded.slice(1));
+              continue;
+            }
+          }
+          mergedPoints.push(...decoded);
+        }
+
+        const etaSeconds = Number(payload?.trip?.summary?.time);
+        const etaMinutes = Number.isFinite(etaSeconds) ? Math.max(1, Math.round(etaSeconds / 60)) : null;
+
+        setRouteInfo({
+          isLoading: false,
+          error: mergedPoints.length > 0 ? "" : "Route geometry missing from response.",
+          etaMinutes,
+          points: mergedPoints,
+        });
+      } catch (routeError) {
+        if (cancelled) {
+          return;
+        }
+        setRouteInfo({
+          isLoading: false,
+          error: routeError.message || "Failed to load route.",
+          etaMinutes: null,
+          points: [],
+        });
+      }
+    }
+
+    void loadRoute();
+    return () => {
+      cancelled = true;
+    };
+  }, [currentPlace, hq]);
 
   async function maybePrefetch(nextIndex) {
     const remaining = cardsRef.current.length - nextIndex - 1;
@@ -234,6 +357,20 @@ function Swiper() {
             <p>
               <strong>Top tags:</strong> {(currentPlace.tags || []).slice(0, 8).join(", ") || "None"}
             </p>
+            <section className="route-panel">
+              <p>
+                <strong>HQ:</strong>{" "}
+                {hq ? hq.label || `${hq.lat.toFixed(5)}, ${hq.lon.toFixed(5)}` : "Not set"}
+              </p>
+              {routeInfo.isLoading ? <p>Loading route...</p> : null}
+              {routeInfo.etaMinutes !== null ? (
+                <p>
+                  <strong>Estimated time:</strong> {routeInfo.etaMinutes} min
+                </p>
+              ) : null}
+              {routeInfo.error ? <p className="route-error">{routeInfo.error}</p> : null}
+              <RouteMiniMap points={routeInfo.points} />
+            </section>
           </div>
         </motion.article>
       </AnimatePresence>

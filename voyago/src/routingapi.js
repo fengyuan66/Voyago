@@ -7,8 +7,12 @@ export async function getRoute(data){
             "Content-Type": "application/json",
         },
         body: JSON.stringify(data)
-    })
+    });
 
-    return res.json();
+    const payload = await res.json();
+    if (!res.ok) {
+        throw new Error(payload?.detail || "Routing request failed");
+    }
+    return payload;
 
 };

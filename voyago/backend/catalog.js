@@ -139,6 +139,14 @@ function dedupeNonEmptyTags(tags) {
   return [...new Set(tags.map(sanitizeTag).filter(Boolean))];
 }
 
+function parseNumberOrNull(value) {
+  const numeric = Number(value);
+  if (!Number.isFinite(numeric)) {
+    return null;
+  }
+  return numeric;
+}
+
 function chooseBestDetails(rawItem) {
   const fromResult = rawItem?.result && typeof rawItem.result === "object" ? rawItem.result : {};
   const fromRawAnswer = parseRawAnswer(rawItem?.raw_answer);
@@ -161,6 +169,19 @@ function normalizeTaggedItem(rawItem) {
   const name = rawItem?.restaurant_name ?? rawItem?.name ?? details?.name ?? "";
   const address = details?.address ?? rawItem?.address ?? "";
   const locationTag = rawItem?.location_tag ?? rawItem?.locationTag ?? rawItem?.location ?? "";
+  const lat =
+    parseNumberOrNull(details?.lat) ??
+    parseNumberOrNull(details?.latitude) ??
+    parseNumberOrNull(rawItem?.lat) ??
+    parseNumberOrNull(rawItem?.latitude);
+  const lon =
+    parseNumberOrNull(details?.lon) ??
+    parseNumberOrNull(details?.lng) ??
+    parseNumberOrNull(details?.longitude) ??
+    parseNumberOrNull(rawItem?.lon) ??
+    parseNumberOrNull(rawItem?.lng) ??
+    parseNumberOrNull(rawItem?.longitude);
+  const placeUrl = details?.place_url ?? details?.placeUrl ?? rawItem?.place_url ?? rawItem?.placeUrl ?? "";
   const seed = `${name}-${locationTag || address}`;
   const genre = details?.genre ?? rawItem?.genre ?? "";
   const description = details?.description ?? rawItem?.description ?? "";
@@ -186,6 +207,9 @@ function normalizeTaggedItem(rawItem) {
     imageUrl: details?.image_url ?? rawItem?.image_url ?? rawItem?.imageUrl ?? "",
     address: String(address ?? "").trim(),
     locationTag: String(locationTag ?? "").trim(),
+    lat,
+    lon,
+    placeUrl: String(placeUrl ?? "").trim(),
     priceRange: String(priceRange ?? "").trim(),
     menu,
     genre: String(genre ?? "").trim(),

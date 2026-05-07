@@ -52,7 +52,10 @@
       "expensive",
       "fine_dining",
       "brunch_spot"
-    ]
+    ],
+    "lat": 49.255852,
+    "lon": -123.1157579,
+    "placeUrl": "https://www.google.com/maps/place/Osteria+Elio+Volpe/data=!4m7!3m6!1s0x5486735ca45d90d7:0x56306e884e11ed33!8m2!3d49.255852!4d-123.1157579!16s%2Fg%2F11vbqyxx_4!19sChIJ15BdpFxzhlQRM-0RTohuMFY"
   },
   {
     "id": "mazahr-lebanese-kitchen-vancouver-fairview-south-granville",
@@ -92,7 +95,10 @@
       "cozy",
       "traditional",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2615983,
+    "lon": -123.1382076,
+    "placeUrl": "https://www.google.com/maps/place/Mazahr+Lebanese+Kitchen/data=!4m7!3m6!1s0x5486731ca84906bf:0x33e753b8693cebf9!8m2!3d49.2615983!4d-123.1382076!16s%2Fg%2F11j_vglrpb!19sChIJvwZJqBxzhlQR-es8abhT5zM"
   },
   {
     "id": "fiore-famiglia-vancouver-west-side",
@@ -143,7 +149,10 @@
       "highly_rated",
       "popular",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2578279,
+    "lon": -123.1651315,
+    "placeUrl": "https://www.google.com/maps/place/Fiore+Famiglia/data=!4m7!3m6!1s0x54867385734e2601:0xf96b9dd198cc9608!8m2!3d49.2578279!4d-123.1651315!16s%2Fg%2F11g18_85s2!19sChIJASZOc4VzhlQRCJbMmNGda_k"
   },
   {
     "id": "don-at-kitsilano-vancouver-kitsilano",
@@ -198,7 +207,10 @@
       "budget_friendly",
       "brunch_spot",
       "dinner_spot"
-    ]
+    ],
+    "lat": 49.2680248,
+    "lon": -123.1545255,
+    "placeUrl": "https://www.google.com/maps/place/Don+at+Kitsilano/data=!4m7!3m6!1s0x5486732e49dfcefb:0xa363c6c2ba8fe9be!8m2!3d49.2680248!4d-123.1545255!16s%2Fg%2F11pzl7jlb5!19sChIJ-87fSS5zhlQRvumPusLGY6M"
   },
   {
     "id": "iden-quanjude-beijing-duck-house-vancouver-south-cambie-fairview",
@@ -223,7 +235,10 @@
       "chinese",
       "expensive",
       "fine_dining"
-    ]
+    ],
+    "lat": 49.2601245,
+    "lon": -123.1147588,
+    "placeUrl": "https://www.google.com/maps/place/iDen+%26+Quanjude+Beijing+Duck+House/data=!4m7!3m6!1s0x548673513eaddda1:0xe3dfd1dda3e82009!8m2!3d49.2601245!4d-123.1147588!16s%2Fg%2F11j3rrt94_!19sChIJod2tPlFzhlQRCSDoo93R3-M"
   },
   {
     "id": "east-is-east-vancouver-fairview-south-granville",
@@ -248,7 +263,10 @@
       "mediterranean",
       "budget_friendly",
       "vegetarian"
-    ]
+    ],
+    "lat": 49.2643582,
+    "lon": -123.1727086,
+    "placeUrl": "https://www.google.com/maps/place/East+Is+East/data=!4m7!3m6!1s0x548673aad83fae0f:0x4a9d67cc063f8767!8m2!3d49.2643582!4d-123.1727086!16s%2Fg%2F1tf_skl9!19sChIJD64_2KpzhlQRZ4c_BsxnnUo"
   },
   {
     "id": "pho-viet-lotus-restaurant-vancouver-fairview-south-granville",
@@ -285,7 +303,10 @@
       "casual",
       "quick_bite",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2638727,
+    "lon": -123.1658085,
+    "placeUrl": "https://www.google.com/maps/place/Pho+Viet+Lotus+Restaurant/data=!4m7!3m6!1s0x54867366200b9a8f:0xb43738c0349e8934!8m2!3d49.2638727!4d-123.1658085!16s%2Fg%2F11ygqw08b0!19sChIJj5oLIGZzhlQRNImeNMA4N7Q"
   },
   {
     "id": "le-coq-frit-vancouver-vancouver-fairview-south-granville",
@@ -323,7 +344,10 @@
       "parking_available",
       "wheelchair_accessible",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2635643,
+    "lon": -123.1477581,
+    "placeUrl": "https://www.google.com/maps/place/LE+COQ+FRIT+%28VANCOUVER%29/data=!4m7!3m6!1s0x54867331874e7e09:0x9745cd9466a1cf98!8m2!3d49.2635643!4d-123.1477581!16s%2Fg%2F11nxcb4btr!19sChIJCX5OhzFzhlQRmM-hZpTNRZc"
   },
   {
     "id": "sip-song-thai-cuisine-vancouver-west-side",
@@ -348,7 +372,10 @@
       "thai",
       "dinner_spot",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2576665,
+    "lon": -123.1857551,
+    "placeUrl": "https://www.google.com/maps/place/Sip+Song+Thai+Cuisine/data=!4m7!3m6!1s0x548673003c21fa25:0x87c6be042c3aa63f!8m2!3d49.2576665!4d-123.1857551!16s%2Fg%2F11vr0gy5gm!19sChIJJfohPABzhlQRP6Y6LAS-xoc"
   },
   {
     "id": "ocean-goose-japanese-restaurant-vancouver-kitsilano",
@@ -373,7 +400,10 @@
       "japanese",
       "budget_friendly",
       "sushi"
-    ]
+    ],
+    "lat": 49.2678378,
+    "lon": -123.1466983,
+    "placeUrl": "https://www.google.com/maps/place/Ocean+Goose+Japanese+Restaurant/data=!4m7!3m6!1s0x548673ab5f1f4707:0x3f2815a3076c5dea!8m2!3d49.2678378!4d-123.1466983!16s%2Fg%2F11y5h_ccrp!19sChIJB0cfX6tzhlQR6l1sB6MVKD8"
   },
   {
     "id": "osaka-teppanyaki-vancouver-fairview-south-granville",
@@ -401,7 +431,10 @@
       "dinner_spot",
       "late_night_food",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2634652,
+    "lon": -123.1452407,
+    "placeUrl": "https://www.google.com/maps/place/Osaka+Teppanyaki/data=!4m7!3m6!1s0x548673b82ca9eef9:0x8cf0c662ce16019!8m2!3d49.2634652!4d-123.1452407!16s%2Fg%2F1thgb487!19sChIJ-e6pLLhzhlQRGWDhLGYMzwg"
   },
   {
     "id": "salmon-n-bannock-vancouver-fairview-south-granville",
@@ -428,7 +461,10 @@
       "family_friendly",
       "neighborhood_spot",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.263303,
+    "lon": -123.1297697,
+    "placeUrl": "https://www.google.com/maps/place/Salmon+n%27+Bannock/data=!4m7!3m6!1s0x548673c6ab40a5bb:0xf067dd0c8d9185d3!8m2!3d49.263303!4d-123.1297697!16s%2Fg%2F1vg4jh69!19sChIJu6VAq8ZzhlQR04WRjQzdZ_A"
   },
   {
     "id": "ash-street-bistro-vancouver-kerrisdale-oakridge",
@@ -459,7 +495,10 @@
       "family_friendly",
       "neighborhood_spot",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2338725,
+    "lon": -123.1187631,
+    "placeUrl": "https://www.google.com/maps/place/Ash+Street+Bistro/data=!4m7!3m6!1s0x5486759b8d3ef9b1:0xcbba85a6e5e89d6d!8m2!3d49.2338725!4d-123.1187631!16s%2Fg%2F11vbr7z7pl!19sChIJsfk-jZt1hlQRbZ3o5aaFuss"
   },
   {
     "id": "fable-kitchen-vancouver-kitsilano",
@@ -482,7 +521,10 @@
     "hours": "Monday–Friday lunch 11:00 am–2:00 pm; dinner daily 5:00 pm–10:00 pm; Saturday–Sunday and holidays brunch 9:00 am–2:00 pm",
     "tags": [
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2679331,
+    "lon": -123.1490012,
+    "placeUrl": "https://www.google.com/maps/place/Fable+Kitchen/data=!4m7!3m6!1s0x548673b673997335:0x67efb96b0b3765cb!8m2!3d49.2679331!4d-123.1490012!16s%2Fg%2F119w7jtc4!19sChIJNXOZc7ZzhlQRy2U3C2u572c"
   },
   {
     "id": "minerva-s-restaurant-vancouver-kerrisdale-oakridge",
@@ -507,7 +549,10 @@
       "greek",
       "mediterranean",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2347718,
+    "lon": -123.1616037,
+    "placeUrl": "https://www.google.com/maps/place/Minerva%E2%80%99s+Restaurant/data=!4m7!3m6!1s0x5486737ab6492159:0xf58053c250d3147e!8m2!3d49.2347718!4d-123.1616037!16s%2Fg%2F1td7swrh!19sChIJWSFJtnpzhlQRfhTTUMJTgPU"
   },
   {
     "id": "unchai-restaurant-vancouver-fairview-south-granville",
@@ -531,7 +576,10 @@
     "tags": [
       "thai",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2650163,
+    "lon": -123.1459855,
+    "placeUrl": "https://www.google.com/maps/place/Unchai+Restaurant/data=!4m7!3m6!1s0x5486731de0dfc71b:0x60958ea8aec5b742!8m2!3d49.2650163!4d-123.1459855!16s%2Fg%2F11h3dghjnm!19sChIJG8ff4B1zhlQRQrfFrqiOlWA"
   },
   {
     "id": "lavidas-restaurant-vancouver-kitsilano",
@@ -555,7 +603,10 @@
     "tags": [
       "dinner_spot",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2682662,
+    "lon": -123.1494147,
+    "placeUrl": "https://www.google.com/maps/place/Lavidas+Restaurant/data=!4m7!3m6!1s0x548673b674251bcd:0xe32d9214552852e1!8m2!3d49.2682662!4d-123.1494147!16s%2Fm%2F04_5ltf!19sChIJzRsldLZzhlQR4VIoVRSSLeM"
   },
   {
     "id": "the-naam-vancouver-kitsilano",
@@ -579,7 +630,10 @@
     "tags": [
       "vegetarian",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2681884,
+    "lon": -123.1670365,
+    "placeUrl": "https://www.google.com/maps/place/The+Naam/data=!4m7!3m6!1s0x5486739159840be9:0x57f3a29d94a7ac53!8m2!3d49.2681884!4d-123.1670365!16s%2Fm%2F04yjsbg!19sChIJ6QuEWZFzhlQRU6ynlJ2i81c"
   },
   {
     "id": "johnny-s-on-oak-vancouver-south-cambie-fairview",
@@ -604,7 +658,10 @@
       "greek",
       "mediterranean",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.25141,
+    "lon": -123.127289,
+    "placeUrl": "https://www.google.com/maps/place/Johnny%E2%80%99s+on+Oak/data=!4m7!3m6!1s0x548677adf2676f63:0x220bf6c3d4920bfc!8m2!3d49.25141!4d-123.127289!16s%2Fg%2F1v8y3qs5!19sChIJY29n8q13hlQR_AuS1MP2CyI"
   },
   {
     "id": "riviera-cafe-restaurant-vancouver-south-cambie-fairview",
@@ -634,7 +691,10 @@
       "family_friendly",
       "neighborhood_spot",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2684969,
+    "lon": -123.1187228,
+    "placeUrl": "https://www.google.com/maps/place/Riviera+Cafe+%26+Restaurant/data=!4m7!3m6!1s0x54867313b4df9f57:0xeba8a797c0b6968c!8m2!3d49.2684969!4d-123.1187228!16s%2Fg%2F11wqvl5rvx!19sChIJV5_ftBNzhlQRjJa2wJenqOs"
   },
   {
     "id": "kim-son-vietnamese-food-vancouver-fairview-south-granville",
@@ -665,7 +725,10 @@
       "quick_bite",
       "budget_friendly",
       "pho"
-    ]
+    ],
+    "lat": 49.2607444,
+    "lon": -123.1164572,
+    "placeUrl": "https://www.google.com/maps/place/Kim+Son+Vietnamese+Food/data=!4m7!3m6!1s0x548673e7e2013ba3:0xaea4c95f3f579336!8m2!3d49.2607444!4d-123.1164572!16s%2Fg%2F11gb3_64nj!19sChIJozsB4udzhlQRNpNXP1_JpK4"
   },
   {
     "id": "the-stable-house-bistro-vancouver-fairview-south-granville",
@@ -698,7 +761,10 @@
       "budget_friendly",
       "brunch_spot",
       "wine_bar"
-    ]
+    ],
+    "lat": 49.2597468,
+    "lon": -123.1392628,
+    "placeUrl": "https://www.google.com/maps/place/The+Stable+House+Bistro/data=!4m7!3m6!1s0x548673bf2e0fc42d:0xc22ac8ea692165a6!8m2!3d49.2597468!4d-123.1392628!16s%2Fg%2F1pyqm2412!19sChIJLcQPLr9zhlQRpmUhaerIKsI"
   },
   {
     "id": "shaughnessy-restaurant-vancouver-south-cambie-fairview",
@@ -721,7 +787,10 @@
     "hours": "Monday–Friday 11:30 am–3:00 pm; Saturday–Sunday 10:00 am–3:00 pm; dinner and private events by reservation",
     "tags": [
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2386995,
+    "lon": -123.1296129,
+    "placeUrl": "https://www.google.com/maps/place/Shaughnessy+Restaurant/data=!4m7!3m6!1s0x5486738631cc6453:0x2102c5d8c47b59e0!8m2!3d49.2386995!4d-123.1296129!16s%2Fm%2F04_6qd1!19sChIJU2TMMYZzhlQR4Fl7xNjFAiE"
   },
   {
     "id": "the-wolf-and-hound-vancouver-fairview-south-granville",
@@ -750,7 +819,10 @@
       "casual",
       "neighborhood_spot",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2644878,
+    "lon": -123.1842158,
+    "placeUrl": "https://www.google.com/maps/place/The+Wolf+and+Hound/data=!4m7!3m6!1s0x548672ff95fbd70d:0x265b7f3edffaf728!8m2!3d49.2644878!4d-123.1842158!16s%2Fg%2F1w111wrt!19sChIJDdf7lf9yhlQRKPf63z5_WyY"
   },
   {
     "id": "saba-foods-middle-eastern-yemeni-restaurant-vancouver-fairview-south-granville",
@@ -775,7 +847,10 @@
       "middle_eastern",
       "halal",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2600643,
+    "lon": -123.1390416,
+    "placeUrl": "https://www.google.com/maps/place/Saba+Foods+Middle+Eastern+Yemeni+Restaurant/data=!4m7!3m6!1s0x5485db973ef280ff:0x9867a956228562bf!8m2!3d49.2600643!4d-123.1390416!16s%2Fg%2F11h0bz9sfn!19sChIJ_4DyPpfbhVQRv2KFIlapZ5g"
   },
   {
     "id": "cactus-club-cafe-vancouver-fairview-south-granville",
@@ -816,7 +891,10 @@
       "wheelchair_accessible",
       "expensive",
       "fine_dining"
-    ]
+    ],
+    "lat": 49.2634083,
+    "lon": -123.1172433,
+    "placeUrl": "https://www.google.com/maps/place/Cactus+Club+Cafe/data=!4m7!3m6!1s0x548673dd16423f87:0x20f4af12818e94a4!8m2!3d49.2634083!4d-123.1172433!16s%2Fg%2F1thtp8pd!19sChIJhz9CFt1zhlQRpJSOgRKv9CA"
   },
   {
     "id": "midam-korean-restaurant-vancouver-vancouver-fairview-south-granville",
@@ -861,7 +939,10 @@
       "dinner_spot",
       "late_night_food",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.264345,
+    "lon": -123.1764925,
+    "placeUrl": "https://www.google.com/maps/place/Midam+Korean+Restaurant-+Vancouver/data=!4m7!3m6!1s0x548673ccd80cb9d9:0xc5a4e61ec380b208!8m2!3d49.264345!4d-123.1764925!16s%2Fg%2F11h9k2rz_0!19sChIJ2bkM2MxzhlQRCLKAwx7mpMU"
   },
   {
     "id": "paul-s-omelettery-restaurant-vancouver-fairview-south-granville",
@@ -896,7 +977,10 @@
       "parking_available",
       "wheelchair_accessible",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2659984,
+    "lon": -123.1387561,
+    "placeUrl": "https://www.google.com/maps/place/Paul%27s+Omelettery+Restaurant/data=!4m7!3m6!1s0x548673c7d52f9493:0x5f8a3feb1dbdd90b!8m2!3d49.2659984!4d-123.1387561!16s%2Fg%2F1tgc9666!19sChIJk5Qv1cdzhlQRC9m9Hes_il8"
   },
   {
     "id": "joon-s-kitchen-vancouver-south-cambie-fairview",
@@ -920,7 +1004,10 @@
     "tags": [
       "korean",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2580941,
+    "lon": -123.1271409,
+    "placeUrl": "https://www.google.com/maps/place/Joon%27s+Kitchen/data=!4m7!3m6!1s0x5486737e80b03d29:0xeb6ad6ccb4668f55!8m2!3d49.2580941!4d-123.1271409!16s%2Fg%2F11ghs20x6w!19sChIJKT2wgH5zhlQRVY9mtMzWaus"
   },
   {
     "id": "farmer-s-apprentice-restaurant-vancouver",
@@ -986,7 +1073,10 @@
       "unique_experience",
       "fresh",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2663397,
+    "lon": -123.1396572,
+    "placeUrl": "https://www.google.com/maps/place/Farmer%27s+Apprentice+Restaurant/data=!4m7!3m6!1s0x548673c87a8a5389:0xce55cc4a8738c91f!8m2!3d49.2663397!4d-123.1396572!16s%2Fg%2F1ptwfftm2!19sChIJiVOKeshzhlQRH8k4h0rMVc4"
   },
   {
     "id": "the-eatery-vancouver-fairview-south-granville",
@@ -1011,7 +1101,10 @@
       "japanese",
       "sushi",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2644681,
+    "lon": -123.1807359,
+    "placeUrl": "https://www.google.com/maps/place/The+Eatery/data=!4m7!3m6!1s0x5486725550faafff:0xc9ff618947acba53!8m2!3d49.2644681!4d-123.1807359!16s%2Fm%2F04ykdf1!19sChIJ_6_6UFVyhlQRU7qsR4lh_8k"
   },
   {
     "id": "baan-wasana-thai-restaurant-vancouver-kerrisdale-oakridge",
@@ -1037,7 +1130,10 @@
       "lunch_spot",
       "dinner_spot",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.234785,
+    "lon": -123.15673,
+    "placeUrl": "https://www.google.com/maps/place/Baan+Wasana+Thai+Restaurant/data=!4m7!3m6!1s0x5486737a534c55ab:0x76c6151dabb0710!8m2!3d49.234785!4d-123.15673!16s%2Fg%2F1tk6_5lm!19sChIJq1VMU3pzhlQREAe72lFhbAc"
   },
   {
     "id": "chickpea-restaurant-vancouver-mount-pleasant-riley-park",
@@ -1062,7 +1158,10 @@
       "vegan",
       "plant_based",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2465917,
+    "lon": -123.1010316,
+    "placeUrl": "https://www.google.com/maps/place/Chickpea+Restaurant/data=!4m7!3m6!1s0x548673f7a416fdef:0xbb0033bf2fe842d9!8m2!3d49.2465917!4d-123.1010316!16s%2Fg%2F11g8p8vw87!19sChIJ7_0WpPdzhlQR2ULoL78zALs"
   },
   {
     "id": "gary-s-vancouver-fairview-south-granville",
@@ -1099,7 +1198,10 @@
       "parking_available",
       "wheelchair_accessible",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2608555,
+    "lon": -123.1382028,
+    "placeUrl": "https://www.google.com/maps/place/Gary%27s/data=!4m7!3m6!1s0x54867398419fc909:0x29a4b2a36439c539!8m2!3d49.2608555!4d-123.1382028!16s%2Fg%2F11sv_b8zjs!19sChIJCcmfQZhzhlQROcU5ZKOypCk"
   },
   {
     "id": "banana-leaf-original-broadway-oak-vancouver-fairview-south-granville",
@@ -1156,7 +1258,10 @@
       "lunch_spot",
       "dinner_spot",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2631683,
+    "lon": -123.1224731,
+    "placeUrl": "https://www.google.com/maps/place/Banana+Leaf+Original+%28Broadway+%26+Oak%29/data=!4m7!3m6!1s0x548673c318eb1877:0xfb761f1580182d13!8m2!3d49.2631683!4d-123.1224731!16s%2Fg%2F1tf5kbf8!19sChIJdxjrGMNzhlQREy0YgBUfdvs"
   },
   {
     "id": "caf-salade-de-fruits-vancouver",
@@ -1214,7 +1319,10 @@
       "instagrammable",
       "unique_experience",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2654832,
+    "lon": -123.1399817,
+    "placeUrl": "https://www.google.com/maps/place/Caf%C3%A9+Salade+de+Fruits/data=!4m7!3m6!1s0x548673c7dc2a6bbb:0x5b760e0fd9c9b03f!8m2!3d49.2654832!4d-123.1399817!16s%2Fg%2F1tlwfbct!19sChIJu2sq3MdzhlQRP7DJ2Q8Odls"
   },
   {
     "id": "kangsan-vancouver-mount-pleasant-riley-park",
@@ -1238,7 +1346,10 @@
     "tags": [
       "korean",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2500326,
+    "lon": -123.1008391,
+    "placeUrl": "https://www.google.com/maps/place/Kangsan/data=!4m7!3m6!1s0x548673007814e375:0xbb9c2375422b5ad9!8m2!3d49.2500326!4d-123.1008391!16s%2Fg%2F11z3p86bj5!19sChIJdeMUeABzhlQR2VorQnUjnLs"
   },
   {
     "id": "cambie-vietnamese-restaurant-vancouver-mount-pleasant-riley-park",
@@ -1287,7 +1398,10 @@
       "late_night_food",
       "budget_friendly",
       "pho"
-    ]
+    ],
+    "lat": 49.2482993,
+    "lon": -123.1007904,
+    "placeUrl": "https://www.google.com/maps/place/Cambie+Vietnamese+Restaurant/data=!4m7!3m6!1s0x548673f767783719:0x32d3593e9c48b249!8m2!3d49.2482993!4d-123.1007904!16s%2Fg%2F1vkxlz3n!19sChIJGTd4Z_dzhlQRSbJInD5Z0zI"
   },
   {
     "id": "the-acorn-restaurant-vancouver-mount-pleasant-riley-park",
@@ -1311,7 +1425,10 @@
     "tags": [
       "vegetarian",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2495919,
+    "lon": -123.101381,
+    "placeUrl": "https://www.google.com/maps/place/The+Acorn+Restaurant/data=!4m7!3m6!1s0x548673f9fed15cd3:0xd89867746a0138b6!8m2!3d49.2495919!4d-123.101381!16s%2Fg%2F11_t1cc13!19sChIJ01zR_vlzhlQRtjgBanRnmNg"
   },
   {
     "id": "locus-restaurant-lounge-vancouver-mount-pleasant-riley-park",
@@ -1378,7 +1495,10 @@
       "unique_experience",
       "expensive",
       "fine_dining"
-    ]
+    ],
+    "lat": 49.2484944,
+    "lon": -123.1012917,
+    "placeUrl": "https://www.google.com/maps/place/Locus+Restaurant+%26+Lounge/data=!4m7!3m6!1s0x548673f75c280e01:0x9916a4b447faca43!8m2!3d49.2484944!4d-123.1012917!16s%2Fg%2F1w3w2r06!19sChIJAQ4oXPdzhlQRQ8r6R7SkFpk"
   },
   {
     "id": "lila-restaurant-vancouver-mount-pleasant-riley-park",
@@ -1422,7 +1542,10 @@
       "fresh",
       "dinner_spot",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2499488,
+    "lon": -123.1013545,
+    "placeUrl": "https://www.google.com/maps/place/Lila+Restaurant/data=!4m7!3m6!1s0x5486730122c04efb:0xff59dedf9c51fd88!8m2!3d49.2499488!4d-123.1013545!16s%2Fg%2F11vz843jhd!19sChIJ-07AIgFzhlQRiP1RnN_eWf8"
   },
   {
     "id": "ivy-s-kitchen-vietnamese-restaurant-vancouver-mount-pleasant-riley-park",
@@ -1456,7 +1579,10 @@
       "wheelchair_accessible",
       "budget_friendly",
       "pho"
-    ]
+    ],
+    "lat": 49.2434391,
+    "lon": -123.1011704,
+    "placeUrl": "https://www.google.com/maps/place/Ivy%27s+Kitchen+Vietnamese+Restaurant/data=!4m7!3m6!1s0x548675ddbda64281:0x2fcac4b010291665!8m2!3d49.2434391!4d-123.1011704!16s%2Fg%2F11smzfv65f!19sChIJgUKmvd11hlQRZRYpELDEyi8"
   },
   {
     "id": "hyde-on-main-vancouver-mount-pleasant-riley-park",
@@ -1492,7 +1618,10 @@
       "parking_available",
       "wheelchair_accessible",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2586777,
+    "lon": -123.1008863,
+    "placeUrl": "https://www.google.com/maps/place/HYDE+on+Main/data=!4m7!3m6!1s0x548673e3a1826e8d:0x2073dac0b1626217!8m2!3d49.2586777!4d-123.1008863!16s%2Fg%2F1hc4dxfr0!19sChIJjW6CoeNzhlQRF2JiscDacyA"
   },
   {
     "id": "heritage-restaurant-bar-vancouver-mount-pleasant-riley-park",
@@ -1516,7 +1645,10 @@
     "tags": [
       "budget_friendly",
       "full_bar"
-    ]
+    ],
+    "lat": 49.2471344,
+    "lon": -123.1008415,
+    "placeUrl": "https://www.google.com/maps/place/Heritage+Restaurant+%26+Bar/data=!4m7!3m6!1s0x54867300399bb90d:0x4302e884fec58dc1!8m2!3d49.2471344!4d-123.1008415!16s%2Fg%2F11ltjzfdkn!19sChIJDbmbOQBzhlQRwY3F_oToAkM"
   },
   {
     "id": "old-durbar-nepalese-indian-restaurant-vancouver",
@@ -1554,7 +1686,10 @@
       "dinner_spot",
       "budget_friendly",
       "full_bar"
-    ]
+    ],
+    "lat": 49.2630875,
+    "lon": -123.1018754,
+    "placeUrl": "https://www.google.com/maps/place/Old+Durbar+Nepalese+%26+Indian+Restaurant/data=!4m7!3m6!1s0x54867344e60a71ab:0x31dc7e68ee987852!8m2!3d49.2630875!4d-123.1018754!16s%2Fg%2F11x_fxc4sz!19sChIJq3EK5kRzhlQRUniY7mh-3DE"
   },
   {
     "id": "sawasdee-thai-restaurant-vancouver-mount-pleasant-riley-park",
@@ -1584,7 +1719,10 @@
       "lunch_spot",
       "dinner_spot",
       "budget_friendly"
-    ]
+    ],
+    "lat": 49.2470623,
+    "lon": -123.100929,
+    "placeUrl": "https://www.google.com/maps/place/Sawasdee+Thai+Restaurant/data=!4m7!3m6!1s0x548673f70adfc721:0x2b32015437a58f64!8m2!3d49.2470623!4d-123.100929!16s%2Fg%2F1tf818tc!19sChIJIcffCvdzhlQRZI-lN1QBMis"
   },
   {
     "id": "napoletana-pizza-restaurant-vancouver-mount-pleasant-riley-park",
@@ -1629,6 +1767,9 @@
       "dinner_spot",
       "budget_friendly",
       "pasta"
-    ]
+    ],
+    "lat": 49.2503594,
+    "lon": -123.0904477,
+    "placeUrl": "https://www.google.com/maps/place/Napoletana+Pizza+Restaurant/data=!4m7!3m6!1s0x548673000a434b6f:0x71afad34f87794c6!8m2!3d49.2503594!4d-123.0904477!16s%2Fg%2F11vr4v0rk0!19sChIJb0tDCgBzhlQRxpR3-DStr3E"
   }
 ]

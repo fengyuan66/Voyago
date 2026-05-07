@@ -84,6 +84,23 @@
   border-radius: 16px;
 }
 
+.route-panel {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e5e5e5;
+}
+
+.route-error {
+  color: #a40000;
+}
+
+.mini-map {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  display: block;
+}
+
 @media (max-width: 820px) {
   .swiper-page {
     padding-top: 5.5rem;
