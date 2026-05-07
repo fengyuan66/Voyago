@@ -17,7 +17,7 @@
     ],
     "genre": "Italian, Seafood, Pizzeria",
     "website": "https://www.eliovolpe.com/",
-    "hours": "Everyday 5:00 pm–10:30 pm; weekend brunch 10:00 am–2:00 pm",
+    "hours": "Daily 5:00 pm–10:30 pm; weekend brunch 10:00 am–2:00 pm",
     "tags": [
       "italian",
       "seafood",
@@ -73,7 +73,7 @@
     ],
     "genre": "Lebanese, Middle Eastern, Mediterranean",
     "website": "http://www.mazahr.ca/",
-    "hours": "Tuesday–Thursday 12:00 pm–9:30 pm; Friday–Saturday 12:00 pm–10:00 pm; Sunday 12:00 pm–8:00 pm; Monday closed",
+    "hours": "Tuesday–Thursday 11:30 am–9:00 pm; Friday–Saturday 11:30 am–9:30 pm; Sunday 11:30 am–9:00 pm; Monday closed",
     "tags": [
       "lebanese",
       "middle_eastern",
@@ -114,7 +114,7 @@
     ],
     "genre": "Italian, Mediterranean, European",
     "website": "http://fiorerestaurants.ca/",
-    "hours": "Open 7 nights for dinner; lunch Tuesday–Sunday; happy hour daily 3:00 pm–5:00 pm",
+    "hours": "Monday–Thursday 11:30 am–10:00 pm; Friday 11:30 am–10:30 pm; Saturday 10:00 am–10:30 pm; Sunday 10:00 am–10:00 pm; happy hour daily 3:00 pm–5:00 pm",
     "tags": [
       "italian",
       "mediterranean",
@@ -164,7 +164,7 @@
     ],
     "genre": "Asian, Chinese, Japanese",
     "website": "https://www.eatdon.com/",
-    "hours": "Daily 5:00 pm–11:00 pm; Saturday–Sunday 11:00 am–4:00 pm",
+    "hours": "Daily 5:00 pm–11:00 pm; Saturday–Sunday brunch 11:00 am–4:00 pm",
     "tags": [
       "fusion",
       "small_plates",
@@ -218,7 +218,7 @@
     ],
     "genre": "Chinese",
     "website": "http://www.quanjude1864.com/",
-    "hours": "Not listed in source data",
+    "hours": "Daily 11:00 am–10:30 pm",
     "tags": [
       "chinese",
       "expensive",
@@ -243,7 +243,7 @@
     ],
     "genre": "Mediterranean",
     "website": "http://www.eastiseast.ca/",
-    "hours": "Closes soon · 10 p.m. · Opens 11:30 a.m. Mon",
+    "hours": "Sunday–Thursday 12:00 pm–10:00 pm; Friday–Saturday 12:00 pm–10:30 pm",
     "tags": [
       "mediterranean",
       "budget_friendly",
@@ -268,7 +268,7 @@
     ],
     "genre": "Vietnamese",
     "website": "https://phovietlotus.ca/",
-    "hours": "Closes soon · 10 p.m. · Opens 11 a.m. Mon",
+    "hours": "Daily 11:00 am–10:00 pm",
     "tags": [
       "vietnamese",
       "pho",
@@ -305,7 +305,7 @@
     ],
     "genre": "Chicken",
     "website": "http://lecoqfrit.ca/",
-    "hours": "Not listed in source data",
+    "hours": "Daily 11:00 am–8:40 pm for online ordering; dine-in/takeout hours may vary",
     "tags": [
       "fried_chicken",
       "casual",
@@ -343,7 +343,7 @@
     ],
     "genre": "Thai",
     "website": "https://www.sipsongthai.com/",
-    "hours": "Closed · Opens 5 p.m. Tue",
+    "hours": "Tuesday–Thursday 5:00 pm–9:00 pm; Friday–Sunday lunch 11:30 am–3:30 pm and dinner 4:30 pm–8:30 pm; Monday closed",
     "tags": [
       "thai",
       "dinner_spot",
@@ -368,7 +368,7 @@
     ],
     "genre": "Japanese",
     "website": "https://oceangoose.ca/",
-    "hours": "Not listed in source data",
+    "hours": "Daily 12:00 pm–12:00 am during daylight saving time; daily 12:00 pm–10:00 pm during standard time; last call 30 minutes before closing",
     "tags": [
       "japanese",
       "budget_friendly",
@@ -393,7 +393,7 @@
     ],
     "genre": "Teppanyaki",
     "website": "http://www.osakavancouver.com/",
-    "hours": "Closes soon · 9:30 p.m. · Opens 5 p.m. Mon",
+    "hours": "Daily 5:00 pm–9:30 pm; closed Christmas Day and New Year’s Day",
     "tags": [
       "japanese",
       "table_service",
@@ -421,7 +421,7 @@
     ],
     "genre": "Canadian",
     "website": "http://salmonandbannock.net/",
-    "hours": "Not listed in source data",
+    "hours": "Daily 3:00 pm–9:00 pm; brunch 10:00 am–2:00 pm; Sunday kitchen break 2:00 pm–3:00 pm",
     "tags": [
       "comfort_food",
       "casual",
@@ -448,7 +448,7 @@
     ],
     "genre": "Restaurant",
     "website": "http://www.ashstreetbistro.com/",
-    "hours": "Not listed in source data",
+    "hours": "Breakfast daily 8:00 am–2:00 pm; lunch daily 11:00 am–2:00 pm; private dinner 4:00 pm–7:30 pm by reservation",
     "tags": [
       "american",
       "brunch",
@@ -479,7 +479,7 @@
     ],
     "genre": "Restaurant",
     "website": "https://fablekitchen.ca/",
-    "hours": "Not listed in source data",
+    "hours": "Monday–Friday lunch 11:00 am–2:00 pm; dinner daily 5:00 pm–10:00 pm; Saturday–Sunday and holidays brunch 9:00 am–2:00 pm",
     "tags": [
       "budget_friendly"
     ]
@@ -502,7 +502,7 @@
     ],
     "genre": "Greek",
     "website": "http://www.minervas.ca/",
-    "hours": "Not listed in source data",
+    "hours": "Tuesday–Thursday 4:00 pm–10:30 pm; Friday–Saturday 4:00 pm–11:00 pm; Sunday 4:00 pm–10:30 pm; Monday closed",
     "tags": [
       "greek",
       "mediterranean",
@@ -527,7 +527,7 @@
     ],
     "genre": "Thai",
     "website": "http://www.unchai.ca/",
-    "hours": "Closed · Opens 3:45 p.m. Mon",
+    "hours": "Monday 3:00 pm–7:45 pm; Tuesday–Sunday 11:30 am–3:00 pm and 4:00 pm–8:30 pm; kitchen closes at 9:00 pm",
     "tags": [
       "thai",
       "budget_friendly"
@@ -551,7 +551,7 @@
     ],
     "genre": "Restaurant",
     "website": "http://lavidasrestaurant.ca/",
-    "hours": "Not listed in source data",
+    "hours": "Daily 11:00 am–10:00 pm",
     "tags": [
       "dinner_spot",
       "budget_friendly"
@@ -575,7 +575,7 @@
     ],
     "genre": "Vegetarian",
     "website": "http://www.thenaam.com/",
-    "hours": "Not listed in source data",
+    "hours": "Daily 24 hours; closed Christmas Day",
     "tags": [
       "vegetarian",
       "budget_friendly"
@@ -599,7 +599,7 @@
     ],
     "genre": "Greek",
     "website": "https://johnnysonoak.ca/",
-    "hours": "Not listed in source data",
+    "hours": "Monday–Wednesday 2:30 pm–11:00 pm; Thursday–Saturday 12:00 pm–11:00 pm; Sunday 12:00 pm–10:00 pm",
     "tags": [
       "greek",
       "mediterranean",
@@ -624,7 +624,7 @@
     ],
     "genre": "Restaurant",
     "website": "",
-    "hours": "Closed · Opens 10 a.m. Tue",
+    "hours": "Tuesday–Sunday 10:00 am–9:00 pm; Monday closed",
     "tags": [
       "breakfast_spot",
       "brunch_spot",
@@ -654,7 +654,7 @@
     ],
     "genre": "Vietnamese",
     "website": "",
-    "hours": "Closed · Opens 10:30 a.m. Mon",
+    "hours": "Monday–Saturday 10:30 am–7:00 pm; Sunday closed",
     "tags": [
       "vietnamese",
       "moderate_price",
@@ -685,7 +685,7 @@
     ],
     "genre": "Bistro",
     "website": "http://thestablehouse.ca/",
-    "hours": "Not listed in source data",
+    "hours": "Tuesday–Saturday dinner 5:00 pm–10:00 pm; Saturday–Sunday brunch 10:00 am–2:00 pm; Monday closed",
     "tags": [
       "brunch",
       "breakfast",
@@ -718,7 +718,7 @@
     ],
     "genre": "Restaurant",
     "website": "http://www.shaughnessyrestaurant.com/",
-    "hours": "Closed · Opens 11:30 a.m. Mon",
+    "hours": "Monday–Friday 11:30 am–3:00 pm; Saturday–Sunday 10:00 am–3:00 pm; dinner and private events by reservation",
     "tags": [
       "budget_friendly"
     ]
@@ -741,7 +741,7 @@
     ],
     "genre": "Irish Pub",
     "website": "http://www.wolfandhound.ca/",
-    "hours": "Closes soon · 10 p.m. · Opens 3 p.m. Mon",
+    "hours": "Monday–Thursday 3:00 pm–10:00 pm; Friday 3:00 pm–11:00 pm; Saturday 12:00 pm–11:00 pm; Sunday 12:00 pm–10:00 pm",
     "tags": [
       "comfort_food",
       "moderate_price",
@@ -770,7 +770,7 @@
     ],
     "genre": "Halal",
     "website": "http://www.sabafoods.ca/",
-    "hours": "Closes soon · 10 p.m. · Opens 12 p.m. Mon",
+    "hours": "Daily 12:00 pm–10:00 pm",
     "tags": [
       "middle_eastern",
       "halal",
@@ -795,7 +795,7 @@
     ],
     "genre": "Restaurant",
     "website": "https://www.cactusclubcafe.com/locations/broadway-ash/",
-    "hours": "Not listed in source data",
+    "hours": "Monday–Thursday and Sunday 11:00 am–12:00 am; Friday–Saturday 11:00 am–1:00 am; happy hour daily 2:00 pm–5:00 pm and 9:00 pm–close",
     "tags": [
       "american",
       "new_american",
@@ -836,7 +836,7 @@
     ],
     "genre": "Korean",
     "website": "https://midamkoreanrestaurant.com/",
-    "hours": "Closes soon · 10 p.m. · Opens 11:30 a.m. Mon",
+    "hours": "Daily 11:30 am–10:00 pm",
     "tags": [
       "korean",
       "korean_bbq",
@@ -881,7 +881,7 @@
     ],
     "genre": "Breakfast",
     "website": "http://paulsomelettery.com/",
-    "hours": "Not listed in source data",
+    "hours": "Daily 8:00 am–3:00 pm",
     "tags": [
       "breakfast",
       "breakfast_spot",
@@ -916,7 +916,7 @@
     ],
     "genre": "Korean",
     "website": "https://joonskitchen.zomi.menu/",
-    "hours": "Closed · Opens 5:30 p.m. Wed",
+    "hours": "Wednesday–Sunday 5:30 pm–10:00 pm; Monday–Tuesday closed",
     "tags": [
       "korean",
       "budget_friendly"
@@ -940,7 +940,7 @@
     ],
     "genre": "Pacific Northwest",
     "website": "http://www.farmersapprentice.ca/",
-    "hours": "Closed · Opens 5 p.m. Mon",
+    "hours": "Monday and Thursday–Sunday 5:00 pm–10:00 pm; Tuesday–Wednesday closed",
     "tags": [
       "farm_to_table",
       "locally_sourced",
@@ -1006,7 +1006,7 @@
     ],
     "genre": "Sushi",
     "website": "http://theeatery.ca/",
-    "hours": "Closes soon · 10 p.m. · Opens 4:30 p.m. Mon",
+    "hours": "Sunday–Thursday 4:30 pm–10:00 pm; Friday–Saturday 4:30 pm–11:00 pm",
     "tags": [
       "japanese",
       "sushi",
@@ -1031,7 +1031,7 @@
     ],
     "genre": "Thai",
     "website": "http://www.baanwasana.com/",
-    "hours": "Closed · Opens 11 a.m. Tue",
+    "hours": "Tuesday–Sunday 11:00 am–9:00 pm; Monday closed",
     "tags": [
       "thai",
       "lunch_spot",
@@ -1057,7 +1057,7 @@
     ],
     "genre": "Vegan",
     "website": "http://www.ilovechickpea.ca/",
-    "hours": "Open · Closes 11 p.m.",
+    "hours": "Daily 11:00 am–11:00 pm",
     "tags": [
       "vegan",
       "plant_based",
@@ -1082,7 +1082,7 @@
     ],
     "genre": "French",
     "website": "https://www.garysrestaurant.ca/",
-    "hours": "Closed · Opens 5 p.m. Tue",
+    "hours": "Tuesday–Saturday 5:00 pm–10:00 pm; Sunday–Monday closed",
     "tags": [
       "french",
       "fine_dining",
@@ -1119,7 +1119,7 @@
     ],
     "genre": "Malaysian",
     "website": "https://www.bananaleaf-vancouver.com/broadway",
-    "hours": "Not listed in source data",
+    "hours": "Daily 11:30 am–10:00 pm",
     "tags": [
       "malaysian",
       "moderate_price",
@@ -1176,7 +1176,7 @@
     ],
     "genre": "French",
     "website": "https://www.cafesaladedefruits.ca/",
-    "hours": "Closed · Opens 11 a.m. Tue",
+    "hours": "Tuesday–Saturday 11:00 am–10:00 pm; Sunday–Monday closed",
     "tags": [
       "french",
       "table_service",
@@ -1234,7 +1234,7 @@
     ],
     "genre": "Korean",
     "website": "",
-    "hours": "Closes soon · 9:30 p.m. · Opens 11 a.m. Mon",
+    "hours": "Daily 11:00 am–9:30 pm",
     "tags": [
       "korean",
       "budget_friendly"
@@ -1258,7 +1258,7 @@
     ],
     "genre": "Vietnamese",
     "website": "https://www.cambievietnameserestaurant.com/",
-    "hours": "Closes soon · 10 p.m. · Opens 11 a.m. Mon",
+    "hours": "Daily 11:00 am–10:00 pm",
     "tags": [
       "vietnamese",
       "moderate_price",
@@ -1307,7 +1307,7 @@
     ],
     "genre": "Vegetarian",
     "website": "http://www.theacornrestaurant.ca/",
-    "hours": "Not listed in source data",
+    "hours": "Wednesday–Sunday 5:30 pm–10:00 pm; Monday–Tuesday closed",
     "tags": [
       "vegetarian",
       "budget_friendly"
@@ -1331,7 +1331,7 @@
     ],
     "genre": "Restaurant",
     "website": "https://locusonmain.com/",
-    "hours": "Open · Closes 11 p.m.",
+    "hours": "Sunday–Thursday 10:00 am–11:00 pm; Friday–Saturday 10:00 am–12:00 am",
     "tags": [
       "moderate_price",
       "table_service",
@@ -1398,7 +1398,7 @@
     ],
     "genre": "Modern Indian",
     "website": "https://www.lilarestaurant.ca/",
-    "hours": "Not listed in source data",
+    "hours": "Tuesday–Sunday 5:00 pm–10:00 pm; Monday closed",
     "tags": [
       "indian",
       "modern",
@@ -1442,7 +1442,7 @@
     ],
     "genre": "Vietnamese",
     "website": "",
-    "hours": "Closed · Opens 10:30 a.m. Mon",
+    "hours": "Monday–Saturday 10:30 am–8:00 pm; Sunday closed",
     "tags": [
       "vietnamese",
       "breakfast_spot",
@@ -1476,7 +1476,7 @@
     ],
     "genre": "Bar & Grill",
     "website": "http://instagram.com/hydeonmain",
-    "hours": "Open · Closes 12 a.m.",
+    "hours": "Sunday–Thursday 11:00 am–12:00 am; Friday–Saturday 11:00 am–1:00 am",
     "tags": [
       "american",
       "burgers",
@@ -1512,7 +1512,7 @@
     ],
     "genre": "Restaurant",
     "website": "https://www.heritageasianeatery.com/",
-    "hours": "Not listed in source data",
+    "hours": "Daily 11:30 am–10:00 pm",
     "tags": [
       "budget_friendly",
       "full_bar"
@@ -1536,7 +1536,7 @@
     ],
     "genre": "Indian / Nepalese",
     "website": "http://www.olddurbar.ca/",
-    "hours": "Open · Closes 11 p.m.",
+    "hours": "Daily 11:00 am–11:00 pm",
     "tags": [
       "indian",
       "table_service",
@@ -1574,7 +1574,7 @@
     ],
     "genre": "Thai",
     "website": "http://sawasdeethairestaurant.com/",
-    "hours": "Not listed in source data",
+    "hours": "Monday–Friday 11:30 am–3:00 pm and 5:00 pm–9:30 pm; Saturday–Sunday 12:00 pm–9:30 pm",
     "tags": [
       "thai",
       "moderate_price",
@@ -1604,7 +1604,7 @@
     ],
     "genre": "Italian",
     "website": "http://pizzanapoletana.ca/",
-    "hours": "Open · Closes 11 p.m.",
+    "hours": "Daily 11:00 am–11:00 pm",
     "tags": [
       "italian",
       "pizza",

@@ -233,9 +233,9 @@
         "updates": 7
       },
       "cuisine_asian": {
-        "alpha": 13.18888888888889,
-        "beta": 10.311111111111106,
-        "updates": 50
+        "alpha": 13.733333333333334,
+        "beta": 10.816666666666661,
+        "updates": 53
       },
       "setting_outdoor": {
         "alpha": 7.861111111111111,
@@ -308,9 +308,9 @@
         "updates": 3
       },
       "middle_eastern": {
-        "alpha": 5.111111111111111,
-        "beta": 4.888888888888889,
-        "updates": 4
+        "alpha": 5.333333333333333,
+        "beta": 5.666666666666667,
+        "updates": 5
       },
       "mediterranean": {
         "alpha": 9.999999999999996,
@@ -423,9 +423,9 @@
         "updates": 3
       },
       "thai": {
-        "alpha": 8.666666666666666,
-        "beta": 6.333333333333333,
-        "updates": 9
+        "alpha": 9.333333333333332,
+        "beta": 6.666666666666666,
+        "updates": 10
       },
       "comfort_food": {
         "alpha": 7.666666666666666,
@@ -453,9 +453,9 @@
         "updates": 5
       },
       "vegetarian": {
-        "alpha": 5.666666666666667,
-        "beta": 4.333333333333334,
-        "updates": 4
+        "alpha": 7.111111111111112,
+        "beta": 4.888888888888889,
+        "updates": 6
       },
       "breakfast_spot": {
         "alpha": 5.555555555555555,
@@ -468,9 +468,9 @@
         "updates": 6
       },
       "halal": {
-        "alpha": 3.7777777777777777,
-        "beta": 3.2222222222222223,
-        "updates": 1
+        "alpha": 4,
+        "beta": 4,
+        "updates": 2
       },
       "new_american": {
         "alpha": 3.5555555555555554,
@@ -478,9 +478,9 @@
         "updates": 2
       },
       "korean": {
-        "alpha": 5.444444444444444,
-        "beta": 4.555555555555556,
-        "updates": 4
+        "alpha": 6.333333333333332,
+        "beta": 5.666666666666668,
+        "updates": 6
       },
       "korean_bbq": {
         "alpha": 3.888888888888889,
@@ -568,27 +568,27 @@
         "updates": 8
       },
       "cuisine_middle_east_africa": {
-        "alpha": 4.205555555555556,
-        "beta": 4.2444444444444445,
-        "updates": 7
+        "alpha": 4.283333333333333,
+        "beta": 4.516666666666667,
+        "updates": 8
       },
       "diet_flexible": {
-        "alpha": 4.516666666666666,
-        "beta": 4.633333333333334,
-        "updates": 9
+        "alpha": 5.099999999999999,
+        "beta": 5.1,
+        "updates": 12
       },
       "budget_friendly": {
-        "alpha": 3.3333333333333335,
-        "beta": 3.666666666666667,
-        "updates": 1
+        "alpha": 7.555555555555555,
+        "beta": 7.444444444444445,
+        "updates": 9
       },
       "price_budget": {
-        "alpha": 3.1166666666666667,
-        "beta": 3.2333333333333334,
-        "updates": 1
+        "alpha": 4.594444444444445,
+        "beta": 4.5555555555555545,
+        "updates": 9
       }
     },
-    "totalRatings": 96,
+    "totalRatings": 104,
     "ratings": [
       {
         "restaurantId": "miku-vancouver-waterfront",
@@ -2436,6 +2436,85 @@
           "budget_friendly"
         ],
         "timestamp": "2026-05-07T09:21:52.319Z"
+      },
+      {
+        "restaurantId": "saba-foods-middle-eastern-yemeni-restaurant-vancouver-fairview-south-granville",
+        "rating": 3,
+        "reward": 0.2222222222222222,
+        "tags": [
+          "middle_eastern",
+          "halal",
+          "budget_friendly"
+        ],
+        "timestamp": "2026-05-07T09:29:14.795Z"
+      },
+      {
+        "restaurantId": "fable-kitchen-vancouver-kitsilano",
+        "rating": 5,
+        "reward": 0.4444444444444444,
+        "tags": [
+          "budget_friendly"
+        ],
+        "timestamp": "2026-05-07T09:29:17.577Z"
+      },
+      {
+        "restaurantId": "shaughnessy-restaurant-vancouver-south-cambie-fairview",
+        "rating": 6,
+        "reward": 0.5555555555555556,
+        "tags": [
+          "budget_friendly"
+        ],
+        "timestamp": "2026-05-07T09:29:19.439Z"
+      },
+      {
+        "restaurantId": "joon-s-kitchen-vancouver-south-cambie-fairview",
+        "rating": 4,
+        "reward": 0.3333333333333333,
+        "tags": [
+          "korean",
+          "budget_friendly"
+        ],
+        "timestamp": "2026-05-07T09:29:21.065Z"
+      },
+      {
+        "restaurantId": "kangsan-vancouver-mount-pleasant-riley-park",
+        "rating": 6,
+        "reward": 0.5555555555555556,
+        "tags": [
+          "korean",
+          "budget_friendly"
+        ],
+        "timestamp": "2026-05-07T09:29:23.330Z"
+      },
+      {
+        "restaurantId": "unchai-restaurant-vancouver-fairview-south-granville",
+        "rating": 7,
+        "reward": 0.6666666666666666,
+        "tags": [
+          "thai",
+          "budget_friendly"
+        ],
+        "timestamp": "2026-05-07T09:29:25.017Z"
+      },
+      {
+        "restaurantId": "the-naam-vancouver-kitsilano",
+        "rating": 8,
+        "reward": 0.7777777777777778,
+        "tags": [
+          "vegetarian",
+          "budget_friendly"
+        ],
+        "timestamp": "2026-05-07T09:29:26.839Z"
+      },
+      {
+        "restaurantId": "the-acorn-restaurant-vancouver-mount-pleasant-riley-park",
+        "rating": 7,
+        "reward": 0.6666666666666666,
+        "tags": [
+          "vegetarian",
+          "budget_friendly"
+        ],
+        "timestamp": "2026-05-07T09:29:28.715Z"
       }
     ],
     "servedRestaurantIds": [
@@ -2762,7 +2841,27 @@
       "joon-s-kitchen-vancouver-south-cambie-fairview",
       "kangsan-vancouver-mount-pleasant-riley-park",
       "sip-song-thai-cuisine-vancouver-west-side",
-      "iden-quanjude-beijing-duck-house-vancouver-south-cambie-fairview"
+      "iden-quanjude-beijing-duck-house-vancouver-south-cambie-fairview",
+      "saba-foods-middle-eastern-yemeni-restaurant-vancouver-fairview-south-granville",
+      "fable-kitchen-vancouver-kitsilano",
+      "shaughnessy-restaurant-vancouver-south-cambie-fairview",
+      "joon-s-kitchen-vancouver-south-cambie-fairview",
+      "kangsan-vancouver-mount-pleasant-riley-park",
+      "unchai-restaurant-vancouver-fairview-south-granville",
+      "the-naam-vancouver-kitsilano",
+      "the-acorn-restaurant-vancouver-mount-pleasant-riley-park",
+      "sip-song-thai-cuisine-vancouver-west-side",
+      "iden-quanjude-beijing-duck-house-vancouver-south-cambie-fairview",
+      "east-is-east-vancouver-fairview-south-granville",
+      "ocean-goose-japanese-restaurant-vancouver-kitsilano",
+      "pho-viet-lotus-restaurant-vancouver-fairview-south-granville",
+      "le-coq-frit-vancouver-vancouver-fairview-south-granville",
+      "kim-son-vietnamese-food-vancouver-fairview-south-granville",
+      "the-wolf-and-hound-vancouver-fairview-south-granville",
+      "paul-s-omelettery-restaurant-vancouver-fairview-south-granville",
+      "ivy-s-kitchen-vietnamese-restaurant-vancouver-mount-pleasant-riley-park",
+      "the-stable-house-bistro-vancouver-fairview-south-granville",
+      "salmon-n-bannock-vancouver-fairview-south-granville"
     ],
     "ratedRestaurantIds": [
       "miku-vancouver-waterfront",
@@ -2860,17 +2959,17 @@
       "osteria-elio-volpe-vancouver-south-cambie-fairview",
       "farmer-s-apprentice-restaurant-vancouver",
       "gary-s-vancouver-fairview-south-granville",
-      "chickpea-restaurant-vancouver-mount-pleasant-riley-park"
+      "chickpea-restaurant-vancouver-mount-pleasant-riley-park",
+      "saba-foods-middle-eastern-yemeni-restaurant-vancouver-fairview-south-granville",
+      "fable-kitchen-vancouver-kitsilano",
+      "shaughnessy-restaurant-vancouver-south-cambie-fairview",
+      "joon-s-kitchen-vancouver-south-cambie-fairview",
+      "kangsan-vancouver-mount-pleasant-riley-park",
+      "unchai-restaurant-vancouver-fairview-south-granville",
+      "the-naam-vancouver-kitsilano",
+      "the-acorn-restaurant-vancouver-mount-pleasant-riley-park"
     ],
     "recentGenres": [
-      "Breakfast",
-      "Mediterranean",
-      "Chicken",
-      "Malaysian",
-      "Bistro",
-      "Japanese",
-      "Sushi",
-      "Asian, Chinese, Japanese",
       "Modern Indian",
       "Teppanyaki",
       "Indian / Nepalese",
@@ -2882,23 +2981,31 @@
       "Italian, Seafood, Pizzeria",
       "Pacific Northwest",
       "French",
-      "Vegan"
+      "Vegan",
+      "Halal",
+      "Restaurant",
+      "Restaurant",
+      "Korean",
+      "Korean",
+      "Thai",
+      "Vegetarian",
+      "Vegetarian"
     ],
     "insights": {
-      "profile_summary": "User enjoys lively dining experiences with a preference for Mediterranean, Thai, and sushi cuisines. They favor vegetarian options and special occasions, while showing a strong aversion to traditional and quiet dining environments.",
+      "profile_summary": "The user enjoys vibrant and lively dining experiences, with a strong preference for Greek, Thai, and sushi cuisines. They favor casual and special occasion dining, particularly in lively atmospheres. The user shows a dislike for traditional and quiet dining settings, as well as breakfast spots and classic menus.",
       "hypotheses": [
-        "User prefers vibrant and social dining settings.",
-        "User is inclined towards Mediterranean and Asian cuisines, particularly Thai and sushi.",
-        "User dislikes traditional and quiet dining experiences, indicating a preference for more modern and lively atmospheres."
+        "The user prefers cuisines that offer a mix of flavors and experiences, such as Greek and Thai.",
+        "The user is likely to enjoy restaurants that provide a lively atmosphere and are suitable for special occasions.",
+        "The user may be less inclined to visit traditional or quiet restaurants, indicating a preference for more modern and vibrant dining experiences."
       ],
       "exploration_tags": [
         "fusion",
         "modern",
-        "lively"
+        "creative_menu"
       ],
       "confidence": "high",
-      "generatedAt": "2026-05-07T09:20:39.352Z"
+      "generatedAt": "2026-05-07T09:29:24.772Z"
     },
-    "lastInsightAt": "2026-05-07T09:20:39.352Z"
+    "lastInsightAt": "2026-05-07T09:29:24.772Z"
   }
 }
