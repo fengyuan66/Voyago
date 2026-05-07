@@ -1,0 +1,128 @@
+{
+  "mode": "restaurant_sheet",
+  "sheet": "restaurants.csv",
+  "spec_file": "Examples.md",
+  "count": 5,
+  "results": [
+    {
+      "restaurant_name": "St. Lawrence",
+      "location_tag": "Vancouver Railtown",
+      "status": "ok",
+      "result": {
+        "description": "St. Lawrence is a restaurant located in Vancouver's Railtown, serving traditional Qu\u00e9b\u00e9cois cuisine with a focus on local and seasonal ingredients.",
+        "image_url": null,
+        "address": "269 Powell St, Vancouver, BC V6A 1G3, Canada",
+        "price_range": "$$$",
+        "menu": [
+          "Foie Gras",
+          "Tourti\u00e8re",
+          "Poutine",
+          "Magret de Canard",
+          "Tarte au Sucre",
+          "Qu\u00e9b\u00e9cois Sugar Pie",
+          "Cassoulet",
+          "Pouding Ch\u00f4meur",
+          "Tournedos Rossini"
+        ],
+        "genre": "Qu\u00e9b\u00e9cois, French-Canadian",
+        "website": "https://www.stlawrencerestaurant.com",
+        "hours": "Tuesday to Saturday 5:30 pm - 10:30 pm, Sunday 5:30 pm - 9:30 pm, Monday Closed"
+      },
+      "raw_answer": "{\n  \"description\": \"St. Lawrence is a restaurant located in Vancouver's Railtown, serving traditional Qu\u00e9b\u00e9cois cuisine with a focus on local and seasonal ingredients.\",\n  \"image_url\": null,\n  \"address\": \"269 Powell St, Vancouver, BC V6A 1G3, Canada\",\n  \"price_range\": \"$$$\",\n  \"menu\": [\"Foie Gras\", \"Tourti\u00e8re\", \"Poutine\", \"Magret de Canard\", \"Tarte au Sucre\", \"Qu\u00e9b\u00e9cois Sugar Pie\", \"Cassoulet\", \"Pouding Ch\u00f4meur\", \"Tournedos Rossini\"],\n  \"genre\": \"Qu\u00e9b\u00e9cois, French-Canadian\",\n  \"website\": \"https://www.stlawrencerestaurant.com\",\n  \"hours\": \"Tuesday to Saturday 5:30 pm - 10:30 pm, Sunday 5:30 pm - 9:30 pm, Monday Closed\"\n}"
+    },
+    {
+      "restaurant_name": "L'Abattoir",
+      "location_tag": "Vancouver Gastown",
+      "status": "ok",
+      "result": {
+        "description": "L'Abattoir is a French-influenced West Coast restaurant located in Vancouver's historic Gastown district. It offers elevated cuisine alongside an award-winning wine list. The restaurant is situated in a 19th-century building that was once the site of Vancouver's first jail.",
+        "image_url": "https://www.labattoir.ca/wp-content/uploads/2021/07/FOH-01-1920x750.jpg",
+        "address": "217 Carrall Street, Vancouver, BC V6B 2J2",
+        "price_range": "$20-30 CAD",
+        "menu": [
+          "Steak tartare",
+          "Baked Pacific oyster",
+          "Hokkaido scallop crudo",
+          "Foie gras torchon",
+          "Pan-fried sweetbreads",
+          "Lightly smoked duck breast"
+        ],
+        "genre": "French-influenced West Coast",
+        "website": "https://www.labattoir.ca/",
+        "hours": "Dinner: Tuesday to Saturday, 5:00 pm to 10:00 pm; Happy Hour: Tuesday to Saturday, 5:00 pm to 6:00 pm"
+      },
+      "raw_answer": "{\n  \"description\": \"L'Abattoir is a French-influenced West Coast restaurant located in Vancouver's historic Gastown district. It offers elevated cuisine alongside an award-winning wine list. The restaurant is situated in a 19th-century building that was once the site of Vancouver's first jail.\",\n  \"image_url\": \"https://www.labattoir.ca/wp-content/uploads/2021/07/FOH-01-1920x750.jpg\",\n  \"address\": \"217 Carrall Street, Vancouver, BC V6B 2J2\",\n  \"price_range\": \"$20-30 CAD\",\n  \"menu\": [\"Steak tartare\", \"Baked Pacific oyster\", \"Hokkaido scallop crudo\", \"Foie gras torchon\", \"Pan-fried sweetbreads\", \"Lightly smoked duck breast\"],\n  \"genre\": \"French-influenced West Coast\",\n  \"website\": \"https://www.labattoir.ca/\",\n  \"hours\": \"Dinner: Tuesday to Saturday, 5:00 pm to 10:00 pm; Happy Hour: Tuesday to Saturday, 5:00 pm to 6:00 pm\"\n}"
+    },
+    {
+      "restaurant_name": "Miku",
+      "location_tag": "Vancouver Waterfront",
+      "status": "ok",
+      "result": {
+        "description": "Miku Restaurant is a Michelin Guide Recommended restaurant that specializes in Aburi, or flamed-seared, sushi. It is located in the heart of Downtown Vancouver, with a waterfront patio and stunning views of the North Shore and mountains. The restaurant offers a unique dining experience, combining traditional Japanese flavours and techniques with local, west coast elements.",
+        "image_url": "https://mikurestaurant.com/wp-content/uploads/2022/02/1074-O.jpg",
+        "address": "70-200 Granville St, Vancouver, BC V6C 1S4",
+        "price_range": "$20-30 CAD",
+        "menu": [
+          "Lobster Ceviche",
+          "Soft-Shell Crab",
+          "Ebi Fritters",
+          "Miku Waterfront Bento",
+          "Aburi Salmon Oshi"
+        ],
+        "genre": "Japanese",
+        "website": "https://mikurestaurant.com/",
+        "hours": "Mon - 11:30 am - 10:00 pm, Tue - 11:30 am - 10:00 pm, Wed - 11:30 am - 10:00 pm, Thu - 11:30 am - 10:00 pm, Fri - 11:30 am - 10:00 pm, Sat - 11:30 am - 10:00 pm, Sun - 11:30 am - 10:00 pm"
+      },
+      "raw_answer": "{\n  \"description\": \"Miku Restaurant is a Michelin Guide Recommended restaurant that specializes in Aburi, or flamed-seared, sushi. It is located in the heart of Downtown Vancouver, with a waterfront patio and stunning views of the North Shore and mountains. The restaurant offers a unique dining experience, combining traditional Japanese flavours and techniques with local, west coast elements.\",\n  \"image_url\": \"https://mikurestaurant.com/wp-content/uploads/2022/02/1074-O.jpg\",\n  \"address\": \"70-200 Granville St, Vancouver, BC V6C 1S4\",\n  \"price_range\": \"$20-30 CAD\",\n  \"menu\": [\n    \"Lobster Ceviche\",\n    \"Soft-Shell Crab\",\n    \"Ebi Fritters\",\n    \"Miku Waterfront Bento\",\n    \"Aburi Salmon Oshi\"\n  ],\n  \"genre\": \"Japanese\",\n  \"website\": \"https://mikurestaurant.com/\",\n  \"hours\": \"Mon - 11:30 am - 10:00 pm, Tue - 11:30 am - 10:00 pm, Wed - 11:30 am - 10:00 pm, Thu - 11:30 am - 10:00 pm, Fri - 11:30 am - 10:00 pm, Sat - 11:30 am - 10:00 pm, Sun - 11:30 am - 10:00 pm\"\n}"
+    },
+    {
+      "restaurant_name": "Minami",
+      "location_tag": "Vancouver Yaletown",
+      "status": "ok",
+      "result": {
+        "description": "Minami Restaurant offers a combination of Japanese and West Coast cuisine in a comfortable, rustic atmosphere. Minami presents the Aburi take on red meats and seafood, highlighting the finest in sushi and Japanese cuisine.",
+        "image_url": "https://www.minamirestaurant.com/wp-content/uploads/2016/04/minami_main.jpg",
+        "address": "1118 Mainland St, Vancouver, BC V6B 2T9",
+        "price_range": "$31 to $50 CAD",
+        "menu": [
+          "Bincho Nigiri",
+          "Sockeye Nigiri",
+          "Maguro Nigiri",
+          "Assorted Sashimi Platter",
+          "Sumire Platter",
+          "Green Tea Opera Dessert Tier"
+        ],
+        "genre": "Japanese, Sushi, Tapas",
+        "website": "https://www.minamirestaurant.com/",
+        "hours": "Monday to Sunday 5:00 pm to 9:30 pm"
+      },
+      "raw_answer": "{\n  \"description\": \"Minami Restaurant offers a combination of Japanese and West Coast cuisine in a comfortable, rustic atmosphere. Minami presents the Aburi take on red meats and seafood, highlighting the finest in sushi and Japanese cuisine.\",\n  \"image_url\": \"https://www.minamirestaurant.com/wp-content/uploads/2016/04/minami_main.jpg\",\n  \"address\": \"1118 Mainland St, Vancouver, BC V6B 2T9\",\n  \"price_range\": \"$31 to $50 CAD\",\n  \"menu\": [\"Bincho Nigiri\", \"Sockeye Nigiri\", \"Maguro Nigiri\", \"Assorted Sashimi Platter\", \"Sumire Platter\", \"Green Tea Opera Dessert Tier\"],\n  \"genre\": \"Japanese, Sushi, Tapas\",\n  \"website\": \"https://www.minamirestaurant.com/\",\n  \"hours\": \"Monday to Sunday 5:00 pm to 9:30 pm\"\n}"
+    },
+    {
+      "restaurant_name": "Kissa Tanto",
+      "location_tag": "Vancouver Chinatown",
+      "status": "ok",
+      "result": {
+        "description": "Kissa Tanto is a unique dining destination nestled in Vancouver's Chinatown, offering a fusion of delicate Japanese flavors and hearty Italian cuisine. The restaurant has a moody vibe, with white mosaic floors, antique Japanese panels, and steely colored accents. The menu is a sophisticated confluence of Japanese and Italian cuisines, with dishes such as charcoal udon with Dungeness crab, prawns, squid, and Calabrian chili butter. The restaurant has received rave reviews for its exceptional service, with knowledgeable and genuinely engaged staff. Kissa Tanto is a popular spot, with reservations open 30 days in advance at midnight. The restaurant is open Wednesday to Sunday, with hours varying from 5:30 pm to 11:00 pm or 12:00 am.",
+        "image_url": null,
+        "address": "263 East Pender Street, Vancouver, BC V6A 1T8",
+        "price_range": "$150-200 CAD per person",
+        "menu": [
+          "Charcoal Udon $49",
+          "Tajarin $35",
+          "Pappardelle $42",
+          "Octopus salad",
+          "Fried stuffed olives",
+          "Miyazaki A5 wagyu",
+          "Hiramasa",
+          "Truffle risotto"
+        ],
+        "genre": "Italian-Japanese fusion",
+        "website": "http://www.kissatanto.com/",
+        "hours": "Wednesday, Thursday, And Sunday 5:30pm - 11:00pm friday and Saturday 5:30pm - 12:00am"
+      },
+      "raw_answer": "{\n  \"description\": \"Kissa Tanto is a unique dining destination nestled in Vancouver's Chinatown, offering a fusion of delicate Japanese flavors and hearty Italian cuisine. The restaurant has a moody vibe, with white mosaic floors, antique Japanese panels, and steely colored accents. The menu is a sophisticated confluence of Japanese and Italian cuisines, with dishes such as charcoal udon with Dungeness crab, prawns, squid, and Calabrian chili butter. The restaurant has received rave reviews for its exceptional service, with knowledgeable and genuinely engaged staff. Kissa Tanto is a popular spot, with reservations open 30 days in advance at midnight. The restaurant is open Wednesday to Sunday, with hours varying from 5:30 pm to 11:00 pm or 12:00 am.\",\n  \"image_url\": null,\n  \"address\": \"263 East Pender Street, Vancouver, BC V6A 1T8\",\n  \"price_range\": \"$150-200 CAD per person\",\n  \"menu\": [\n    \"Charcoal Udon $49\",\n    \"Tajarin $35\",\n    \"Pappardelle $42\",\n    \"Octopus salad\",\n    \"Fried stuffed olives\",\n    \"Miyazaki A5 wagyu\",\n    \"Hiramasa\",\n    \"Truffle risotto\"\n  ],\n  \"genre\": \"Italian-Japanese fusion\",\n  \"website\": \"http://www.kissatanto.com/\",\n  \"hours\": \"Wednesday, Thursday, And Sunday 5:30pm - 11:00pm friday and Saturday 5:30pm - 12:00am\"\n}"
+    }
+  ]
+}
+
