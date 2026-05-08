@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { fetchFeed, submitRating } from "./recommendationApi";
+import { fetchFeed, getLlmPicks, submitRating } from "./recommendationApi";
 import { getRoute } from "./routingapi";
 import { getHQFromStorage, isWithinRoutingCoverage } from "./settingsStore";
 import { decodePolyline6 } from "./polyline6";
@@ -9,7 +9,7 @@ import "./swiper.css";
 
 
 
-const USER_ID = "demo-user";
+const USER_ID_STORAGE_KEY = "voyago_user_id";
 const ANIMATION_SCROLLLOCK_MS = 420;
 const PREFETCH_THRESHOLD = 3;
 const PREFETCH_BATCH_SIZE = 10;
@@ -48,6 +48,30 @@ function getImageFallback(restaurant) {
   return GENERIC_FALLBACK_IMAGE_URL;
 }
 
+function createUserId() {
+  if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+    return `user-${crypto.randomUUID()}`;
+  }
+  return `user-${Math.random().toString(36).slice(2, 12)}`;
+}
+
+function getOrCreateUserId() {
+  if (typeof window === "undefined") {
+    return "user-anon";
+  }
+  try {
+    const existing = window.localStorage.getItem(USER_ID_STORAGE_KEY);
+    if (existing && existing.trim()) {
+      return existing;
+    }
+    const next = createUserId();
+    window.localStorage.setItem(USER_ID_STORAGE_KEY, next);
+    return next;
+  } catch {
+    return createUserId();
+  }
+}
+
 
 function humanizeRouteError(message) {
   const raw = String(message ?? "");
@@ -64,6 +88,7 @@ function humanizeRouteError(message) {
 
 
 function Swiper() {
+  const [userId] = useState(() => getOrCreateUserId());
   const [cards, setCards] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(1);
@@ -72,6 +97,10 @@ function Swiper() {
   const [ratingByCardId, setRatingByCardId] = useState({});
   const [profileSummary, setProfileSummary] = useState(null);
   const [insights, setInsights] = useState(null);
+  const [aiPicks, setAiPicks] = useState([]);
+  const [aiPicksSource, setAiPicksSource] = useState("");
+  const [isAiPicksLoading, setIsAiPicksLoading] = useState(false);
+  const [aiPicksError, setAiPicksError] = useState("");
   const [hq, setHq] = useState(() => getHQFromStorage());
   const [routeMode, setRouteMode] = useState("auto");
   const [routeInfo, setRouteInfo] = useState({
@@ -118,7 +147,7 @@ function Swiper() {
     try {
       const excludeIds = cardsRef.current.map((restaurant) => restaurant.id);
       const payload = await fetchFeed({
-        userId: USER_ID,
+        userId,
         limit,
         excludeIds,
       });
@@ -142,7 +171,7 @@ function Swiper() {
 
   useEffect(() => {
     void loadMoreCards(PREFETCH_BATCH_SIZE);
-  }, []);
+  }, [userId]);
 
   useEffect(() => {
     let cancelled = false;
@@ -315,7 +344,7 @@ function Swiper() {
     setRatingByCardId((previous) => ({ ...previous, [currentPlace.id]: rating }));
     try {
       const payload = await submitRating({
-        userId: USER_ID,
+        userId,
         restaurantId: currentPlace.id,
         rating,
       });
@@ -328,6 +357,46 @@ function Swiper() {
       setError("");
     } catch (requestError) {
       setError(requestError.message || "Failed to submit rating.");
+    }
+  }
+
+  function jumpToRestaurant(restaurantId) {
+    const nextIndex = cardsRef.current.findIndex((restaurant) => restaurant.id === restaurantId);
+    if (nextIndex < 0) {
+      return false;
+    }
+    if (nextIndex === currentIndexRef.current) {
+      return true;
+    }
+    setDirection(nextIndex > currentIndexRef.current ? 1 : -1);
+    setCurrentIndex(nextIndex);
+    currentIndexRef.current = nextIndex;
+    return true;
+  }
+
+  async function handleLoadAiPicks() {
+    setIsAiPicksLoading(true);
+    setAiPicksError("");
+    try {
+      const payload = await getLlmPicks({
+        userId,
+        count: 5,
+      });
+      setAiPicks(Array.isArray(payload?.picks) ? payload.picks : []);
+      setAiPicksSource(String(payload?.source ?? ""));
+    } catch (requestError) {
+      setAiPicksError(requestError.message || "Failed to load AI picks.");
+    } finally {
+      setIsAiPicksLoading(false);
+    }
+  }
+
+  function handlePickClick(restaurantId) {
+    const jumped = jumpToRestaurant(restaurantId);
+    if (!jumped) {
+      setAiPicksError("That pick is not in the current deck yet. Keep swiping to load more cards.");
+    } else {
+      setAiPicksError("");
     }
   }
 
@@ -456,7 +525,17 @@ function Swiper() {
 
       {profileSummary ? (
         <section className="profile-panel">
-          <h2>Learned Preferences</h2>
+          <div className="profile-header">
+            <h2>Learned Preferences</h2>
+            <button
+              type="button"
+              className="ai-picks-button"
+              onClick={() => void handleLoadAiPicks()}
+              disabled={isAiPicksLoading}
+            >
+              {isAiPicksLoading ? "Loading..." : "AI Picks"}
+            </button>
+          </div>
           <p>
             <strong>Liked:</strong>{" "}
             {profileSummary.liked?.map((entry) => entry.tag).join(", ") || "Not enough data yet"}
@@ -469,6 +548,24 @@ function Swiper() {
             <p>
               <strong>Agent insight:</strong> {insights.profile_summary}
             </p>
+          ) : null}
+          {aiPicksError ? <p className="ai-picks-error">{aiPicksError}</p> : null}
+          {aiPicks.length > 0 ? (
+            <section className="ai-picks-panel">
+              <p>
+                <strong>AI picks{aiPicksSource === "heuristic" ? " (quick mode)" : ""}:</strong>
+              </p>
+              <ul className="ai-picks-list">
+                {aiPicks.map((pick) => (
+                  <li key={pick.id}>
+                    <button type="button" className="ai-pick-jump" onClick={() => handlePickClick(pick.id)}>
+                      {pick.name}
+                    </button>
+                    <span className="ai-pick-reason"> - {pick.reason}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
           ) : null}
         </section>
       ) : null}

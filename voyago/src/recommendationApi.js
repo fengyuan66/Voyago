@@ -43,3 +43,18 @@ export async function submitRating({ userId, restaurantId, rating }) {
   });
   return parseJson(response);
 }
+
+export async function getLlmPicks({ userId, count = 5, excludeIds = [] }) {
+  const response = await fetch(`${API_ROOT}/recommendations/llm-picks`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      user_id: userId,
+      count,
+      exclude_ids: excludeIds,
+    }),
+  });
+  return parseJson(response);
+}

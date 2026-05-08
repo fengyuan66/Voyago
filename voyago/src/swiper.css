@@ -182,6 +182,67 @@
   margin: 0.15rem 0;
 }
 
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.profile-header h2 {
+  margin: 0;
+}
+
+.ai-picks-button {
+  border: 1px solid var(--ui-border);
+  background: var(--ui-bg);
+  color: var(--ui-text);
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.ai-picks-button:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.ai-picks-panel {
+  margin-top: 0.35rem;
+  border-top: 1px solid #e4e8ed;
+  padding-top: 0.35rem;
+}
+
+.ai-picks-list {
+  margin: 0.2rem 0 0;
+  padding-left: 1rem;
+}
+
+.ai-pick-jump {
+  border: none;
+  background: transparent;
+  color: #0f5ca8;
+  cursor: pointer;
+  padding: 0;
+  font-weight: 600;
+}
+
+.ai-pick-jump:hover {
+  text-decoration: underline;
+}
+
+.ai-pick-reason {
+  color: #4f6274;
+}
+
+.ai-picks-error {
+  color: #a40000;
+  margin-top: 0.25rem;
+}
+
 .route-panel {
   margin-top: 0.75rem;
   padding-top: 0.75rem;

@@ -2,7 +2,7 @@ import http from "node:http";
 import { loadCatalog, loadUserProfiles, saveCatalog, saveUserProfiles } from "./db.js";
 import { importTaggedCatalogFromObject } from "./catalog.js";
 import { applyRating, createEmptyProfile, recommendNextBatch, summarizeTopTagPrefs } from "./recommender.js";
-import { maybeGenerateInsights } from "./llmInsights.js";
+import { generateLlmPicks, maybeGenerateInsights } from "./llmInsights.js";
 
 const HOST = process.env.HOST ?? "127.0.0.1";
 const PORT = Number(process.env.PORT ?? 8787);
@@ -87,6 +87,23 @@ function compactRestaurantForClient(restaurant) {
     hours: restaurant.hours,
     tags: restaurant.tags,
   };
+}
+
+function buildLlmPickCandidates({ userProfile, catalogItems, excludeIds = [] }) {
+  const excluded = new Set(excludeIds);
+  const ratedSet = new Set(userProfile.ratedRestaurantIds ?? []);
+  const servedSet = new Set(userProfile.servedRestaurantIds ?? []);
+  const primary = catalogItems.filter(
+    (restaurant) => !excluded.has(restaurant.id) && !ratedSet.has(restaurant.id) && !servedSet.has(restaurant.id),
+  );
+  if (primary.length >= 20) {
+    return primary;
+  }
+  const relaxed = catalogItems.filter((restaurant) => !excluded.has(restaurant.id) && !ratedSet.has(restaurant.id));
+  if (relaxed.length > 0) {
+    return relaxed;
+  }
+  return catalogItems.filter((restaurant) => !excluded.has(restaurant.id));
 }
 
 function importCatalogAndPersist(items) {
@@ -242,6 +259,32 @@ const server = http.createServer(async (request, response) => {
         profileSummary: summarizeTopTagPrefs(userProfile, 5),
         insights: userProfile.insights,
       });
+    } catch (error) {
+      sendJson(response, 400, { error: error.message });
+    }
+    return;
+  }
+
+  if (request.method === "POST" && urlObject.pathname === "/api/recommendations/llm-picks") {
+    try {
+      normalizeCatalogInPlace();
+      const body = await parseBody(request);
+      const userId = String(body.user_id ?? body.userId ?? "demo-user").trim() || "demo-user";
+      const count = Number(body.count ?? 5);
+      const excludeIds = Array.isArray(body.exclude_ids ?? body.excludeIds)
+        ? (body.exclude_ids ?? body.excludeIds).map((id) => String(id).trim()).filter(Boolean)
+        : [];
+
+      const userProfile = ensureProfile(userId);
+      const catalogItems = Array.isArray(catalog) ? catalog : [];
+      const candidates = buildLlmPickCandidates({ userProfile, catalogItems, excludeIds });
+      const result = await generateLlmPicks({
+        userProfile,
+        candidates,
+        count: Number.isFinite(count) ? count : 5,
+      });
+
+      sendJson(response, 200, result);
     } catch (error) {
       sendJson(response, 400, { error: error.message });
     }
