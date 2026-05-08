@@ -4962,9 +4962,9 @@
     "userId": "user-7f2d487f-dd62-4c33-a2d2-68cc36430e51",
     "tagPrefs": {
       "italian": {
-        "alpha": 3,
-        "beta": 3,
-        "updates": 0
+        "alpha": 3.555555555555556,
+        "beta": 4.444444444444445,
+        "updates": 2
       },
       "seafood": {
         "alpha": 3,
@@ -4972,234 +4972,234 @@
         "updates": 0
       },
       "pizza": {
-        "alpha": 3,
-        "beta": 3,
-        "updates": 0
+        "alpha": 3.555555555555556,
+        "beta": 4.444444444444445,
+        "updates": 2
       },
       "moderate_price": {
-        "alpha": 4,
-        "beta": 6,
-        "updates": 4
+        "alpha": 13.777777777777777,
+        "beta": 15.222222222222223,
+        "updates": 23
       },
       "table_service": {
-        "alpha": 4,
-        "beta": 6,
-        "updates": 4
+        "alpha": 12.888888888888888,
+        "beta": 13.111111111111112,
+        "updates": 20
       },
       "brunch": {
-        "alpha": 3.111111111111111,
-        "beta": 3.888888888888889,
-        "updates": 1
+        "alpha": 4,
+        "beta": 5,
+        "updates": 3
       },
       "dinner_spot": {
-        "alpha": 4.333333333333333,
-        "beta": 6.666666666666668,
-        "updates": 5
+        "alpha": 9.333333333333332,
+        "beta": 12.66666666666667,
+        "updates": 16
       },
       "wine_bar": {
-        "alpha": 3.3333333333333335,
-        "beta": 4.666666666666666,
-        "updates": 2
+        "alpha": 5.555555555555555,
+        "beta": 8.444444444444443,
+        "updates": 8
       },
       "full_bar": {
-        "alpha": 3.3333333333333335,
-        "beta": 4.666666666666666,
-        "updates": 2
+        "alpha": 6.222222222222222,
+        "beta": 8.777777777777777,
+        "updates": 9
       },
       "cocktails": {
-        "alpha": 3.3333333333333335,
-        "beta": 4.666666666666666,
-        "updates": 2
+        "alpha": 5.111111111111111,
+        "beta": 7.888888888888888,
+        "updates": 7
       },
       "parking_available": {
-        "alpha": 4,
-        "beta": 6,
-        "updates": 4
-      },
-      "wheelchair_accessible": {
-        "alpha": 4,
-        "beta": 6,
-        "updates": 4
-      },
-      "locally_sourced": {
-        "alpha": 4,
-        "beta": 6,
-        "updates": 4
-      },
-      "seasonal_menu": {
-        "alpha": 4,
-        "beta": 6,
-        "updates": 4
-      },
-      "creative_menu": {
-        "alpha": 3.4444444444444446,
-        "beta": 4.555555555555555,
-        "updates": 2
-      },
-      "highly_rated": {
-        "alpha": 4,
-        "beta": 6,
-        "updates": 4
-      },
-      "popular": {
-        "alpha": 4,
-        "beta": 6,
-        "updates": 4
-      },
-      "upscale": {
-        "alpha": 3.3333333333333335,
-        "beta": 4.666666666666666,
-        "updates": 2
-      },
-      "casual_vibe": {
-        "alpha": 3.3333333333333335,
-        "beta": 4.666666666666666,
-        "updates": 2
-      },
-      "lively": {
-        "alpha": 3.2222222222222223,
-        "beta": 3.7777777777777777,
-        "updates": 1
-      },
-      "intimate": {
-        "alpha": 3.3333333333333335,
-        "beta": 4.666666666666666,
-        "updates": 2
-      },
-      "modern": {
-        "alpha": 3.2222222222222223,
-        "beta": 3.7777777777777777,
-        "updates": 1
-      },
-      "outdoor_seating": {
-        "alpha": 4,
-        "beta": 6,
-        "updates": 4
-      },
-      "patio": {
-        "alpha": 3.3333333333333335,
-        "beta": 4.666666666666666,
-        "updates": 2
-      },
-      "reservation_recommended": {
-        "alpha": 3.2222222222222223,
-        "beta": 3.7777777777777777,
-        "updates": 1
-      },
-      "walk_in_friendly": {
-        "alpha": 3.8888888888888893,
-        "beta": 5.111111111111112,
-        "updates": 3
-      },
-      "date_night": {
-        "alpha": 3.2222222222222223,
-        "beta": 3.7777777777777777,
-        "updates": 1
-      },
-      "group_friendly": {
-        "alpha": 3.8888888888888893,
-        "beta": 5.111111111111112,
-        "updates": 3
-      },
-      "special_occasion": {
-        "alpha": 3.2222222222222223,
-        "beta": 3.7777777777777777,
-        "updates": 1
-      },
-      "tourist_friendly": {
-        "alpha": 3.2222222222222223,
-        "beta": 3.7777777777777777,
-        "updates": 1
-      },
-      "expensive": {
-        "alpha": 3,
-        "beta": 3,
-        "updates": 0
-      },
-      "fine_dining": {
-        "alpha": 3,
-        "beta": 3,
-        "updates": 0
-      },
-      "brunch_spot": {
-        "alpha": 3.4444444444444446,
-        "beta": 4.555555555555555,
-        "updates": 2
-      },
-      "lebanese": {
-        "alpha": 3,
-        "beta": 3,
-        "updates": 0
-      },
-      "middle_eastern": {
-        "alpha": 3,
-        "beta": 3,
-        "updates": 0
-      },
-      "mediterranean": {
-        "alpha": 5,
-        "beta": 3,
-        "updates": 2
-      },
-      "takeout": {
-        "alpha": 3.666666666666667,
-        "beta": 4.333333333333334,
-        "updates": 2
-      },
-      "delivery": {
-        "alpha": 3.666666666666667,
-        "beta": 4.333333333333334,
-        "updates": 2
-      },
-      "authentic": {
-        "alpha": 3.666666666666667,
-        "beta": 5.333333333333333,
-        "updates": 3
-      },
-      "lunch_spot": {
-        "alpha": 4.111111111111112,
-        "beta": 5.888888888888889,
-        "updates": 4
-      },
-      "family_friendly": {
-        "alpha": 4.222222222222222,
-        "beta": 5.777777777777779,
-        "updates": 4
-      },
-      "casual": {
-        "alpha": 4.222222222222222,
-        "beta": 5.777777777777779,
-        "updates": 4
-      },
-      "cozy": {
-        "alpha": 3.2222222222222223,
-        "beta": 3.7777777777777777,
-        "updates": 1
-      },
-      "traditional": {
-        "alpha": 3.3333333333333335,
-        "beta": 4.666666666666666,
-        "updates": 2
-      },
-      "budget_friendly": {
-        "alpha": 7.222222222222221,
-        "beta": 10.777777777777779,
+        "alpha": 7.000000000000001,
+        "beta": 11.000000000000002,
         "updates": 12
       },
-      "pasta": {
-        "alpha": 3,
+      "wheelchair_accessible": {
+        "alpha": 7.222222222222223,
+        "beta": 11.777777777777779,
+        "updates": 13
+      },
+      "locally_sourced": {
+        "alpha": 8.11111111111111,
+        "beta": 10.888888888888891,
+        "updates": 13
+      },
+      "seasonal_menu": {
+        "alpha": 5.777777777777778,
+        "beta": 9.222222222222223,
+        "updates": 9
+      },
+      "creative_menu": {
+        "alpha": 4.111111111111112,
+        "beta": 6.888888888888889,
+        "updates": 5
+      },
+      "highly_rated": {
+        "alpha": 7.111111111111112,
+        "beta": 10.888888888888891,
+        "updates": 12
+      },
+      "popular": {
+        "alpha": 7.111111111111112,
+        "beta": 10.888888888888891,
+        "updates": 12
+      },
+      "upscale": {
+        "alpha": 5.111111111111111,
+        "beta": 7.888888888888888,
+        "updates": 7
+      },
+      "casual_vibe": {
+        "alpha": 5.222222222222222,
+        "beta": 7.777777777777777,
+        "updates": 7
+      },
+      "lively": {
+        "alpha": 5.111111111111112,
+        "beta": 6.888888888888888,
+        "updates": 6
+      },
+      "intimate": {
+        "alpha": 5,
+        "beta": 6.999999999999999,
+        "updates": 6
+      },
+      "modern": {
+        "alpha": 4.888888888888889,
+        "beta": 6.111111111111111,
+        "updates": 5
+      },
+      "outdoor_seating": {
+        "alpha": 5.888888888888889,
+        "beta": 9.111111111111112,
+        "updates": 9
+      },
+      "patio": {
+        "alpha": 4.666666666666667,
+        "beta": 6.333333333333332,
+        "updates": 5
+      },
+      "reservation_recommended": {
+        "alpha": 4.666666666666667,
+        "beta": 5.333333333333333,
+        "updates": 4
+      },
+      "walk_in_friendly": {
+        "alpha": 6.333333333333335,
+        "beta": 8.666666666666668,
+        "updates": 9
+      },
+      "date_night": {
+        "alpha": 5,
+        "beta": 6.999999999999999,
+        "updates": 6
+      },
+      "group_friendly": {
+        "alpha": 8.88888888888889,
+        "beta": 10.111111111111114,
+        "updates": 13
+      },
+      "special_occasion": {
+        "alpha": 4.888888888888889,
+        "beta": 6.111111111111111,
+        "updates": 5
+      },
+      "tourist_friendly": {
+        "alpha": 4.555555555555556,
+        "beta": 5.444444444444444,
+        "updates": 4
+      },
+      "expensive": {
+        "alpha": 3.666666666666667,
+        "beta": 4.333333333333333,
+        "updates": 2
+      },
+      "fine_dining": {
+        "alpha": 4,
+        "beta": 5,
+        "updates": 3
+      },
+      "brunch_spot": {
+        "alpha": 4.333333333333334,
+        "beta": 5.666666666666666,
+        "updates": 4
+      },
+      "lebanese": {
+        "alpha": 4,
         "beta": 3,
-        "updates": 0
+        "updates": 1
+      },
+      "middle_eastern": {
+        "alpha": 4,
+        "beta": 3,
+        "updates": 1
+      },
+      "mediterranean": {
+        "alpha": 7.888888888888888,
+        "beta": 5.111111111111111,
+        "updates": 7
+      },
+      "takeout": {
+        "alpha": 8.777777777777779,
+        "beta": 10.222222222222225,
+        "updates": 13
+      },
+      "delivery": {
+        "alpha": 7.666666666666668,
+        "beta": 9.333333333333336,
+        "updates": 11
+      },
+      "authentic": {
+        "alpha": 7.4444444444444455,
+        "beta": 8.555555555555555,
+        "updates": 10
+      },
+      "lunch_spot": {
+        "alpha": 7.333333333333334,
+        "beta": 10.66666666666667,
+        "updates": 12
+      },
+      "family_friendly": {
+        "alpha": 12.22222222222222,
+        "beta": 12.77777777777778,
+        "updates": 19
+      },
+      "casual": {
+        "alpha": 13.22222222222222,
+        "beta": 12.77777777777778,
+        "updates": 20
+      },
+      "cozy": {
+        "alpha": 5.666666666666667,
+        "beta": 6.333333333333332,
+        "updates": 6
+      },
+      "traditional": {
+        "alpha": 5.444444444444445,
+        "beta": 5.5555555555555545,
+        "updates": 5
+      },
+      "budget_friendly": {
+        "alpha": 20.44444444444444,
+        "beta": 21.555555555555564,
+        "updates": 36
+      },
+      "pasta": {
+        "alpha": 3.555555555555556,
+        "beta": 4.444444444444445,
+        "updates": 2
       },
       "dessert": {
-        "alpha": 3.111111111111111,
-        "beta": 3.888888888888889,
-        "updates": 1
+        "alpha": 3.2222222222222223,
+        "beta": 4.777777777777778,
+        "updates": 2
       },
       "romantic": {
-        "alpha": 3.111111111111111,
-        "beta": 3.888888888888889,
-        "updates": 1
+        "alpha": 3.777777777777778,
+        "beta": 6.222222222222222,
+        "updates": 4
       },
       "fusion": {
         "alpha": 3,
@@ -5212,89 +5212,89 @@
         "updates": 0
       },
       "solo_friendly": {
-        "alpha": 3.8888888888888893,
-        "beta": 5.111111111111112,
-        "updates": 3
+        "alpha": 6.1111111111111125,
+        "beta": 8.88888888888889,
+        "updates": 9
       },
       "business_meeting": {
-        "alpha": 3.2222222222222223,
-        "beta": 3.7777777777777777,
-        "updates": 1
+        "alpha": 4.555555555555556,
+        "beta": 5.444444444444444,
+        "updates": 4
       },
       "celebration": {
+        "alpha": 4.555555555555556,
+        "beta": 5.444444444444444,
+        "updates": 4
+      },
+      "trendy": {
         "alpha": 3.2222222222222223,
         "beta": 3.7777777777777777,
         "updates": 1
       },
-      "trendy": {
-        "alpha": 3,
-        "beta": 3,
-        "updates": 0
-      },
       "instagrammable": {
-        "alpha": 3.666666666666667,
-        "beta": 5.333333333333333,
-        "updates": 3
+        "alpha": 5.333333333333334,
+        "beta": 7.666666666666666,
+        "updates": 7
       },
       "unique_experience": {
-        "alpha": 3.666666666666667,
-        "beta": 5.333333333333333,
-        "updates": 3
+        "alpha": 5.333333333333334,
+        "beta": 7.666666666666666,
+        "updates": 7
       },
       "chinese": {
-        "alpha": 3,
-        "beta": 3,
-        "updates": 0
+        "alpha": 3.4444444444444446,
+        "beta": 3.5555555555555554,
+        "updates": 1
       },
       "japanese": {
-        "alpha": 3,
+        "alpha": 4,
         "beta": 3,
-        "updates": 0
+        "updates": 1
       },
       "vegetarian": {
-        "alpha": 3.3333333333333335,
+        "alpha": 5.333333333333334,
         "beta": 4.666666666666667,
-        "updates": 2
+        "updates": 4
       },
       "vietnamese": {
-        "alpha": 3.3333333333333335,
-        "beta": 3.666666666666667,
-        "updates": 1
+        "alpha": 5.555555555555556,
+        "beta": 4.444444444444445,
+        "updates": 4
       },
       "pho": {
-        "alpha": 3.3333333333333335,
-        "beta": 3.666666666666667,
-        "updates": 1
+        "alpha": 5.555555555555556,
+        "beta": 4.444444444444445,
+        "updates": 4
       },
       "noodles": {
-        "alpha": 3,
+        "alpha": 4,
         "beta": 3,
-        "updates": 0
+        "updates": 1
       },
       "soup": {
-        "alpha": 3,
+        "alpha": 4,
         "beta": 3,
-        "updates": 0
+        "updates": 1
       },
       "quick_bite": {
-        "alpha": 3.555555555555556,
-        "beta": 4.444444444444445,
-        "updates": 2
+        "alpha": 8.222222222222223,
+        "beta": 8.777777777777777,
+        "updates": 11
       },
       "fried_chicken": {
-        "alpha": 3,
-        "beta": 3,
-        "updates": 0
+        "alpha": 3.2222222222222223,
+        "beta": 3.7777777777777777,
+        "updates": 1
       },
       "counter_service": {
-        "alpha": 3,
-        "beta": 3,
-        "updates": 0
+        "alpha": 3.2222222222222223,
+        "beta": 3.7777777777777777,
+        "updates": 1
       },
       "thai": {
         "alpha": 3,
-        "beta": 4,
-        "updates": 1
+        "beta": 6,
+        "updates": 3
       },
       "sushi": {
         "alpha": 3,
@@ -5302,19 +5302,19 @@
         "updates": 0
       },
       "late_night_food": {
-        "alpha": 3.3333333333333335,
-        "beta": 3.666666666666667,
-        "updates": 1
+        "alpha": 4.555555555555556,
+        "beta": 4.444444444444445,
+        "updates": 3
       },
       "comfort_food": {
-        "alpha": 3,
-        "beta": 3,
-        "updates": 0
+        "alpha": 4.888888888888889,
+        "beta": 3.111111111111111,
+        "updates": 2
       },
       "neighborhood_spot": {
-        "alpha": 4.222222222222222,
-        "beta": 5.777777777777779,
-        "updates": 4
+        "alpha": 8.555555555555555,
+        "beta": 9.444444444444446,
+        "updates": 12
       },
       "american": {
         "alpha": 3,
@@ -5322,24 +5322,24 @@
         "updates": 0
       },
       "breakfast": {
-        "alpha": 3.111111111111111,
-        "beta": 3.888888888888889,
-        "updates": 1
+        "alpha": 4,
+        "beta": 5,
+        "updates": 3
       },
       "greek": {
-        "alpha": 5,
-        "beta": 3,
-        "updates": 2
+        "alpha": 5.777777777777778,
+        "beta": 4.222222222222222,
+        "updates": 4
       },
       "breakfast_spot": {
-        "alpha": 3.4444444444444446,
-        "beta": 4.555555555555555,
-        "updates": 2
+        "alpha": 4.111111111111112,
+        "beta": 5.888888888888888,
+        "updates": 4
       },
       "late_night": {
-        "alpha": 3,
-        "beta": 3,
-        "updates": 0
+        "alpha": 4.222222222222222,
+        "beta": 3.7777777777777777,
+        "updates": 2
       },
       "halal": {
         "alpha": 3,
@@ -5352,54 +5352,54 @@
         "updates": 0
       },
       "beer": {
+        "alpha": 4.555555555555556,
+        "beta": 5.444444444444444,
+        "updates": 4
+      },
+      "korean": {
         "alpha": 3.2222222222222223,
         "beta": 3.7777777777777777,
         "updates": 1
       },
-      "korean": {
-        "alpha": 3,
-        "beta": 3,
-        "updates": 0
-      },
       "korean_bbq": {
-        "alpha": 3,
-        "beta": 3,
-        "updates": 0
+        "alpha": 3.2222222222222223,
+        "beta": 3.7777777777777777,
+        "updates": 1
       },
       "generous_portions": {
-        "alpha": 3.777777777777778,
-        "beta": 5.222222222222222,
-        "updates": 3
-      },
-      "farm_to_table": {
         "alpha": 4,
         "beta": 6,
         "updates": 4
       },
+      "farm_to_table": {
+        "alpha": 5.666666666666667,
+        "beta": 8.333333333333334,
+        "updates": 8
+      },
       "quiet": {
-        "alpha": 3.3333333333333335,
-        "beta": 4.666666666666666,
-        "updates": 2
+        "alpha": 4.666666666666667,
+        "beta": 6.333333333333332,
+        "updates": 5
       },
       "rustic": {
-        "alpha": 3.2222222222222223,
-        "beta": 3.7777777777777777,
-        "updates": 1
+        "alpha": 4.333333333333334,
+        "beta": 4.666666666666666,
+        "updates": 3
       },
       "pet_friendly": {
-        "alpha": 3.2222222222222223,
-        "beta": 3.7777777777777777,
-        "updates": 1
+        "alpha": 4.555555555555556,
+        "beta": 5.444444444444444,
+        "updates": 4
       },
       "chef_driven": {
-        "alpha": 3.2222222222222223,
-        "beta": 3.7777777777777777,
-        "updates": 1
+        "alpha": 4.333333333333334,
+        "beta": 4.666666666666666,
+        "updates": 3
       },
       "fresh": {
-        "alpha": 3.555555555555556,
-        "beta": 4.444444444444445,
-        "updates": 2
+        "alpha": 5,
+        "beta": 6,
+        "updates": 5
       },
       "vegan": {
         "alpha": 3,
@@ -5412,9 +5412,9 @@
         "updates": 0
       },
       "french": {
-        "alpha": 3.111111111111111,
-        "beta": 3.888888888888889,
-        "updates": 1
+        "alpha": 3.4444444444444446,
+        "beta": 4.555555555555555,
+        "updates": 2
       },
       "malaysian": {
         "alpha": 3.3333333333333335,
@@ -5422,24 +5422,24 @@
         "updates": 1
       },
       "classic_menu": {
-        "alpha": 3.4444444444444446,
-        "beta": 4.555555555555555,
-        "updates": 2
+        "alpha": 3.8888888888888893,
+        "beta": 5.111111111111111,
+        "updates": 3
       },
       "spicy": {
-        "alpha": 3.3333333333333335,
-        "beta": 3.666666666666667,
-        "updates": 1
+        "alpha": 3.666666666666667,
+        "beta": 4.333333333333334,
+        "updates": 2
       },
       "savory": {
-        "alpha": 3.3333333333333335,
-        "beta": 3.666666666666667,
-        "updates": 1
+        "alpha": 3.666666666666667,
+        "beta": 4.333333333333334,
+        "updates": 2
       },
       "rich": {
-        "alpha": 3.3333333333333335,
-        "beta": 3.666666666666667,
-        "updates": 1
+        "alpha": 3.666666666666667,
+        "beta": 4.333333333333334,
+        "updates": 2
       },
       "smoky": {
         "alpha": 3.3333333333333335,
@@ -5467,9 +5467,9 @@
         "updates": 1
       },
       "indian": {
-        "alpha": 3,
-        "beta": 3,
-        "updates": 0
+        "alpha": 4,
+        "beta": 4,
+        "updates": 2
       },
       "burgers": {
         "alpha": 3,
@@ -5477,52 +5477,57 @@
         "updates": 0
       },
       "price_budget": {
-        "alpha": 4.477777777777776,
-        "beta": 5.722222222222221,
-        "updates": 12
+        "alpha": 9.105555555555549,
+        "beta": 9.494444444444444,
+        "updates": 36
       },
       "cuisine_european": {
-        "alpha": 3.738888888888889,
-        "beta": 3.311111111111111,
-        "updates": 3
+        "alpha": 4.71111111111111,
+        "beta": 5.488888888888889,
+        "updates": 12
       },
       "cuisine_asian": {
-        "alpha": 3.35,
-        "beta": 4.05,
-        "updates": 4
+        "alpha": 5.916666666666664,
+        "beta": 6.383333333333332,
+        "updates": 18
       },
       "diet_flexible": {
-        "alpha": 3.1166666666666667,
+        "alpha": 3.816666666666667,
         "beta": 3.5833333333333335,
-        "updates": 2
-      },
-      "vibe_chill": {
-        "alpha": 4.166666666666667,
-        "beta": 6.383333333333333,
-        "updates": 13
-      },
-      "vibe_social": {
-        "alpha": 3.8166666666666673,
-        "beta": 4.983333333333333,
-        "updates": 8
-      },
-      "price_upscale": {
-        "alpha": 3.35,
-        "beta": 4.05,
         "updates": 4
       },
+      "vibe_chill": {
+        "alpha": 10.81666666666666,
+        "beta": 12.683333333333339,
+        "updates": 50
+      },
+      "vibe_social": {
+        "alpha": 9.105555555555553,
+        "beta": 10.544444444444446,
+        "updates": 39
+      },
+      "price_upscale": {
+        "alpha": 7.355555555555553,
+        "beta": 8.444444444444443,
+        "updates": 28
+      },
       "occasion_special": {
-        "alpha": 3.505555555555556,
-        "beta": 5.294444444444443,
-        "updates": 8
+        "alpha": 6.616666666666664,
+        "beta": 10.583333333333332,
+        "updates": 32
       },
       "setting_outdoor": {
-        "alpha": 3.466666666666667,
-        "beta": 4.633333333333333,
-        "updates": 6
+        "alpha": 4.594444444444444,
+        "beta": 6.3055555555555545,
+        "updates": 14
+      },
+      "cuisine_middle_east_africa": {
+        "alpha": 3.7,
+        "beta": 3,
+        "updates": 2
       }
     },
-    "totalRatings": 12,
+    "totalRatings": 38,
     "ratings": [
       {
         "restaurantId": "fable-kitchen-vancouver-kitsilano",
@@ -5784,6 +5789,610 @@
           "pho"
         ],
         "timestamp": "2026-05-08T08:10:49.343Z"
+      },
+      {
+        "restaurantId": "kim-son-vietnamese-food-vancouver-fairview-south-granville",
+        "rating": 10,
+        "reward": 1,
+        "tags": [
+          "vietnamese",
+          "moderate_price",
+          "table_service",
+          "takeout",
+          "family_friendly",
+          "casual",
+          "quick_bite",
+          "budget_friendly",
+          "pho"
+        ],
+        "timestamp": "2026-05-08T08:12:45.185Z"
+      },
+      {
+        "restaurantId": "ivy-s-kitchen-vietnamese-restaurant-vancouver-mount-pleasant-riley-park",
+        "rating": 3,
+        "reward": 0.2222222222222222,
+        "tags": [
+          "vietnamese",
+          "breakfast_spot",
+          "lunch_spot",
+          "dinner_spot",
+          "family_friendly",
+          "casual",
+          "moderate_price",
+          "takeout",
+          "delivery",
+          "wheelchair_accessible",
+          "budget_friendly",
+          "pho"
+        ],
+        "timestamp": "2026-05-08T08:12:50.315Z"
+      },
+      {
+        "restaurantId": "sawasdee-thai-restaurant-vancouver-mount-pleasant-riley-park",
+        "rating": 1,
+        "reward": 0,
+        "tags": [
+          "thai",
+          "moderate_price",
+          "table_service",
+          "takeout",
+          "delivery",
+          "lunch_spot",
+          "dinner_spot",
+          "budget_friendly"
+        ],
+        "timestamp": "2026-05-08T08:12:55.895Z"
+      },
+      {
+        "restaurantId": "baan-wasana-thai-restaurant-vancouver-kerrisdale-oakridge",
+        "rating": 1,
+        "reward": 0,
+        "tags": [
+          "thai",
+          "lunch_spot",
+          "dinner_spot",
+          "budget_friendly"
+        ],
+        "timestamp": "2026-05-08T08:12:59.796Z"
+      },
+      {
+        "restaurantId": "the-acorn-restaurant-vancouver-mount-pleasant-riley-park",
+        "rating": 10,
+        "reward": 1,
+        "tags": [
+          "vegetarian",
+          "budget_friendly"
+        ],
+        "timestamp": "2026-05-08T08:13:02.154Z"
+      },
+      {
+        "restaurantId": "iden-quanjude-beijing-duck-house-vancouver-south-cambie-fairview",
+        "rating": 5,
+        "reward": 0.4444444444444444,
+        "tags": [
+          "chinese",
+          "expensive",
+          "fine_dining"
+        ],
+        "timestamp": "2026-05-08T08:15:17.633Z"
+      },
+      {
+        "restaurantId": "east-is-east-vancouver-fairview-south-granville",
+        "rating": 10,
+        "reward": 1,
+        "tags": [
+          "mediterranean",
+          "budget_friendly",
+          "vegetarian"
+        ],
+        "timestamp": "2026-05-08T08:22:49.984Z"
+      },
+      {
+        "restaurantId": "le-coq-frit-vancouver-vancouver-fairview-south-granville",
+        "rating": 3,
+        "reward": 0.2222222222222222,
+        "tags": [
+          "fried_chicken",
+          "casual",
+          "quick_bite",
+          "moderate_price",
+          "takeout",
+          "delivery",
+          "counter_service",
+          "walk_in_friendly",
+          "family_friendly",
+          "group_friendly",
+          "solo_friendly",
+          "lively",
+          "casual_vibe",
+          "parking_available",
+          "wheelchair_accessible",
+          "budget_friendly"
+        ],
+        "timestamp": "2026-05-08T08:23:19.610Z"
+      },
+      {
+        "restaurantId": "farmer-s-apprentice-restaurant-vancouver",
+        "rating": 5,
+        "reward": 0.4444444444444444,
+        "tags": [
+          "farm_to_table",
+          "locally_sourced",
+          "seasonal_menu",
+          "moderate_price",
+          "table_service",
+          "reservation_recommended",
+          "walk_in_friendly",
+          "date_night",
+          "family_friendly",
+          "group_friendly",
+          "solo_friendly",
+          "business_meeting",
+          "celebration",
+          "casual",
+          "quick_bite",
+          "special_occasion",
+          "tourist_friendly",
+          "cozy",
+          "upscale",
+          "casual_vibe",
+          "lively",
+          "quiet",
+          "intimate",
+          "modern",
+          "traditional",
+          "rustic",
+          "neighborhood_spot",
+          "outdoor_seating",
+          "patio",
+          "full_bar",
+          "cocktails",
+          "wine_bar",
+          "beer",
+          "parking_available",
+          "wheelchair_accessible",
+          "pet_friendly",
+          "authentic",
+          "chef_driven",
+          "highly_rated",
+          "popular",
+          "instagrammable",
+          "unique_experience",
+          "fresh",
+          "budget_friendly"
+        ],
+        "timestamp": "2026-05-08T08:23:22.144Z"
+      },
+      {
+        "restaurantId": "mazahr-lebanese-kitchen-vancouver-fairview-south-granville",
+        "rating": 10,
+        "reward": 1,
+        "tags": [
+          "lebanese",
+          "middle_eastern",
+          "mediterranean",
+          "moderate_price",
+          "table_service",
+          "takeout",
+          "delivery",
+          "authentic",
+          "locally_sourced",
+          "lunch_spot",
+          "dinner_spot",
+          "family_friendly",
+          "group_friendly",
+          "casual",
+          "cozy",
+          "traditional",
+          "budget_friendly"
+        ],
+        "timestamp": "2026-05-08T08:23:25.215Z"
+      },
+      {
+        "restaurantId": "osaka-teppanyaki-vancouver-fairview-south-granville",
+        "rating": 10,
+        "reward": 1,
+        "tags": [
+          "japanese",
+          "table_service",
+          "moderate_price",
+          "dinner_spot",
+          "late_night_food",
+          "budget_friendly"
+        ],
+        "timestamp": "2026-05-08T08:23:27.590Z"
+      },
+      {
+        "restaurantId": "paul-s-omelettery-restaurant-vancouver-fairview-south-granville",
+        "rating": 5,
+        "reward": 0.4444444444444444,
+        "tags": [
+          "breakfast",
+          "breakfast_spot",
+          "brunch",
+          "brunch_spot",
+          "casual",
+          "quick_bite",
+          "family_friendly",
+          "solo_friendly",
+          "walk_in_friendly",
+          "moderate_price",
+          "parking_available",
+          "wheelchair_accessible",
+          "budget_friendly"
+        ],
+        "timestamp": "2026-05-08T08:23:29.906Z"
+      },
+      {
+        "restaurantId": "napoletana-pizza-restaurant-vancouver-mount-pleasant-riley-park",
+        "rating": 5,
+        "reward": 0.4444444444444444,
+        "tags": [
+          "italian",
+          "pizza",
+          "moderate_price",
+          "table_service",
+          "takeout",
+          "delivery",
+          "family_friendly",
+          "group_friendly",
+          "casual",
+          "quick_bite",
+          "neighborhood_spot",
+          "outdoor_seating",
+          "full_bar",
+          "parking_available",
+          "wheelchair_accessible",
+          "authentic",
+          "locally_sourced",
+          "classic_menu",
+          "highly_rated",
+          "popular",
+          "dinner_spot",
+          "budget_friendly",
+          "pasta"
+        ],
+        "timestamp": "2026-05-08T08:23:32.053Z"
+      },
+      {
+        "restaurantId": "fiore-famiglia-vancouver-west-side",
+        "rating": 2,
+        "reward": 0.1111111111111111,
+        "tags": [
+          "italian",
+          "mediterranean",
+          "pizza",
+          "pasta",
+          "wine_bar",
+          "cocktails",
+          "dessert",
+          "lunch_spot",
+          "dinner_spot",
+          "takeout",
+          "moderate_price",
+          "table_service",
+          "family_friendly",
+          "group_friendly",
+          "date_night",
+          "casual",
+          "cozy",
+          "romantic",
+          "upscale",
+          "outdoor_seating",
+          "full_bar",
+          "locally_sourced",
+          "seasonal_menu",
+          "creative_menu",
+          "highly_rated",
+          "popular",
+          "budget_friendly"
+        ],
+        "timestamp": "2026-05-08T08:23:42.106Z"
+      },
+      {
+        "restaurantId": "minerva-s-restaurant-vancouver-kerrisdale-oakridge",
+        "rating": 4,
+        "reward": 0.3333333333333333,
+        "tags": [
+          "greek",
+          "mediterranean",
+          "budget_friendly"
+        ],
+        "timestamp": "2026-05-08T08:23:45.201Z"
+      },
+      {
+        "restaurantId": "johnny-s-on-oak-vancouver-south-cambie-fairview",
+        "rating": 5,
+        "reward": 0.4444444444444444,
+        "tags": [
+          "greek",
+          "mediterranean",
+          "budget_friendly"
+        ],
+        "timestamp": "2026-05-08T08:23:46.502Z"
+      },
+      {
+        "restaurantId": "the-wolf-and-hound-vancouver-fairview-south-granville",
+        "rating": 10,
+        "reward": 1,
+        "tags": [
+          "comfort_food",
+          "moderate_price",
+          "table_service",
+          "late_night",
+          "casual",
+          "neighborhood_spot",
+          "budget_friendly"
+        ],
+        "timestamp": "2026-05-08T08:23:47.971Z"
+      },
+      {
+        "restaurantId": "salmon-n-bannock-vancouver-fairview-south-granville",
+        "rating": 9,
+        "reward": 0.8888888888888888,
+        "tags": [
+          "comfort_food",
+          "casual",
+          "family_friendly",
+          "neighborhood_spot",
+          "budget_friendly"
+        ],
+        "timestamp": "2026-05-08T08:23:49.227Z"
+      },
+      {
+        "restaurantId": "lila-restaurant-vancouver-mount-pleasant-riley-park",
+        "rating": 4,
+        "reward": 0.3333333333333333,
+        "tags": [
+          "indian",
+          "modern",
+          "table_service",
+          "moderate_price",
+          "casual_vibe",
+          "lively",
+          "intimate",
+          "authentic",
+          "locally_sourced",
+          "farm_to_table",
+          "seasonal_menu",
+          "creative_menu",
+          "highly_rated",
+          "popular",
+          "instagrammable",
+          "unique_experience",
+          "spicy",
+          "savory",
+          "rich",
+          "fresh",
+          "dinner_spot",
+          "budget_friendly"
+        ],
+        "timestamp": "2026-05-08T08:23:50.563Z"
+      },
+      {
+        "restaurantId": "locus-restaurant-lounge-vancouver-mount-pleasant-riley-park",
+        "rating": 3,
+        "reward": 0.2222222222222222,
+        "tags": [
+          "moderate_price",
+          "table_service",
+          "takeout",
+          "delivery",
+          "walk_in_friendly",
+          "late_night",
+          "date_night",
+          "family_friendly",
+          "group_friendly",
+          "solo_friendly",
+          "business_meeting",
+          "celebration",
+          "casual",
+          "quick_bite",
+          "special_occasion",
+          "tourist_friendly",
+          "cozy",
+          "trendy",
+          "romantic",
+          "upscale",
+          "casual_vibe",
+          "lively",
+          "quiet",
+          "intimate",
+          "modern",
+          "neighborhood_spot",
+          "outdoor_seating",
+          "patio",
+          "full_bar",
+          "cocktails",
+          "wine_bar",
+          "beer",
+          "parking_available",
+          "wheelchair_accessible",
+          "pet_friendly",
+          "locally_sourced",
+          "farm_to_table",
+          "seasonal_menu",
+          "creative_menu",
+          "highly_rated",
+          "popular",
+          "instagrammable",
+          "unique_experience",
+          "expensive",
+          "fine_dining"
+        ],
+        "timestamp": "2026-05-08T08:23:51.751Z"
+      },
+      {
+        "restaurantId": "the-stable-house-bistro-vancouver-fairview-south-granville",
+        "rating": 5,
+        "reward": 0.4444444444444444,
+        "tags": [
+          "brunch",
+          "breakfast",
+          "casual",
+          "moderate_price",
+          "table_service",
+          "walk_in_friendly",
+          "family_friendly",
+          "neighborhood_spot",
+          "budget_friendly",
+          "brunch_spot",
+          "wine_bar"
+        ],
+        "timestamp": "2026-05-08T08:23:53.129Z"
+      },
+      {
+        "restaurantId": "farmer-s-apprentice-restaurant-vancouver",
+        "rating": 7,
+        "reward": 0.6666666666666666,
+        "tags": [
+          "farm_to_table",
+          "locally_sourced",
+          "seasonal_menu",
+          "moderate_price",
+          "table_service",
+          "reservation_recommended",
+          "walk_in_friendly",
+          "date_night",
+          "family_friendly",
+          "group_friendly",
+          "solo_friendly",
+          "business_meeting",
+          "celebration",
+          "casual",
+          "quick_bite",
+          "special_occasion",
+          "tourist_friendly",
+          "cozy",
+          "upscale",
+          "casual_vibe",
+          "lively",
+          "quiet",
+          "intimate",
+          "modern",
+          "traditional",
+          "rustic",
+          "neighborhood_spot",
+          "outdoor_seating",
+          "patio",
+          "full_bar",
+          "cocktails",
+          "wine_bar",
+          "beer",
+          "parking_available",
+          "wheelchair_accessible",
+          "pet_friendly",
+          "authentic",
+          "chef_driven",
+          "highly_rated",
+          "popular",
+          "instagrammable",
+          "unique_experience",
+          "fresh",
+          "budget_friendly"
+        ],
+        "timestamp": "2026-05-08T08:23:56.892Z"
+      },
+      {
+        "restaurantId": "old-durbar-nepalese-indian-restaurant-vancouver",
+        "rating": 7,
+        "reward": 0.6666666666666666,
+        "tags": [
+          "indian",
+          "table_service",
+          "takeout",
+          "delivery",
+          "moderate_price",
+          "family_friendly",
+          "group_friendly",
+          "casual",
+          "authentic",
+          "locally_sourced",
+          "highly_rated",
+          "popular",
+          "lunch_spot",
+          "dinner_spot",
+          "budget_friendly",
+          "full_bar"
+        ],
+        "timestamp": "2026-05-08T08:24:01.627Z"
+      },
+      {
+        "restaurantId": "midam-korean-restaurant-vancouver-vancouver-fairview-south-granville",
+        "rating": 3,
+        "reward": 0.2222222222222222,
+        "tags": [
+          "korean",
+          "korean_bbq",
+          "table_service",
+          "takeout",
+          "delivery",
+          "moderate_price",
+          "family_friendly",
+          "group_friendly",
+          "solo_friendly",
+          "casual",
+          "quick_bite",
+          "neighborhood_spot",
+          "parking_available",
+          "wheelchair_accessible",
+          "authentic",
+          "locally_sourced",
+          "generous_portions",
+          "highly_rated",
+          "popular",
+          "lunch_spot",
+          "dinner_spot",
+          "late_night_food",
+          "budget_friendly"
+        ],
+        "timestamp": "2026-05-08T08:24:03.381Z"
+      },
+      {
+        "restaurantId": "gary-s-vancouver-fairview-south-granville",
+        "rating": 4,
+        "reward": 0.3333333333333333,
+        "tags": [
+          "french",
+          "fine_dining",
+          "table_service",
+          "moderate_price",
+          "reservation_recommended",
+          "date_night",
+          "special_occasion",
+          "upscale",
+          "romantic",
+          "full_bar",
+          "wine_bar",
+          "cocktails",
+          "parking_available",
+          "wheelchair_accessible",
+          "budget_friendly"
+        ],
+        "timestamp": "2026-05-08T08:24:06.408Z"
+      },
+      {
+        "restaurantId": "pho-viet-lotus-restaurant-vancouver-fairview-south-granville",
+        "rating": 10,
+        "reward": 1,
+        "tags": [
+          "vietnamese",
+          "pho",
+          "noodles",
+          "soup",
+          "moderate_price",
+          "table_service",
+          "takeout",
+          "delivery",
+          "lunch_spot",
+          "dinner_spot",
+          "family_friendly",
+          "group_friendly",
+          "casual",
+          "quick_bite",
+          "budget_friendly"
+        ],
+        "timestamp": "2026-05-08T08:24:26.071Z"
       }
     ],
     "servedRestaurantIds": [
@@ -5816,7 +6425,144 @@
       "lila-restaurant-vancouver-mount-pleasant-riley-park",
       "old-durbar-nepalese-indian-restaurant-vancouver",
       "cactus-club-cafe-vancouver-fairview-south-granville",
-      "gary-s-vancouver-fairview-south-granville"
+      "gary-s-vancouver-fairview-south-granville",
+      "saba-foods-middle-eastern-yemeni-restaurant-vancouver-fairview-south-granville",
+      "the-eatery-vancouver-fairview-south-granville",
+      "locus-restaurant-lounge-vancouver-mount-pleasant-riley-park",
+      "chickpea-restaurant-vancouver-mount-pleasant-riley-park",
+      "joon-s-kitchen-vancouver-south-cambie-fairview",
+      "kangsan-vancouver-mount-pleasant-riley-park",
+      "hyde-on-main-vancouver-mount-pleasant-riley-park",
+      "the-wolf-and-hound-vancouver-fairview-south-granville",
+      "paul-s-omelettery-restaurant-vancouver-fairview-south-granville",
+      "the-stable-house-bistro-vancouver-fairview-south-granville",
+      "kim-son-vietnamese-food-vancouver-fairview-south-granville",
+      "ivy-s-kitchen-vietnamese-restaurant-vancouver-mount-pleasant-riley-park",
+      "sawasdee-thai-restaurant-vancouver-mount-pleasant-riley-park",
+      "baan-wasana-thai-restaurant-vancouver-kerrisdale-oakridge",
+      "the-acorn-restaurant-vancouver-mount-pleasant-riley-park",
+      "heritage-restaurant-bar-vancouver-mount-pleasant-riley-park",
+      "shaughnessy-restaurant-vancouver-south-cambie-fairview",
+      "iden-quanjude-beijing-duck-house-vancouver-south-cambie-fairview",
+      "don-at-kitsilano-vancouver-kitsilano",
+      "east-is-east-vancouver-fairview-south-granville",
+      "osteria-elio-volpe-vancouver-south-cambie-fairview",
+      "ocean-goose-japanese-restaurant-vancouver-kitsilano",
+      "saba-foods-middle-eastern-yemeni-restaurant-vancouver-fairview-south-granville",
+      "the-eatery-vancouver-fairview-south-granville",
+      "chickpea-restaurant-vancouver-mount-pleasant-riley-park",
+      "joon-s-kitchen-vancouver-south-cambie-fairview",
+      "kangsan-vancouver-mount-pleasant-riley-park",
+      "iden-quanjude-beijing-duck-house-vancouver-south-cambie-fairview",
+      "east-is-east-vancouver-fairview-south-granville",
+      "ocean-goose-japanese-restaurant-vancouver-kitsilano",
+      "don-at-kitsilano-vancouver-kitsilano",
+      "saba-foods-middle-eastern-yemeni-restaurant-vancouver-fairview-south-granville",
+      "the-eatery-vancouver-fairview-south-granville",
+      "chickpea-restaurant-vancouver-mount-pleasant-riley-park",
+      "joon-s-kitchen-vancouver-south-cambie-fairview",
+      "kangsan-vancouver-mount-pleasant-riley-park",
+      "osteria-elio-volpe-vancouver-south-cambie-fairview",
+      "minerva-s-restaurant-vancouver-kerrisdale-oakridge",
+      "johnny-s-on-oak-vancouver-south-cambie-fairview",
+      "farmer-s-apprentice-restaurant-vancouver",
+      "fiore-famiglia-vancouver-west-side",
+      "gary-s-vancouver-fairview-south-granville",
+      "hyde-on-main-vancouver-mount-pleasant-riley-park",
+      "the-wolf-and-hound-vancouver-fairview-south-granville",
+      "lila-restaurant-vancouver-mount-pleasant-riley-park",
+      "salmon-n-bannock-vancouver-fairview-south-granville",
+      "the-stable-house-bistro-vancouver-fairview-south-granville",
+      "le-coq-frit-vancouver-vancouver-fairview-south-granville",
+      "mazahr-lebanese-kitchen-vancouver-fairview-south-granville",
+      "paul-s-omelettery-restaurant-vancouver-fairview-south-granville",
+      "osaka-teppanyaki-vancouver-fairview-south-granville",
+      "napoletana-pizza-restaurant-vancouver-mount-pleasant-riley-park",
+      "midam-korean-restaurant-vancouver-vancouver-fairview-south-granville",
+      "old-durbar-nepalese-indian-restaurant-vancouver",
+      "caf-salade-de-fruits-vancouver",
+      "banana-leaf-original-broadway-oak-vancouver-fairview-south-granville",
+      "ash-street-bistro-vancouver-kerrisdale-oakridge",
+      "east-is-east-vancouver-fairview-south-granville",
+      "ocean-goose-japanese-restaurant-vancouver-kitsilano",
+      "saba-foods-middle-eastern-yemeni-restaurant-vancouver-fairview-south-granville",
+      "the-eatery-vancouver-fairview-south-granville",
+      "chickpea-restaurant-vancouver-mount-pleasant-riley-park",
+      "joon-s-kitchen-vancouver-south-cambie-fairview",
+      "kangsan-vancouver-mount-pleasant-riley-park",
+      "don-at-kitsilano-vancouver-kitsilano",
+      "osteria-elio-volpe-vancouver-south-cambie-fairview",
+      "iden-quanjude-beijing-duck-house-vancouver-south-cambie-fairview",
+      "fiore-famiglia-vancouver-west-side",
+      "hyde-on-main-vancouver-mount-pleasant-riley-park",
+      "minerva-s-restaurant-vancouver-kerrisdale-oakridge",
+      "johnny-s-on-oak-vancouver-south-cambie-fairview",
+      "the-wolf-and-hound-vancouver-fairview-south-granville",
+      "salmon-n-bannock-vancouver-fairview-south-granville",
+      "lila-restaurant-vancouver-mount-pleasant-riley-park",
+      "locus-restaurant-lounge-vancouver-mount-pleasant-riley-park",
+      "the-stable-house-bistro-vancouver-fairview-south-granville",
+      "le-coq-frit-vancouver-vancouver-fairview-south-granville",
+      "farmer-s-apprentice-restaurant-vancouver",
+      "mazahr-lebanese-kitchen-vancouver-fairview-south-granville",
+      "osaka-teppanyaki-vancouver-fairview-south-granville",
+      "paul-s-omelettery-restaurant-vancouver-fairview-south-granville",
+      "napoletana-pizza-restaurant-vancouver-mount-pleasant-riley-park",
+      "midam-korean-restaurant-vancouver-vancouver-fairview-south-granville",
+      "old-durbar-nepalese-indian-restaurant-vancouver",
+      "gary-s-vancouver-fairview-south-granville",
+      "caf-salade-de-fruits-vancouver",
+      "banana-leaf-original-broadway-oak-vancouver-fairview-south-granville",
+      "kim-son-vietnamese-food-vancouver-fairview-south-granville",
+      "pho-viet-lotus-restaurant-vancouver-fairview-south-granville",
+      "ivy-s-kitchen-vietnamese-restaurant-vancouver-mount-pleasant-riley-park",
+      "cambie-vietnamese-restaurant-vancouver-mount-pleasant-riley-park",
+      "ash-street-bistro-vancouver-kerrisdale-oakridge",
+      "the-naam-vancouver-kitsilano",
+      "the-acorn-restaurant-vancouver-mount-pleasant-riley-park",
+      "fable-kitchen-vancouver-kitsilano",
+      "shaughnessy-restaurant-vancouver-south-cambie-fairview",
+      "cactus-club-cafe-vancouver-fairview-south-granville",
+      "ocean-goose-japanese-restaurant-vancouver-kitsilano",
+      "saba-foods-middle-eastern-yemeni-restaurant-vancouver-fairview-south-granville",
+      "the-eatery-vancouver-fairview-south-granville",
+      "chickpea-restaurant-vancouver-mount-pleasant-riley-park",
+      "iden-quanjude-beijing-duck-house-vancouver-south-cambie-fairview",
+      "the-naam-vancouver-kitsilano",
+      "the-acorn-restaurant-vancouver-mount-pleasant-riley-park",
+      "hyde-on-main-vancouver-mount-pleasant-riley-park",
+      "banana-leaf-original-broadway-oak-vancouver-fairview-south-granville",
+      "don-at-kitsilano-vancouver-kitsilano",
+      "ocean-goose-japanese-restaurant-vancouver-kitsilano",
+      "saba-foods-middle-eastern-yemeni-restaurant-vancouver-fairview-south-granville",
+      "the-eatery-vancouver-fairview-south-granville",
+      "chickpea-restaurant-vancouver-mount-pleasant-riley-park",
+      "iden-quanjude-beijing-duck-house-vancouver-south-cambie-fairview",
+      "the-naam-vancouver-kitsilano",
+      "the-acorn-restaurant-vancouver-mount-pleasant-riley-park",
+      "hyde-on-main-vancouver-mount-pleasant-riley-park",
+      "banana-leaf-original-broadway-oak-vancouver-fairview-south-granville",
+      "don-at-kitsilano-vancouver-kitsilano",
+      "east-is-east-vancouver-fairview-south-granville",
+      "osteria-elio-volpe-vancouver-south-cambie-fairview",
+      "sawasdee-thai-restaurant-vancouver-mount-pleasant-riley-park",
+      "the-wolf-and-hound-vancouver-fairview-south-granville",
+      "ash-street-bistro-vancouver-kerrisdale-oakridge",
+      "salmon-n-bannock-vancouver-fairview-south-granville",
+      "minerva-s-restaurant-vancouver-kerrisdale-oakridge",
+      "johnny-s-on-oak-vancouver-south-cambie-fairview",
+      "joon-s-kitchen-vancouver-south-cambie-fairview",
+      "kangsan-vancouver-mount-pleasant-riley-park",
+      "ocean-goose-japanese-restaurant-vancouver-kitsilano",
+      "saba-foods-middle-eastern-yemeni-restaurant-vancouver-fairview-south-granville",
+      "the-eatery-vancouver-fairview-south-granville",
+      "chickpea-restaurant-vancouver-mount-pleasant-riley-park",
+      "iden-quanjude-beijing-duck-house-vancouver-south-cambie-fairview",
+      "the-naam-vancouver-kitsilano",
+      "the-acorn-restaurant-vancouver-mount-pleasant-riley-park",
+      "hyde-on-main-vancouver-mount-pleasant-riley-park",
+      "don-at-kitsilano-vancouver-kitsilano",
+      "banana-leaf-original-broadway-oak-vancouver-fairview-south-granville"
     ],
     "ratedRestaurantIds": [
       "fable-kitchen-vancouver-kitsilano",
@@ -5830,39 +6576,71 @@
       "farmer-s-apprentice-restaurant-vancouver",
       "caf-salade-de-fruits-vancouver",
       "banana-leaf-original-broadway-oak-vancouver-fairview-south-granville",
-      "cambie-vietnamese-restaurant-vancouver-mount-pleasant-riley-park"
+      "cambie-vietnamese-restaurant-vancouver-mount-pleasant-riley-park",
+      "kim-son-vietnamese-food-vancouver-fairview-south-granville",
+      "ivy-s-kitchen-vietnamese-restaurant-vancouver-mount-pleasant-riley-park",
+      "sawasdee-thai-restaurant-vancouver-mount-pleasant-riley-park",
+      "baan-wasana-thai-restaurant-vancouver-kerrisdale-oakridge",
+      "the-acorn-restaurant-vancouver-mount-pleasant-riley-park",
+      "iden-quanjude-beijing-duck-house-vancouver-south-cambie-fairview",
+      "east-is-east-vancouver-fairview-south-granville",
+      "le-coq-frit-vancouver-vancouver-fairview-south-granville",
+      "farmer-s-apprentice-restaurant-vancouver",
+      "mazahr-lebanese-kitchen-vancouver-fairview-south-granville",
+      "osaka-teppanyaki-vancouver-fairview-south-granville",
+      "paul-s-omelettery-restaurant-vancouver-fairview-south-granville",
+      "napoletana-pizza-restaurant-vancouver-mount-pleasant-riley-park",
+      "fiore-famiglia-vancouver-west-side",
+      "minerva-s-restaurant-vancouver-kerrisdale-oakridge",
+      "johnny-s-on-oak-vancouver-south-cambie-fairview",
+      "the-wolf-and-hound-vancouver-fairview-south-granville",
+      "salmon-n-bannock-vancouver-fairview-south-granville",
+      "lila-restaurant-vancouver-mount-pleasant-riley-park",
+      "locus-restaurant-lounge-vancouver-mount-pleasant-riley-park",
+      "the-stable-house-bistro-vancouver-fairview-south-granville",
+      "farmer-s-apprentice-restaurant-vancouver",
+      "old-durbar-nepalese-indian-restaurant-vancouver",
+      "midam-korean-restaurant-vancouver-vancouver-fairview-south-granville",
+      "gary-s-vancouver-fairview-south-granville",
+      "pho-viet-lotus-restaurant-vancouver-fairview-south-granville"
     ],
     "recentGenres": [
-      "Restaurant",
-      "Greek",
-      "Thai",
-      "Restaurant",
-      "Vegetarian",
-      "Vegetarian",
-      "Greek",
-      "Restaurant",
+      "Mediterranean",
+      "Chicken",
       "Pacific Northwest",
+      "Lebanese, Middle Eastern, Mediterranean",
+      "Teppanyaki",
+      "Breakfast",
+      "Italian",
+      "Italian, Mediterranean, European",
+      "Greek",
+      "Greek",
+      "Irish Pub",
+      "Canadian",
+      "Modern Indian",
+      "Restaurant",
+      "Bistro",
+      "Pacific Northwest",
+      "Indian / Nepalese",
+      "Korean",
       "French",
-      "Malaysian",
       "Vietnamese"
     ],
     "insights": {
-      "profile_summary": "User shows a strong interest in budget-friendly options but has mixed feelings about vegetarian and Thai cuisines. They have a preference for Greek and Mediterranean food, as indicated by high ratings for restaurants in those categories.",
+      "profile_summary": "The user has a strong preference for Mediterranean and Greek cuisine, particularly vegetarian options. They favor casual dining experiences and traditional meals, while showing a dislike for creative and seasonal menus. Budget-friendly options are important to them.",
       "hypotheses": [
-        "User enjoys Greek and Mediterranean cuisines, particularly when they are budget-friendly.",
-        "User is likely to explore more casual dining options that are also budget-friendly.",
-        "User may have had a negative experience with vegetarian and Thai restaurants, leading to lower ratings."
+        "The user enjoys Mediterranean and Greek dishes, especially vegetarian ones.",
+        "They prefer casual dining environments and traditional food experiences.",
+        "The user is likely to avoid restaurants with creative or seasonal menus."
       ],
       "exploration_tags": [
-        "greek",
-        "mediterranean",
-        "casual",
-        "family_friendly",
-        "dinner_spot"
+        "middle_eastern",
+        "comfort_food",
+        "casual_dining"
       ],
-      "confidence": "medium",
-      "generatedAt": "2026-05-08T08:10:47.854Z"
+      "confidence": "high",
+      "generatedAt": "2026-05-08T08:24:05.173Z"
     },
-    "lastInsightAt": "2026-05-08T08:10:47.855Z"
+    "lastInsightAt": "2026-05-08T08:24:05.173Z"
   }
 }

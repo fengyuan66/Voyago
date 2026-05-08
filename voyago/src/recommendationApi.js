@@ -45,16 +45,41 @@ export async function submitRating({ userId, restaurantId, rating }) {
 }
 
 export async function getLlmPicks({ userId, count = 5, excludeIds = [] }) {
-  const response = await fetch(`${API_ROOT}/recommendations/llm-picks`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      user_id: userId,
-      count,
-      exclude_ids: excludeIds,
-    }),
+  const body = JSON.stringify({
+    user_id: userId,
+    count,
+    exclude_ids: excludeIds,
   });
+  const paths = [`${API_ROOT}/recommendations/llm-picks`, `${API_ROOT}/llm-picks`];
+
+  let lastError = null;
+  for (const path of paths) {
+    try {
+      const response = await fetch(path, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body,
+      });
+      if (response.status === 404) {
+        lastError = new Error("Not found");
+        continue;
+      }
+      return await parseJson(response);
+    } catch (error) {
+      lastError = error;
+    }
+  }
+
+  throw new Error(
+    lastError?.message === "Not found"
+      ? "AI Picks endpoint not available yet. Restart the backend API (`npm run api`)."
+      : lastError?.message || "Failed to load AI picks.",
+  );
+}
+
+export async function fetchRestaurantById({ restaurantId }) {
+  const response = await fetch(`${API_ROOT}/restaurants/${encodeURIComponent(restaurantId)}`);
   return parseJson(response);
 }

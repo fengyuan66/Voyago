@@ -222,6 +222,23 @@ const server = http.createServer(async (request, response) => {
     return;
   }
 
+  if (request.method === "GET" && urlObject.pathname.startsWith("/api/restaurants/")) {
+    normalizeCatalogInPlace();
+    const encodedId = urlObject.pathname.slice("/api/restaurants/".length);
+    const restaurantId = decodeURIComponent(encodedId).trim();
+    if (!restaurantId) {
+      sendJson(response, 400, { error: "restaurant id is required" });
+      return;
+    }
+    const restaurant = (Array.isArray(catalog) ? catalog : []).find((candidate) => candidate.id === restaurantId);
+    if (!restaurant) {
+      sendJson(response, 404, { error: "restaurant not found" });
+      return;
+    }
+    sendJson(response, 200, { item: compactRestaurantForClient(restaurant) });
+    return;
+  }
+
   if (request.method === "POST" && urlObject.pathname === "/api/ratings") {
     try {
       const body = await parseBody(request);
@@ -265,7 +282,10 @@ const server = http.createServer(async (request, response) => {
     return;
   }
 
-  if (request.method === "POST" && urlObject.pathname === "/api/recommendations/llm-picks") {
+  if (
+    request.method === "POST" &&
+    (urlObject.pathname === "/api/recommendations/llm-picks" || urlObject.pathname === "/api/llm-picks")
+  ) {
     try {
       normalizeCatalogInPlace();
       const body = await parseBody(request);

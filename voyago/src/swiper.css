@@ -96,6 +96,7 @@
   border-radius: 6px;
   display: grid;
   grid-template-rows: auto minmax(0, 1fr);
+  z-index: 1;
 }
 
 .rating-grid {
@@ -172,6 +173,7 @@
   margin: 0;
   justify-self: stretch;
   align-self: stretch;
+  margin-left: -2vh;
 }
 
 .profile-panel h2 {

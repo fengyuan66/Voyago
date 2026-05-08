@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { fetchFeed, getLlmPicks, submitRating } from "./recommendationApi";
+import { fetchFeed, fetchRestaurantById, getLlmPicks, submitRating } from "./recommendationApi";
 import { getRoute } from "./routingapi";
 import { getHQFromStorage, isWithinRoutingCoverage } from "./settingsStore";
 import { decodePolyline6 } from "./polyline6";
@@ -391,12 +391,34 @@ function Swiper() {
     }
   }
 
-  function handlePickClick(restaurantId) {
+  async function handlePickClick(restaurantId) {
     const jumped = jumpToRestaurant(restaurantId);
-    if (!jumped) {
-      setAiPicksError("That pick is not in the current deck yet. Keep swiping to load more cards.");
-    } else {
+    if (jumped) {
       setAiPicksError("");
+      return;
+    }
+
+    try {
+      const payload = await fetchRestaurantById({ restaurantId });
+      const item = payload?.item;
+      if (!item?.id) {
+        setAiPicksError("Could not load this pick right now.");
+        return;
+      }
+
+      const baseIndex = currentIndexRef.current;
+      const insertIndex = Math.min(baseIndex + 1, cardsRef.current.length);
+      setCards((previous) => {
+        const next = [...previous];
+        next.splice(insertIndex, 0, item);
+        return next;
+      });
+      setDirection(1);
+      setCurrentIndex(insertIndex);
+      currentIndexRef.current = insertIndex;
+      setAiPicksError("");
+    } catch (requestError) {
+      setAiPicksError(requestError.message || "Could not load this pick right now.");
     }
   }
 
@@ -558,7 +580,7 @@ function Swiper() {
               <ul className="ai-picks-list">
                 {aiPicks.map((pick) => (
                   <li key={pick.id}>
-                    <button type="button" className="ai-pick-jump" onClick={() => handlePickClick(pick.id)}>
+                    <button type="button" className="ai-pick-jump" onClick={() => void handlePickClick(pick.id)}>
                       {pick.name}
                     </button>
                     <span className="ai-pick-reason"> - {pick.reason}</span>
