@@ -42,6 +42,7 @@ VALHALLA_CONFIG_PATH = BASE_PATH / "valhalla" / "valhalla.json"
 
 actor: Actor | None = None
 actor_error: str | None = None
+SNAP_RADIUS_METERS = 50
 
 try:
     actor = Actor(str(VALHALLA_CONFIG_PATH))
@@ -56,16 +57,25 @@ except Exception as e:
 def route(req: RouteRequest):
     if actor is None:
         raise HTTPException(status_code=503, detail="Valhalla not ready!")
-    
-    
 
     payload = {
-        "locations": [{"lat": p.lat, "lon": p.lon} for p in req.locations],
+        "locations": [
+            {"lat": p.lat, "lon": p.lon, "radius": SNAP_RADIUS_METERS}
+            for p in req.locations
+        ],
         "costing": req.costing
     }
 
     if req.date_time:
         payload["date_time"] = req.date_time
+
+    debug_context = {
+        "costing": req.costing,
+        "locations": payload["locations"],
+        "has_date_time": req.date_time is not None,
+        "snap_radius_meters": SNAP_RADIUS_METERS,
+    }
+    print(f"[route] request={debug_context}", flush=True)
 
     try:
         result = actor.route(payload)
@@ -76,10 +86,22 @@ def route(req: RouteRequest):
         if isinstance(result, str):
             result = json.loads(result)
 
+        trip = result.get("trip", {}) if isinstance(result, dict) else {}
+        summary = trip.get("summary", {}) if isinstance(trip, dict) else {}
+        print(
+            f"[route] success costing={req.costing} time={summary.get('time')} length={summary.get('length')}",
+            flush=True,
+        )
+
         return result
     
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Routing failed: {e}")
+        error_detail = {
+            "message": f"Routing failed: {e}",
+            "debug": debug_context,
+        }
+        print(f"[route] failure detail={error_detail}", flush=True)
+        raise HTTPException(status_code=500, detail=error_detail)
     
 #debug
 @app.get("/health")
@@ -87,6 +109,7 @@ def health():
     return {
         "actor_presence": actor is not None,
         "config_path": str(VALHALLA_CONFIG_PATH),
-        "actor_error": actor_error
+        "actor_error": actor_error,
+        "snap_radius_meters": SNAP_RADIUS_METERS,
     }
 
