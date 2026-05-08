@@ -165,7 +165,7 @@ function Swiper() {
             { lat: hq.lat, lon: hq.lon },
             { lat: destinationLat, lon: destinationLon },
           ],
-          costing: "multimodal",
+          costing: "auto",
         });
 
         if (cancelled) {

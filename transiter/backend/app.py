@@ -3,6 +3,7 @@ from pydantic import BaseModel, Field
 from fastapi.middleware.cors import CORSMiddleware
 from valhalla import Actor, get_config, get_help
 from pathlib import Path
+import json
 
 
 app = FastAPI()
@@ -32,7 +33,7 @@ class Location(BaseModel):
     lon:float
 class RouteRequest(BaseModel):
     locations: list[Location] = Field(min_length=2)
-    costing: str = "multimodal" #routing mode
+    costing: str = "auto" #routing mode
     date_time: dict | None = None
 
 
@@ -55,7 +56,7 @@ except Exception as e:
 @app.post("/route")
 def route(req: RouteRequest):
     if actor is None:
-        raise HTTPException(status_code = 201, detail = "Valhalla not ready!")
+        raise HTTPException(status_code = 503, detail = "Valhalla not ready!")
     
     
 
@@ -68,9 +69,17 @@ def route(req: RouteRequest):
         payload["date_time"] = req.date_time
 
     try:
-        return actor.route(payload)
+        result = actor.route(payload)
+
+        if isinstance(result, bytes):
+            result = result.decode("utf-8")
+
+        if isinstance(result, str):
+            result = json.loads(result)
+
+        return result
     except Exception as e:
-        raise HTTPException(status_code = 202, detail = "Routing failed with below message: {e}")
+        raise HTTPException(status_code = 500, detail = f"Routing failed: {e}")
     
 #debug
 @app.get("/health")
