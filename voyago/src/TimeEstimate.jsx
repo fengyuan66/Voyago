@@ -8,18 +8,25 @@ function TimeEstimate (){
     const [endLon, setEndLon] = useState("");
 
     const [result, setResult] = useState(null);
+    const [error, setError] = useState("");
 
     const handleClick = async() => {
-        const data = await getRoute({
-            locations: [
-                { lat: parseFloat(startLat), lon: parseFloat(startLon) },
-                { lat: parseFloat(endLat), lon: parseFloat(endLon) },
-            ],
-            costing: "multimodal" //CHANGE HERE FOR PRACTICAL COSTING MODE
+        setError("");
+        try {
+            const data = await getRoute({
+                locations: [
+                    { lat: parseFloat(startLat), lon: parseFloat(startLon) },
+                    { lat: parseFloat(endLat), lon: parseFloat(endLon) },
+                ],
+                costing: "multimodal" //CHANGE HERE FOR PRACTICAL COSTING MODE
 
-        });
+            });
 
-        setResult(data);
+            setResult(data);
+        } catch (err) {
+            setResult(null);
+            setError(err?.message || "Routing is disabled.");
+        }
     }
 
     return (
@@ -56,6 +63,7 @@ function TimeEstimate (){
         <pre>
         {result ? JSON.stringify(result, null, 2) : "No data yet"}
         </pre>
+        {error ? <p>{error}</p> : null}
 
         </div>
         
