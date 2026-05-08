@@ -7,10 +7,19 @@ import { decodePolyline6 } from "./polyline6";
 import RouteMiniMap from "./RouteMinimap";
 import "./swiper.css";
 
+
+
 const USER_ID = "demo-user";
 const ANIMATION_SCROLLLOCK_MS = 420;
 const PREFETCH_THRESHOLD = 3;
 const PREFETCH_BATCH_SIZE = 10;
+const GENERIC_FALLBACK_IMAGE_URL = "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80";
+const ROUTE_MODES = [
+  { value: "auto", label: "Driving" },
+  { value: "pedestrian", label: "Walking" },
+];
+
+
 
 const cardVariants = {
   enter: (direction) => ({
@@ -30,12 +39,15 @@ const cardVariants = {
   }),
 };
 
+
+
 function getImageFallback(restaurant) {
   if (restaurant.imageUrl) {
     return restaurant.imageUrl;
   }
-  return "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80";
+  return GENERIC_FALLBACK_IMAGE_URL;
 }
+
 
 function humanizeRouteError(message) {
   const raw = String(message ?? "");
@@ -49,6 +61,8 @@ function humanizeRouteError(message) {
   return raw || "Failed to load route.";
 }
 
+
+
 function Swiper() {
   const [cards, setCards] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -59,6 +73,7 @@ function Swiper() {
   const [profileSummary, setProfileSummary] = useState(null);
   const [insights, setInsights] = useState(null);
   const [hq, setHq] = useState(() => getHQFromStorage());
+  const [routeMode, setRouteMode] = useState("auto");
   const [routeInfo, setRouteInfo] = useState({
     isLoading: false,
     error: "",
@@ -186,7 +201,7 @@ function Swiper() {
             { lat: hq.lat, lon: hq.lon },
             { lat: destinationLat, lon: destinationLon },
           ],
-          costing: "auto",
+          costing: routeMode,
         });
 
         if (cancelled) {
@@ -237,7 +252,7 @@ function Swiper() {
     return () => {
       cancelled = true;
     };
-  }, [currentPlace, hq]);
+  }, [currentPlace, hq, routeMode]);
 
   async function maybePrefetch(nextIndex) {
     const remaining = cardsRef.current.length - nextIndex - 1;
@@ -333,7 +348,7 @@ function Swiper() {
 
   return (
     <section
-      className="swiper-page"
+      className={`swiper-page ${profileSummary ? "swiper-page-with-profile" : "swiper-page-no-profile"}`}
       onWheel={(event) => {
         if (Math.abs(event.deltaY) < 10) {
           return;
@@ -341,12 +356,12 @@ function Swiper() {
         void moveCard(event.deltaY > 0 ? 1 : -1);
       }}
     >
-      <div className="swiper-meta">
+      {/*<div className="swiper-meta">
         <span>
           Card {currentIndex + 1} / {Math.max(totalCards, 1)}
         </span>
         {error ? <span className="swiper-error">{error}</span> : null}
-      </div>
+      </div>*/}
 
       <AnimatePresence mode="wait" custom={direction}>
         <motion.article
@@ -359,7 +374,15 @@ function Swiper() {
           custom={direction}
           transition={{ duration: 0.35 }}
         >
-          <img src={getImageFallback(currentPlace)} alt={currentPlace.name} className="swiper-image" />
+          <img
+            src={getImageFallback(currentPlace)}
+            alt={currentPlace.name}
+            className="swiper-image"
+            onError={(event) => {
+              event.currentTarget.onerror = null;
+              event.currentTarget.src = GENERIC_FALLBACK_IMAGE_URL;
+            }}
+          />
           <div className="swiper-content">
             <h1>{currentPlace.name}</h1>
             <p>{currentPlace.description || "No description available."}</p>
@@ -383,10 +406,26 @@ function Swiper() {
                 <strong>HQ:</strong>{" "}
                 {hq ? hq.label || `${hq.lat.toFixed(5)}, ${hq.lon.toFixed(5)}` : "Not set"}
               </p>
+
+              <div className="route-mode-toggle" role="group" aria-label="Route mode">
+                {ROUTE_MODES.map((mode) => (
+                  <button
+                    key={mode.value}
+                    type="button"
+                    className={`route-mode-button ${routeMode === mode.value ? "route-mode-button-selected" : ""}`}
+                    onClick={() => setRouteMode(mode.value)}
+                    disabled={routeInfo.isLoading && routeMode === mode.value}
+                  >
+                    {mode.label}
+                  </button>
+                ))}
+              </div>
+              
               {routeInfo.isLoading ? <p>Loading route...</p> : null}
               {routeInfo.etaMinutes !== null ? (
                 <p>
-                  <strong>Estimated time:</strong> {routeInfo.etaMinutes} min
+                  <strong>Estimated time ({routeMode === "auto" ? "driving" : "walking"}):</strong>{" "}
+                  {routeInfo.etaMinutes} min
                 </p>
               ) : null}
               {routeInfo.error ? <p className="route-error">{routeInfo.error}</p> : null}

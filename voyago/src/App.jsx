@@ -7,13 +7,15 @@ import Footer from './Footer'
 import Swiper from './Swiper'
 import SettingsPage from './Settings'
 
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 
 
 
 
 function App() {
- 
+
+  const location = useLocation()
+  const isSwipePage = location.pathname === '/swipe'
 
   return (
     <>
@@ -26,7 +28,7 @@ function App() {
         <Route path="/settings" element={<SettingsPage />} />
       </Routes>
       
-      <Footer />
+      {!isSwipePage ? <Footer /> : null}
     </>
   )
 }
