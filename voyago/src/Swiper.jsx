@@ -11,7 +11,6 @@ const USER_ID = "demo-user";
 const ANIMATION_SCROLLLOCK_MS = 420;
 const PREFETCH_THRESHOLD = 3;
 const PREFETCH_BATCH_SIZE = 10;
-const ROUTE_MODE_KEY = "voyago.route_mode";
 
 const cardVariants = {
   enter: (direction) => ({
@@ -48,13 +47,6 @@ function Swiper() {
   const [profileSummary, setProfileSummary] = useState(null);
   const [insights, setInsights] = useState(null);
   const [hq, setHq] = useState(() => getHQFromStorage());
-  const [routeMode, setRouteMode] = useState(() => {
-    if (typeof window === "undefined") {
-      return "pedestrian";
-    }
-    const saved = window.localStorage.getItem(ROUTE_MODE_KEY);
-    return saved === "auto" ? "auto" : "pedestrian";
-  });
   const [routeInfo, setRouteInfo] = useState({
     isLoading: false,
     error: "",
@@ -126,13 +118,6 @@ function Swiper() {
   }, []);
 
   useEffect(() => {
-    if (typeof window === "undefined") {
-      return;
-    }
-    window.localStorage.setItem(ROUTE_MODE_KEY, routeMode);
-  }, [routeMode]);
-
-  useEffect(() => {
     let cancelled = false;
 
     async function loadRoute() {
@@ -180,7 +165,7 @@ function Swiper() {
             { lat: hq.lat, lon: hq.lon },
             { lat: destinationLat, lon: destinationLon },
           ],
-          costing: routeMode,
+          costing: "auto",
         });
 
         if (cancelled) {
@@ -231,7 +216,7 @@ function Swiper() {
     return () => {
       cancelled = true;
     };
-  }, [currentPlace, hq, routeMode]);
+  }, [currentPlace, hq]);
 
   async function maybePrefetch(nextIndex) {
     const remaining = cardsRef.current.length - nextIndex - 1;
@@ -376,17 +361,6 @@ function Swiper() {
               <p>
                 <strong>HQ:</strong>{" "}
                 {hq ? hq.label || `${hq.lat.toFixed(5)}, ${hq.lon.toFixed(5)}` : "Not set"}
-              </p>
-              <div>
-                <button type="button" onClick={() => setRouteMode("pedestrian")} disabled={routeMode === "pedestrian"}>
-                  Walking
-                </button>
-                <button type="button" onClick={() => setRouteMode("auto")} disabled={routeMode === "auto"}>
-                  Driving
-                </button>
-              </div>
-              <p>
-                <strong>Mode:</strong> {routeMode === "pedestrian" ? "Walking" : "Driving"}
               </p>
               {routeInfo.isLoading ? <p>Loading route...</p> : null}
               {routeInfo.etaMinutes !== null ? (
