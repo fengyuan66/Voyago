@@ -21,18 +21,9 @@ function parseHq(raw) {
   }
 }
 
-
-
 export function getHQFromStorage() {
   if (typeof window === "undefined") {
     return null;
   }
   return parseHq(window.localStorage.getItem(HQ_KEY));
-}
-
-export function saveHQToStorage(hq) {
-  if (typeof window === "undefined") {
-    return;
-  }
-  window.localStorage.setItem(HQ_KEY, JSON.stringify(hq));
 }
