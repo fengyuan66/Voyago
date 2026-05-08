@@ -5,6 +5,7 @@ import LandingPage from './LandingPage'
 import Header from './Header'
 import Footer from './Footer'
 import Swiper from './Swiper'
+import SettingsPage from './Settings'
 
 import { Routes, Route } from 'react-router-dom'
 
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/swipe" element={<Swiper />} />
+        <Route path="/settings" element={<SettingsPage />} />
       </Routes>
       
       <Footer />

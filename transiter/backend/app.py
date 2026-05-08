@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from valhalla import Actor, get_config, get_help
 from pathlib import Path
 import json
+import threading
 
 
 app = FastAPI()
@@ -47,6 +48,7 @@ VALHALLA_CONFIG_PATH = BASE_PATH / "valhalla" / "valhalla.json"
 
 actor: Actor | None = None
 actor_error: str | None = None
+actor_lock = threading.Lock()
 
 try:
     actor = Actor(str(VALHALLA_CONFIG_PATH))
@@ -103,7 +105,10 @@ def route(req: RouteRequest):
     last_error = None
     for payload in attempts:
         try:
-            result = actor.route(payload)
+            # pyvalhalla Actor wraps native code; guard shared instance against concurrent access
+            # to avoid process-level crashes from overlapping requests.
+            with actor_lock:
+                result = actor.route(payload)
             return _decode_actor_result(result)
         except Exception as error:
             last_error = error
