@@ -115,6 +115,10 @@ main {
   height: 2rem;
   box-shadow: 0 0 0.65rem black;
   transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-transition-box h1 {
@@ -122,6 +126,8 @@ main {
   font-family: 'Inter', sans-serif;
   color: rgb(65, 65, 65);
   font-weight: 50;
+
+  
 }
 
 .destinations {
@@ -141,4 +147,17 @@ main {
     font-size: 0.85rem;
     padding: 0.4rem 0.6rem;
   }
+}
+
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  box-sizing: border-box;
+}
+
+footer p {
+  margin: 0;
 }

@@ -9,8 +9,6 @@ function LandingPage(){
             <Hero />
             <HeroTransition />
             <About/>
-            <Destinations />
-            
         </>
     )
 }

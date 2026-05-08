@@ -5,7 +5,7 @@ function HeroTransition(){
     return (
         <section className="hero-transition">
             <div className="hero-transition-box">
-                <h1>This is a transition!!!11!!!! Content may be added here in the future</h1>
+                <h1>This is a proof of concept. The recommendation pipeline only applies to restaurants for now.</h1>
             </div>
         </section>
     );

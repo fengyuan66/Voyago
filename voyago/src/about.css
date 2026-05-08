@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 .about {
-   position:relative;
-   min-height: 100vh;
+    position: relative;
+    padding: 6rem 10% 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    min-height: auto;
 }
 
 .about h1 {
@@ -34,9 +38,6 @@
 }
 
 .who-are-we {
-    position: absolute;
-    top: 15%;
-    left: 10%;
 
     z-index: 1;
 }
@@ -47,11 +48,9 @@
 
 
 .voyago-intro {
-  position: absolute;
-    top: 40%;
-    left: 10%;
-    z-index: 1;
-    display:grid;
+    position: static;   /* remove absolute positioning */
+    top: auto;
+    left: auto;
     
 }
 
