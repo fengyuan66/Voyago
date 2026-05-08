@@ -5,7 +5,7 @@ import {NavLink, useLocation} from 'react-router-dom'
 
 function Header() {
     const location = useLocation();
-    const isSwipePage = location.pathname === '/swipe';
+    const isSwipePage = location.pathname === '/swipe'|| location.pathname === '/setting';
   return (
     <header className={`site-header ${isSwipePage ? 'site-header--solid' : ''}`}>
       <h1>Voyago</h1>
@@ -23,7 +23,7 @@ function Header() {
             <a href="#plan">Plan</a>
           </li>
           <li>
-            <NavLink to="/settings">Setting</NavLink>
+            <NavLink to="/settings">Settings</NavLink>
           </li>
         </ul>
       </nav>
