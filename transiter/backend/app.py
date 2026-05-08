@@ -36,6 +36,10 @@ class RouteRequest(BaseModel):
     costing: str = "auto" #routing mode
     date_time: dict | None = None
 
+ROUTE_RETRY_RADIUS_METERS = 200
+ROUTE_RETRY_MIN_REACHABILITY = 1
+ROUTE_RETRY_SEARCH_CUTOFF_METERS = 35000
+
 
 
 BASE_PATH = Path(__file__).resolve().parent.parent
@@ -53,33 +57,69 @@ except Exception as e:
     print(e.http_code)
     print(e.http_messages)
 
+def _decode_actor_result(result):
+    if isinstance(result, bytes):
+        result = result.decode("utf-8")
+
+    if isinstance(result, str):
+        return json.loads(result)
+
+    return result
+
+def _make_locations(points: list[Location], with_search_hints: bool):
+    mapped = []
+    for point in points:
+        location = {
+            "lat": point.lat,
+            "lon": point.lon,
+            "type": "break",
+        }
+        if with_search_hints:
+            location["radius"] = ROUTE_RETRY_RADIUS_METERS
+            location["minimum_reachability"] = ROUTE_RETRY_MIN_REACHABILITY
+            location["search_cutoff"] = ROUTE_RETRY_SEARCH_CUTOFF_METERS
+        mapped.append(location)
+    return mapped
+
 @app.post("/route")
 def route(req: RouteRequest):
     if actor is None:
         raise HTTPException(status_code = 503, detail = "Valhalla not ready!")
     
-    
-
-    payload = {
-        "locations": [{"lat": p.lat, "lon": p.lon} for p in req.locations],
-        "costing": req.costing
-    }
-
+    attempts = [
+        {
+            "locations": _make_locations(req.locations, with_search_hints=False),
+            "costing": req.costing,
+        },
+        {
+            "locations": _make_locations(req.locations, with_search_hints=True),
+            "costing": req.costing,
+        },
+    ]
     if req.date_time:
-        payload["date_time"] = req.date_time
+        for payload in attempts:
+            payload["date_time"] = req.date_time
 
-    try:
-        result = actor.route(payload)
+    last_error = None
+    for payload in attempts:
+        try:
+            result = actor.route(payload)
+            return _decode_actor_result(result)
+        except Exception as error:
+            last_error = error
+            continue
 
-        if isinstance(result, bytes):
-            result = result.decode("utf-8")
+    message = str(last_error) if last_error is not None else "Unknown routing error"
+    if "no suitable edges near location" in message.lower():
+        raise HTTPException(
+            status_code=422,
+            detail=(
+                "Routing failed: one or more points are off-road or outside the currently loaded routing tiles. "
+                "Set HQ to a nearby Vancouver street address."
+            ),
+        )
 
-        if isinstance(result, str):
-            result = json.loads(result)
-
-        return result
-    except Exception as e:
-        raise HTTPException(status_code = 500, detail = f"Routing failed: {e}")
+    raise HTTPException(status_code=500, detail=f"Routing failed: {message}")
     
 #debug
 @app.get("/health")

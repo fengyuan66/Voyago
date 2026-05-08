@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { fetchFeed, submitRating } from "./recommendationApi";
 import { getRoute } from "./routingapi";
-import { getHQFromStorage } from "./settingsStore";
+import { getHQFromStorage, isWithinRoutingCoverage } from "./settingsStore";
 import { decodePolyline6 } from "./polyline6";
 import RouteMiniMap from "./RouteMinimap";
 import "./swiper.css";
@@ -35,6 +35,18 @@ function getImageFallback(restaurant) {
     return restaurant.imageUrl;
   }
   return "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80";
+}
+
+function humanizeRouteError(message) {
+  const raw = String(message ?? "");
+  const normalized = raw.toLowerCase();
+  if (normalized.includes("no suitable edges near location")) {
+    return "Route unavailable from this HQ. Set HQ to a specific Vancouver street address.";
+  }
+  if (normalized.includes("outside the currently loaded routing tiles")) {
+    return "HQ is outside the local routing map. Set HQ to a Vancouver address.";
+  }
+  return raw || "Failed to load route.";
 }
 
 function Swiper() {
@@ -140,6 +152,15 @@ function Swiper() {
         });
         return;
       }
+      if (!isWithinRoutingCoverage(hq.lat, hq.lon)) {
+        setRouteInfo({
+          isLoading: false,
+          error: "HQ is outside routing coverage. Set HQ to a Vancouver address.",
+          etaMinutes: null,
+          points: [],
+        });
+        return;
+      }
 
       const destinationLat = Number(currentPlace.lat);
       const destinationLon = Number(currentPlace.lon);
@@ -205,7 +226,7 @@ function Swiper() {
         }
         setRouteInfo({
           isLoading: false,
-          error: routeError.message || "Failed to load route.",
+          error: humanizeRouteError(routeError?.message),
           etaMinutes: null,
           points: [],
         });
