@@ -1,18 +1,18 @@
-//Vallaha caller
+// Valhalla caller
+const TRANSITER_API_ROOT = (import.meta.env.VITE_TRANSITER_API_URL || "http://127.0.0.1:8000").replace(/\/+$/, "");
 
-export async function getRoute(data){
-    const res = await fetch("http://127.0.0.1:8000/route", { //CHANGE IN DEPLOYMENT
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data)
-    });
+export async function getRoute(data) {
+  const res = await fetch(`${TRANSITER_API_ROOT}/route`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
 
-    const payload = await res.json();
-    if (!res.ok) {
-        throw new Error(payload?.detail || "Routing request failed");
-    }
-    return payload;
-
-};
+  const payload = await res.json();
+  if (!res.ok) {
+    throw new Error(payload?.detail || "Routing request failed");
+  }
+  return payload;
+}

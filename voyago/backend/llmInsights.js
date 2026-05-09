@@ -42,6 +42,15 @@ function sanitizeReason(reason) {
 function buildPickPrompt({ userProfile, candidates, count }) {
   const recent = (userProfile.ratings ?? []).slice(-30);
   const topPrefs = summarizeTopTagPrefs(userProfile, 8);
+
+  const insightSummary = String(userProfile?.insights?.profile_summary ?? "").slice(0, 350);
+  const insightHypotheses = Array.isArray(userProfile?.insights?.hypotheses)
+    ? userProfile.insights.hypotheses.slice(0, 3)
+    : [];
+  const insightExplorationTags = Array.isArray(userProfile?.insights?.exploration_tags)
+    ? userProfile.insights.exploration_tags.slice(0, 5)
+    : [];
+
   const candidateList = candidates.slice(0, 80).map((restaurant) => ({
     id: restaurant.id,
     name: restaurant.name,
@@ -52,18 +61,21 @@ function buildPickPrompt({ userProfile, candidates, count }) {
   }));
 
   return [
-    "You are a restaurant recommender.",
-    `Pick exactly ${count} restaurants from candidate list for this user.`,
-    "Use only provided candidate IDs.",
-    'Return strict JSON only: {"picks":[{"id":"restaurant_id","reason":"one short sentence"}]}',
-    "Keep each reason under 20 words.",
-    "",
-    `Top liked tags: ${JSON.stringify(topPrefs.liked)}`,
-    `Top disliked tags: ${JSON.stringify(topPrefs.disliked)}`,
-    `Recent ratings: ${JSON.stringify(recent)}`,
-    `Candidates: ${JSON.stringify(candidateList)}`,
-  ].join("\n");
-}
+      "You are a restaurant recommender.",
+      `Pick exactly ${count} restaurants from candidate list for this user.`,
+      "Use only provided candidate IDs.",
+      'Return strict JSON only: {"picks":[{"id":"restaurant_id","reason":"one short sentence"}]}',
+      "Keep each reason under 20 words.",
+      "",
+      `Top liked tags: ${JSON.stringify(topPrefs.liked)}`,
+      `Top disliked tags: ${JSON.stringify(topPrefs.disliked)}`,
+      `Recent ratings: ${JSON.stringify(recent)}`,
+      `Insight summary: ${insightSummary || "none"}`,
+      `Insight hypotheses: ${JSON.stringify(insightHypotheses)}`,
+      `Insight exploration tags: ${JSON.stringify(insightExplorationTags)}`,
+      `Candidates: ${JSON.stringify(candidateList)}`,
+    ].join("\n");
+  }
 
 function uniqueById(list) {
   const seen = new Set();

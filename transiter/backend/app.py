@@ -1,19 +1,30 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 from fastapi.middleware.cors import CORSMiddleware
-from valhalla import Actor, get_config, get_help
+from valhalla import Actor
 from pathlib import Path
 import json
 import threading
+import os
 
 
 app = FastAPI()
 
+def _load_cors_origins():
+    configured = os.getenv("TRANSITER_CORS_ORIGINS", "").strip()
+    if configured:
+        if configured == "*":
+            return ["*"]
+        parsed = [origin.strip() for origin in configured.split(",") if origin.strip()]
+        if parsed:
+            return parsed
+    return [
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+    ]
+
 #ALLOWED URLS. TWEAK THIS IN DEPLOYMENT
-origins = [
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-]
+origins = _load_cors_origins()
 #PERMISSION SETTINGS
 app.add_middleware(
     CORSMiddleware,
@@ -50,14 +61,25 @@ actor: Actor | None = None
 actor_error: str | None = None
 actor_lock = threading.Lock()
 
+def _build_actor_config():
+    with VALHALLA_CONFIG_PATH.open("r", encoding="utf-8") as handle:
+        config = json.load(handle)
+
+    valhalla_root = BASE_PATH / "valhalla"
+    mjolnir = config.setdefault("mjolnir", {})
+
+    # Keep local development defaults, but allow cloud overrides through env vars.
+    mjolnir["tile_dir"] = os.getenv("TRANSITER_TILE_DIR", str(valhalla_root / "tiles"))
+    mjolnir["transit_dir"] = os.getenv("TRANSITER_TRANSIT_TILE_DIR", str(valhalla_root / "transit_tiles"))
+    mjolnir["transit_feeds_dir"] = os.getenv("TRANSITER_GTFS_FEEDS_DIR", str(valhalla_root / "gtfs_feeds"))
+
+    return config
+
 try:
-    actor = Actor(str(VALHALLA_CONFIG_PATH))
+    actor = Actor(_build_actor_config())
 except Exception as e:
     actor_error = str(e)
-    print(e.code)
-    print(e.message)
-    print(e.http_code)
-    print(e.http_messages)
+    print(f"Failed to initialize Valhalla actor: {actor_error}")
 
 def _decode_actor_result(result):
     if isinstance(result, bytes):

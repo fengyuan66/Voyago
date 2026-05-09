@@ -4,7 +4,7 @@ import { importTaggedCatalogFromObject } from "./catalog.js";
 import { applyRating, createEmptyProfile, recommendNextBatch, summarizeTopTagPrefs } from "./recommender.js";
 import { generateLlmPicks, maybeGenerateInsights } from "./llmInsights.js";
 
-const HOST = process.env.HOST ?? "127.0.0.1";
+const HOST = process.env.HOST ?? "0.0.0.0";
 const PORT = Number(process.env.PORT ?? 8787);
 
 let catalog = loadCatalog();

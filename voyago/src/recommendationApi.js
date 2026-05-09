@@ -1,4 +1,4 @@
-const API_ROOT = "/api";
+const API_ROOT = (import.meta.env.VITE_VOYAGO_API_URL || "/api").replace(/\/+$/, "");
 
 function createQuery(params) {
   const query = new URLSearchParams();
