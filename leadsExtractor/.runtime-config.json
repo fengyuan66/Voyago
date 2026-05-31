@@ -10,6 +10,7 @@
     "lngStep": 0.012,
     "zoom": 14
   },
+  
   "searchTerm": "restaurant",
   "maxPlacesPerCell": 120,
   "maxPhotosPerPlace": 25,
